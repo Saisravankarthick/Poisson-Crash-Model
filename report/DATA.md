@@ -66,15 +66,9 @@ Before Dec 2016 the funds did not exist (or have no usable history), so proxies 
 | `verification.json` | `src/verify.py` | All 199 independent checks with computed and reference values |
 | `tables/*.csv` | `src/laura_poisson.py` | Fund-level rates, dollar loss by fund and type, probability each type affects Laura |
 
-## Figures (`figures/`)
+## Figures (`figures/`) and tables (`results/tables/`)
 
-| File | Shows | Data behind it |
-|---|---|---|
-| `01_poisson_pmf_windows.png` | Probability of 0, 1, 2, 3+ crashes in three windows | `crash_events.json` → equity → 20 |
-| `02_fund_level_lambda.png` | Each fund's crash rate | `tables/fund_level_poisson.csv` |
-| `03_crash_damage_exceedance.png` | Chance crashes cost Laura at least $X | `laura_poisson.json` → aggregate_poisson, aggregate_mmpp_2027_32 |
-| `04_dollar_change_by_fund_and_type.png` | Dollar change per holding by crash type | `tables/dollar_loss_by_fund_and_type.csv` |
-| `05_markov_modulated_horizon.png` | Plain against Markov-modulated Poisson | `crash_events.json` → markov |
-| `06_probability_crash_affects_laura.png` | Probability each type affects Laura | `tables/probability_crash_affects_laura.csv` |
+Fifteen charts and thirteen CSV tables: see the [index](INDEX.md) for which file feeds which chart.
+
 
 All charts use one muted palette (blue `#3b6ea8`, orange `#c8733f`, violet `#8a64b0`, green `#2e9474`), checked for adjacent-pair separation under colour-vision deficiency. Labels, markers and line styles carry identity as well, so colour is never the only cue.
