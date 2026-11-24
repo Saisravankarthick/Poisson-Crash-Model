@@ -1,0 +1,161 @@
+# Poisson-Crash-Model
+
+How often could a market crash hit **Laura Gao's** portfolio, how much could it cost, and how likely is it to stop her paying the ten $50,000 instalments or keeping her 2031 promise to the facility co-sponsors?
+
+Team Parallax · Wharton Global High School Investment Competition 2026–27. This is the companion code to the Research Pack, Section 8 (rebuilt).
+
+> **AI-use note.** This code was written with AI assistance (Anthropic's Claude) as study material for the team. Anything quoted in the Final Report must be in the team's own words, and AI use must be cited in APA style as the competition rules require.
+
+## The client and the money (Case Study only)
+
+| Item | Value |
+|---|---|
+| Invested at the start of 2027 | $300,000 |
+| Added at the start of 2028 | $150,000 |
+| Payments | 10 × $50,000, start of 2033 to start of 2042 (annuity-due) |
+| Reserve needed in 2033 | $421,767 at 4% (IPS), $439,305 at 3% (stress) |
+
+**Holdings at cost basis** (forced to $300,000 with a cash row):
+
+| Holding | Amount |
+|---|---|
+| VTI | $64,962.10 |
+| VXUS | $39,786.00 |
+| EQAL | $14,303.35 |
+| IEF | $35,736.00 |
+| SCHP | $27,698.00 |
+| SGOV | $30,159.00 |
+| SHY | $40,590.00 |
+| VGIT | $40,446.00 |
+| Cash (modelled as SGOV) | $6,319.55 |
+
+That makes 39.7% equities and 60.3% bonds and cash.
+
+## How the Poisson distribution is calculated
+
+**1. Define a crash.** A crash is a fall of **20% or more** (also **30% or more**) from a previous peak, measured on **month-end closes**. One crash runs from the peak to full recovery, so a long bear market is counted once.
+
+**2. Count crashes.** We count them in 100.3 years of CRSP US total-market data (1926–2026, Kenneth R. French Data Library). The result is **n = 10** falls of 20% or more and **n = 5** falls of 30% or more.
+
+**3. Estimate the rate.** The rate per year is λ = n / T: 10 / 100.3 = **0.0997** (about one every 10 years); for 30% or more it is 0.0499.
+
+**4. Apply the Poisson law.** The chance of exactly *k* crashes in *t* years is
+
+   P(N = k) = e^(−λt) (λt)^k / k!,  so P(at least one) = 1 − e^(−λt).
+
+   Worked example for 2031–32 (t = 2): λt = 0.1994, so P(at least one) = 1 − e^(−0.1994) = **18.1%**. Treating each of the 24 months as a separate trial with p = λ/12 gives a binomial answer of 18.2%, which shows Poisson is the limit of the binomial.
+
+| Window | P(≥1 fall of 20%+) | 90% range | P(≥1 fall of 30%+) |
+|---|---|---|---|
+| 2027 (first year) | 9.5% | 5.3–15.6% | 4.9% |
+| 2031–32 (critical) | **18.1%** | 10.3–28.7% | 9.5% |
+| 2027–32 (build-up) | 45.0% | 27.7–63.7% | 25.8% |
+| 2027–42 (whole plan) | 79.7% | 57.9–93.3% | 54.9% |
+
+For 2027–32, P(0, 1, 2, 3+ crashes) = 55%, 33%, 10% and 2%.
+
+**5. Quantify the uncertainty.** Ten events is a small sample. The 90% interval for λ is the exact Garwood (1936) chi-square interval: λ_L = χ²₀.₀₅(2n)/2T and λ_U = χ²₀.₉₅(2n+2)/2T.
+
+**6. Check that Poisson fits.** The number of crashes starting in each calendar year has variance/mean = 0.91. The chi-square dispersion test gives p = 0.73, so Poisson is not rejected.
+
+**7. Apply it to Laura's own money: compound Poisson.** Each crash *j* is given:
+   - **a type**, in proportion to history: recession 10%, V-shock 30%, inflation/rate 40%, valuation bust 20%;
+   - **a depth**, drawn from the same type's history;
+   - **each fund's response**, taken from the matching 1990–2026 episode (2008, 2020, 2022, 2000–02), with equity losses scaled to the drawn depth.
+
+   Her dollar loss in crash *j* is L_j = exposure × Σ wᵢ rᵢ, where exposure is $300k in 2027 and $450k from 2028. Total crash damage is S = L₁ + … + L_N with N ~ Poisson(λt), so **E[S] = λt·E[L]** and Var[S] = λt·E[L²]. These formulas are checked against 200,000 simulations.
+
+**8. Allow for clustering: Markov-modulated Poisson.** A two-state Hamilton (1989) regime model gives λ = 0.009/yr when markets are calm and 0.56/yr when turbulent. The regime moves month to month through the fitted transition matrix. Today's state is calm, so the odds for the next two years (2027–28) are lower than plain Poisson: 12.5% against 18.1%. By 2031–32 the starting state has mostly been forgotten. Once a crash starts, a second one becomes much more likely: 34% within two years.
+
+## Results for Laura's portfolio
+
+**Each fund (1990–2026, month-end):**
+
+| Fund | Falls of 20%+ | P(another in 2031–32) |
+|---|---|---|
+| VTI | 4 | 20% |
+| VXUS | 6 | 28% |
+| EQAL | 5 | 24% |
+| IEF | 1 (2020–23, −23%) | 5% |
+| SCHP, SGOV, SHY, VGIT | 0 | 0% (90% upper bound 15%) |
+
+The bond sleeve, about 60% of the money, has never had a 20% fall.
+
+**One crash, in dollars ($300k portfolio):**
+- The average loss is **$39.9k (−13.3%)**.
+- The worst combination seen is −23.7%.
+- By type: recession −$44k, V-shock −$26k, inflation/rate −$54k, valuation bust −$30k.
+- In three of the four types the bond sleeve *gains*. In the inflation/rate type it *loses* as well (2022).
+
+**Total crash damage, 2027–32:**
+- Expected **$33.7k** (the formula gives $33.8k).
+- P(damage of at least $50k) = 29.6%; P(at least $100k) = 11.0%.
+- 99% value-at-risk = $190k.
+- In 2031–32 alone: P(at least $50k) = 11.6%.
+
+**Probability that each crash type affects Laura** = P(it occurs in 2031–32) × P(harm | it ends at the 2033 valuation):
+
+| Crash type | P(occurs 2031–32) | Misses reserve: S9 / S10 / S10C | Breaks promise: S9 / S10 / S10C |
+|---|---|---|---|
+| T1 Recession (2008) | 2.0% | 0.45% / 0.00% / 0.00% | 1.87% / 0.44% / 0.00% |
+| T2 V-shock (2020; includes 1962) | 5.8% | 0.20% / 0.01% / 0.01% | 0.80% / 0.27% / 0.09% |
+| T3 Inflation/rates (2022) | 3.9% | 0.43% / 0.22% / 0.18% | 2.12% / 2.41% / 2.00% |
+| T3+ Severe inflation (1973–74) | 3.9% | 0.68% / 0.00% / 0.00% | 3.60% / 0.34% / 0.00% |
+| T4 Valuation bust (2000–02) | 3.9% | 0.25% / 0.00% / 0.00% | 1.37% / 0.00% / 0.00% |
+| T5 Falling rates (2019–20) | 22.2% | 0.04% / 0.00% / 0.00% | 0.04% / 0.00% / 0.00% |
+
+These are upper bounds, because they assume the worst timing.
+
+## Figures (muted palette)
+
+| File | Shows |
+|---|---|
+| `figures/01_poisson_pmf_windows.png` | Poisson probabilities of 0–3+ crashes in three windows |
+| `figures/02_fund_level_lambda.png` | Each fund's crash rate, 90% bound and dollars held |
+| `figures/03_crash_damage_exceedance.png` | Chance crashes cost Laura at least $X |
+| `figures/04_dollar_change_by_fund_and_type.png` | Dollar change in each holding by crash type |
+| `figures/05_markov_modulated_horizon.png` | Plain against Markov-modulated Poisson over 1–16 years |
+| `figures/06_probability_crash_affects_laura.png` | The table above, as a chart |
+
+## Run it
+
+```bash
+pip install -r requirements.txt
+python src/run_all.py           # about 10 minutes, mostly the strategy simulation
+python -m pytest tests -q       # 6 checks on the mathematics
+```
+
+| Script | What it does |
+|---|---|
+| `src/build_data.py` | Builds the monthly data and validates the proxies |
+| `src/crash_events.py` | Market crash history, Poisson rates, Markov model |
+| `src/strategy_sim.py` | Simulates the ten strategies and replays the crashes |
+| `src/laura_poisson.py` | Applies the model to Laura's holdings |
+| `src/figures.py` | Draws the charts |
+
+## Data
+
+The raw snapshots are in `data/raw` (downloaded 24 Nov 2026):
+- FRED yields, CPI, USD/TWD and NBER recession dates;
+- the Kenneth R. French Data Library (to Sep 2026);
+- Shiller's S&P 500 file;
+- the team's daily fund returns (Nov 2016 – Oct 2026) from `Monte-Carlo-Simulations-`.
+
+Proxies are used before Dec 2016 and validated against the real funds (correlation 0.94–0.999). `data/processed/proxy_validation.json` has the details.
+
+## Limitations
+
+- Ten crashes is a small sample, so the per-type rates rest on 1–4 events each.
+- Proxies are imperfect: EQAL's runs about 1.6 points a year high, and pre-2003 TIPS are a nominal-bond stand-in.
+- Crash damage is measured before recovery, and there are no taxes or fees.
+- Worst-timing probabilities are upper bounds.
+- USD/TWD currency risk is analysed but not simulated.
+
+## References
+
+- Garwood (1936), *Biometrika* 28.
+- Hamilton (1989), *Econometrica* 57.
+- Merton (1976), *Journal of Financial Economics* 3.
+- Künsch (1989), *Annals of Statistics* 17.
+- Cont (2001), *Quantitative Finance* 1.
+- Kenneth R. French Data Library; FRED, Federal Reserve Bank of St. Louis.
