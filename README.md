@@ -43,7 +43,7 @@ That makes 39.7% equities and 60.3% bonds and cash.
 
    P(N = k) = e^(−λt) (λt)^k / k!,  so P(at least one) = 1 − e^(−λt).
 
-   Worked example for 2031–32 (t = 2): λt = 0.1994, so P(at least one) = 1 − e^(−0.1994) = **18.1%**. Treating each of the 24 months as a separate trial with p = λ/12 gives a binomial answer of 18.2%, which shows Poisson is the limit of the binomial.
+   Worked example for 2031–32 (t = 2): λt = 0.1994, so P(at least one) = 1 − e^(−0.1994) = **18.1%**. Treating each of the 24 months as a separate trial with p = λ/12 gives a binomial answer of 18.1% (18.14% against 18.07%), which shows Poisson is the limit of the binomial.
 
 | Window | P(≥1 fall of 20%+) | 90% range | P(≥1 fall of 30%+) |
 |---|---|---|---|
@@ -106,6 +106,21 @@ The bond sleeve, about 60% of the money, has never had a 20% fall.
 
 These are upper bounds, because they assume the worst timing.
 
+## Verification
+
+`python src/verify.py` recomputes the numbers a second way and checks them against the competition guide (WGHS 2026-27 Team Study Pack, sections 3.1-3.3). It runs **199 checks, all passing** (report in `results/verification.json`):
+
+| Group | Checks | What is compared |
+|---|---|---|
+| Guide tables | 28 | Reserve at 0-6% ($421,767 at 4%, $439,305 at 3%), portfolio at the start of 2033 at 0-8%, remainder after the reserve, 2031 illustrations, holdings sum to $300,000 |
+| Market-wide Poisson | 22 | Independent crash counter, lambda, P(at least one), binomial limit, Garwood bounds by chi-square and by inverting the Poisson cdf, dispersion test |
+| Markov model | 12 | Stationary distribution by eigenvector and closed form, expected stay, P^12, month-by-month MMPP recursion |
+| Fund level | 50 | Falls, lambda, P(2031-32), worst drawdown, upper bound and dollars held for all eight funds |
+| Compound Poisson | 27 | Type shares, mean loss per crash, E[S] = lambda t E[L], Poisson pmf, ordering of VaR and CVaR |
+| Probability that a type affects Laura | 60 | P(occurs) = 1 - exp(-2 lambda) and the product with P(harm given crash) |
+
+`docs/Poisson_Graphs_and_Data.pdf` shows all six figures with their data tables.
+
 ## Figures (muted palette)
 
 | File | Shows |
@@ -123,6 +138,7 @@ These are upper bounds, because they assume the worst timing.
 pip install -r requirements.txt
 python src/run_all.py           # about 10 minutes, mostly the strategy simulation
 python -m pytest tests -q       # 6 checks on the mathematics
+python src/verify.py            # 199 independent checks against the guide
 ```
 
 | Script | What it does |

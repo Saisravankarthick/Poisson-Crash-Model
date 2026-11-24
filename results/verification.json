@@ -1,0 +1,1797 @@
+{
+ "n_checks": 199,
+ "n_failed": 0,
+ "checks": [
+  {
+   "group": "A guide s3.1",
+   "check": "reserve at 0%",
+   "computed": 500000.0,
+   "reference": 500000.0,
+   "tolerance": 1,
+   "ok": true,
+   "note": "annuity-due, n=10"
+  },
+  {
+   "group": "A guide s3.1",
+   "check": "reserve at 2%",
+   "computed": 458111.8353183544,
+   "reference": 458112.0,
+   "tolerance": 1,
+   "ok": true,
+   "note": "annuity-due, n=10"
+  },
+  {
+   "group": "A guide s3.1",
+   "check": "reserve at 3%",
+   "computed": 439305.44609395554,
+   "reference": 439305.0,
+   "tolerance": 1,
+   "ok": true,
+   "note": "annuity-due, n=10"
+  },
+  {
+   "group": "A guide s3.1",
+   "check": "reserve at 4%",
+   "computed": 421766.5805264618,
+   "reference": 421767.0,
+   "tolerance": 1,
+   "ok": true,
+   "note": "annuity-due, n=10"
+  },
+  {
+   "group": "A guide s3.1",
+   "check": "reserve at 5%",
+   "computed": 405391.0837822029,
+   "reference": 405391.0,
+   "tolerance": 1,
+   "ok": true,
+   "note": "annuity-due, n=10"
+  },
+  {
+   "group": "A guide s3.1",
+   "check": "reserve at 6%",
+   "computed": 390084.6137249793,
+   "reference": 390085.0,
+   "tolerance": 1,
+   "ok": true,
+   "note": "annuity-due, n=10"
+  },
+  {
+   "group": "A guide s3.2",
+   "check": "portfolio at start of 2033, 0%",
+   "computed": 450000.0,
+   "reference": 450000.0,
+   "tolerance": 1,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "A guide s3.2",
+   "check": "portfolio at start of 2033, 2%",
+   "computed": 503460.8462592,
+   "reference": 503461.0,
+   "tolerance": 1,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "A guide s3.2",
+   "check": "portfolio at start of 2033, 3%",
+   "computed": 532106.8001037,
+   "reference": 532107.0,
+   "tolerance": 1,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "A guide s3.2",
+   "check": "portfolio at start of 2033, 4%",
+   "computed": 562093.6409088002,
+   "reference": 562094.0,
+   "tolerance": 1,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "A guide s3.2",
+   "check": "portfolio at start of 2033, 5%",
+   "computed": 593470.9265625002,
+   "reference": 593471.0,
+   "tolerance": 1,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "A guide s3.2",
+   "check": "portfolio at start of 2033, 6%",
+   "computed": 626289.5703168001,
+   "reference": 626290.0,
+   "tolerance": 1,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "A guide s3.2",
+   "check": "portfolio at start of 2033, 7%",
+   "computed": 660601.8651597002,
+   "reference": 660602.0,
+   "tolerance": 1,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "A guide s3.2",
+   "check": "portfolio at start of 2033, 8%",
+   "computed": 696461.5084032002,
+   "reference": 696462.0,
+   "tolerance": 1,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "A guide s3.2",
+   "check": "remaining after $421,767 reserve, 0%",
+   "computed": 28233.0,
+   "reference": 28233.0,
+   "tolerance": 1,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "A guide s3.2",
+   "check": "remaining after $421,767 reserve, 2%",
+   "computed": 81693.84625920001,
+   "reference": 81694.0,
+   "tolerance": 1,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "A guide s3.2",
+   "check": "remaining after $421,767 reserve, 3%",
+   "computed": 110339.80010370002,
+   "reference": 110340.0,
+   "tolerance": 1,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "A guide s3.2",
+   "check": "remaining after $421,767 reserve, 4%",
+   "computed": 140326.64090880018,
+   "reference": 140327.0,
+   "tolerance": 1,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "A guide s3.2",
+   "check": "remaining after $421,767 reserve, 5%",
+   "computed": 171703.9265625002,
+   "reference": 171704.0,
+   "tolerance": 1,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "A guide s3.2",
+   "check": "remaining after $421,767 reserve, 6%",
+   "computed": 204522.57031680015,
+   "reference": 204523.0,
+   "tolerance": 1,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "A guide s3.2",
+   "check": "remaining after $421,767 reserve, 7%",
+   "computed": 238834.86515970016,
+   "reference": 238835.0,
+   "tolerance": 1,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "A guide s3.2",
+   "check": "remaining after $421,767 reserve, 8%",
+   "computed": 274694.5084032002,
+   "reference": 274695.0,
+   "tolerance": 1,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "A guide s3.3",
+   "check": "portfolio at start of 2031, 3%",
+   "computed": 501561.693,
+   "reference": 501600.0,
+   "tolerance": 100,
+   "ok": true,
+   "note": "guide says 'about'"
+  },
+  {
+   "group": "A guide s3.3",
+   "check": "portfolio at start of 2031, 5%",
+   "computed": 538295.6250000001,
+   "reference": 538300.0,
+   "tolerance": 100,
+   "ok": true,
+   "note": "guide says 'about'"
+  },
+  {
+   "group": "A guide s3.3",
+   "check": "portfolio at start of 2031, 7%",
+   "computed": 576995.253,
+   "reference": 577000.0,
+   "tolerance": 100,
+   "ok": true,
+   "note": "guide says 'about'"
+  },
+  {
+   "group": "A holdings",
+   "check": "holdings + cash = $300,000",
+   "computed": 300000.0,
+   "reference": 300000.0,
+   "tolerance": 0.005,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "A holdings",
+   "check": "equity share (VTI+VXUS+EQAL)",
+   "computed": 0.39683816666666666,
+   "reference": 0.39683816666666666,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "A guide s3.1",
+   "check": "gap between $500,000 and the 4% reserve is about $78,000",
+   "computed": 78233.41947353818,
+   "reference": 78000.0,
+   "tolerance": 300,
+   "ok": true,
+   "note": "guide: 'roughly $78,000'"
+  },
+  {
+   "group": "B market",
+   "check": "years of history",
+   "computed": 100.33333333333333,
+   "reference": 100.33333333333333,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "B market",
+   "check": "number of falls >= 20%",
+   "computed": 10.0,
+   "reference": 10.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "independent episode counter"
+  },
+  {
+   "group": "B market",
+   "check": "number of falls >= 30%",
+   "computed": 5.0,
+   "reference": 5.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "independent episode counter"
+  },
+  {
+   "group": "B market",
+   "check": "lambda = n/T (20%)",
+   "computed": 0.09966777408637874,
+   "reference": 0.09966777408637874,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "B market",
+   "check": "lambda = n/T (30%)",
+   "computed": 0.04983388704318937,
+   "reference": 0.04983388704318937,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "B market",
+   "check": "P(>=1) 2027 (first year): 1-exp(-lt)",
+   "computed": 0.09486192158533568,
+   "reference": 0.09486192158533568,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "B market",
+   "check": "P(>=1) 2027 (first year): scipy poisson.sf(0)",
+   "computed": 0.09486192158533563,
+   "reference": 0.09486192158533568,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "B market",
+   "check": "P(>=1) 2031-32 (critical years): 1-exp(-lt)",
+   "computed": 0.18072505900380897,
+   "reference": 0.18072505900380897,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "B market",
+   "check": "P(>=1) 2031-32 (critical years): scipy poisson.sf(0)",
+   "computed": 0.180725059003809,
+   "reference": 0.18072505900380897,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "B market",
+   "check": "P(>=1) 2027-32 (build-up): 1-exp(-lt)",
+   "computed": 0.4500932961556794,
+   "reference": 0.4500932961556794,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "B market",
+   "check": "P(>=1) 2027-32 (build-up): scipy poisson.sf(0)",
+   "computed": 0.4500932961556794,
+   "reference": 0.4500932961556794,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "B market",
+   "check": "P(>=1) 2027-42 (whole plan): 1-exp(-lt)",
+   "computed": 0.7970274204925708,
+   "reference": 0.7970274204925708,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "B market",
+   "check": "P(>=1) 2027-42 (whole plan): scipy poisson.sf(0)",
+   "computed": 0.7970274204925707,
+   "reference": 0.7970274204925708,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "B market",
+   "check": "binomial limit, 24 months p=lam/12 vs Poisson 2 years",
+   "computed": 0.181406754294288,
+   "reference": 0.18072505900380897,
+   "tolerance": 0.001,
+   "ok": true,
+   "note": "Poisson = limit of binomial: 18.14% vs 18.07%"
+  },
+  {
+   "group": "B market",
+   "check": "Garwood 90% lower bound (chi-square)",
+   "computed": 0.05407381093446474,
+   "reference": 0.05407381093446471,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "B market",
+   "check": "Garwood 90% upper bound (chi-square)",
+   "computed": 0.16905866347895585,
+   "reference": 0.16905866347895585,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "B market",
+   "check": "Garwood upper bound by inverting the Poisson cdf",
+   "computed": 0.16905866347895582,
+   "reference": 0.16905866347895585,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "B market",
+   "check": "Garwood lower bound by inverting the Poisson cdf",
+   "computed": 0.05407381093446468,
+   "reference": 0.05407381093446474,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "B market",
+   "check": "dispersion index var/mean",
+   "computed": 0.91,
+   "reference": 0.91,
+   "tolerance": 0.01,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "B market",
+   "check": "dispersion test p (chi-square, df=N-1)",
+   "computed": 0.728748282158817,
+   "reference": 0.728748282158817,
+   "tolerance": 0.01,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "B market",
+   "check": "type counts add to 10",
+   "computed": 10.0,
+   "reference": 10.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "B market",
+   "check": "mean wait 1/lambda (years)",
+   "computed": 10.033333333333333,
+   "reference": 10.033333333333333,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "C Markov",
+   "check": "rows of P sum to 1",
+   "computed": 1.1102230246251565e-16,
+   "reference": 0.0,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "C Markov",
+   "check": "stationary distribution (eigenvector) calm",
+   "computed": 0.8339523279152516,
+   "reference": 0.8339523279152515,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "C Markov",
+   "check": "stationary distribution (closed form) turbulent",
+   "computed": 0.1660476720847485,
+   "reference": 0.1660476720847485,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "C Markov",
+   "check": "expected calm stay = 1/(1-p00) months",
+   "computed": 40.69375864338878,
+   "reference": 40.69375864338878,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "C Markov",
+   "check": "expected turbulent stay = 1/(1-p11) months",
+   "computed": 8.102506180425209,
+   "reference": 8.102506180425209,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "C Markov",
+   "check": "12-month transition P^12 [0,1]",
+   "computed": 0.14175057236949637,
+   "reference": 0.14175057236949637,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "C Markov",
+   "check": "MMPP P(>=1) from today's state, 2 years",
+   "computed": 0.12556636799852705,
+   "reference": 0.124885,
+   "tolerance": 0.02,
+   "ok": true,
+   "note": "tolerance 2 points: the code steps the chain at a different point in the month"
+  },
+  {
+   "group": "C Markov",
+   "check": "MMPP P(>=1) from today's state, 6 years",
+   "computed": 0.36934677544574634,
+   "reference": 0.36709,
+   "tolerance": 0.02,
+   "ok": true,
+   "note": "tolerance 2 points: the code steps the chain at a different point in the month"
+  },
+  {
+   "group": "C Markov",
+   "check": "MMPP P(>=1) from the long-run mix, 2 years",
+   "computed": 0.15736349935092098,
+   "reference": 0.15678,
+   "tolerance": 0.02,
+   "ok": true,
+   "note": "tolerance 2 points: the code steps the chain at a different point in the month"
+  },
+  {
+   "group": "C Markov",
+   "check": "MMPP P(>=1) from the long-run mix, 6 years",
+   "computed": 0.3924949232932481,
+   "reference": 0.390495,
+   "tolerance": 0.02,
+   "ok": true,
+   "note": "tolerance 2 points: the code steps the chain at a different point in the month"
+  },
+  {
+   "group": "C Markov",
+   "check": "MMPP P(>=1) just after turbulence starts, 2 years",
+   "computed": 0.3360020334838515,
+   "reference": 0.335295,
+   "tolerance": 0.02,
+   "ok": true,
+   "note": "tolerance 2 points: the code steps the chain at a different point in the month"
+  },
+  {
+   "group": "C Markov",
+   "check": "MMPP P(>=1) just after turbulence starts, 6 years",
+   "computed": 0.5225428560310141,
+   "reference": 0.52127,
+   "tolerance": 0.02,
+   "ok": true,
+   "note": "tolerance 2 points: the code steps the chain at a different point in the month"
+  },
+  {
+   "group": "D funds",
+   "check": "VTI falls >= 20%",
+   "computed": 4.0,
+   "reference": 4.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "D funds",
+   "check": "VTI lambda",
+   "computed": 0.1103448275862069,
+   "reference": 0.1103448275862069,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "D funds",
+   "check": "VTI P(>=1) in 2031-32",
+   "computed": 0.19803447247265793,
+   "reference": 0.19803447247265793,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "D funds",
+   "check": "VTI worst drawdown",
+   "computed": -0.5031170717166412,
+   "reference": -0.5031170717166412,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "D funds",
+   "check": "VTI Garwood upper bound",
+   "computed": 0.25251086970034686,
+   "reference": 0.25251086970034686,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "D funds",
+   "check": "VTI dollars held",
+   "computed": 64962.1,
+   "reference": 64962.1,
+   "tolerance": 0.01,
+   "ok": true,
+   "note": "SGOV includes the $6,319.55 cash row"
+  },
+  {
+   "group": "D funds",
+   "check": "VXUS falls >= 20%",
+   "computed": 6.0,
+   "reference": 6.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "D funds",
+   "check": "VXUS lambda",
+   "computed": 0.16551724137931034,
+   "reference": 0.16551724137931034,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "D funds",
+   "check": "VXUS P(>=1) in 2031-32",
+   "computed": 0.2818195962279241,
+   "reference": 0.2818195962279241,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "D funds",
+   "check": "VXUS worst drawdown",
+   "computed": -0.5707769504786588,
+   "reference": -0.5707769504786588,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "D funds",
+   "check": "VXUS Garwood upper bound",
+   "computed": 0.3266867766184907,
+   "reference": 0.3266867766184907,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "D funds",
+   "check": "VXUS dollars held",
+   "computed": 39786.0,
+   "reference": 39786.0,
+   "tolerance": 0.01,
+   "ok": true,
+   "note": "SGOV includes the $6,319.55 cash row"
+  },
+  {
+   "group": "D funds",
+   "check": "EQAL falls >= 20%",
+   "computed": 5.0,
+   "reference": 5.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "D funds",
+   "check": "EQAL lambda",
+   "computed": 0.13793103448275862,
+   "reference": 0.13793103448275862,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "D funds",
+   "check": "EQAL P(>=1) in 2031-32",
+   "computed": 0.24108239816771115,
+   "reference": 0.24108239816771115,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "D funds",
+   "check": "EQAL worst drawdown",
+   "computed": -0.5557331185722731,
+   "reference": -0.5557331185722731,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "D funds",
+   "check": "EQAL Garwood upper bound",
+   "computed": 0.29001475610321475,
+   "reference": 0.29001475610321475,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "D funds",
+   "check": "EQAL dollars held",
+   "computed": 14303.35,
+   "reference": 14303.35,
+   "tolerance": 0.01,
+   "ok": true,
+   "note": "SGOV includes the $6,319.55 cash row"
+  },
+  {
+   "group": "D funds",
+   "check": "IEF falls >= 20%",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "D funds",
+   "check": "IEF lambda",
+   "computed": 0.027586206896551724,
+   "reference": 0.027586206896551724,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "D funds",
+   "check": "IEF P(>=1) in 2031-32",
+   "computed": 0.05367802507394637,
+   "reference": 0.05367802507394637,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "D funds",
+   "check": "IEF worst drawdown",
+   "computed": -0.23152620371157373,
+   "reference": -0.23152620371157373,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "D funds",
+   "check": "IEF Garwood upper bound",
+   "computed": 0.13086522809353315,
+   "reference": 0.13086522809353315,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "D funds",
+   "check": "IEF dollars held",
+   "computed": 35736.0,
+   "reference": 35736.0,
+   "tolerance": 0.01,
+   "ok": true,
+   "note": "SGOV includes the $6,319.55 cash row"
+  },
+  {
+   "group": "D funds",
+   "check": "SCHP falls >= 20%",
+   "computed": 0.0,
+   "reference": 0.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "D funds",
+   "check": "SCHP lambda",
+   "computed": 0.0,
+   "reference": 0.0,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "D funds",
+   "check": "SCHP P(>=1) in 2031-32",
+   "computed": 0.0,
+   "reference": 0.0,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "D funds",
+   "check": "SCHP worst drawdown",
+   "computed": -0.14826856868684513,
+   "reference": -0.14826856868684513,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "D funds",
+   "check": "SCHP Garwood upper bound",
+   "computed": 0.08264089030493764,
+   "reference": 0.08264089030493764,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "D funds",
+   "check": "SCHP dollars held",
+   "computed": 27698.0,
+   "reference": 27698.0,
+   "tolerance": 0.01,
+   "ok": true,
+   "note": "SGOV includes the $6,319.55 cash row"
+  },
+  {
+   "group": "D funds",
+   "check": "SGOV falls >= 20%",
+   "computed": 0.0,
+   "reference": 0.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "D funds",
+   "check": "SGOV lambda",
+   "computed": 0.0,
+   "reference": 0.0,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "D funds",
+   "check": "SGOV P(>=1) in 2031-32",
+   "computed": 0.0,
+   "reference": 0.0,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "D funds",
+   "check": "SGOV worst drawdown",
+   "computed": -2.9552060259230295e-05,
+   "reference": -2.9552060259230295e-05,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "D funds",
+   "check": "SGOV Garwood upper bound",
+   "computed": 0.08264089030493764,
+   "reference": 0.08264089030493764,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "D funds",
+   "check": "SGOV dollars held",
+   "computed": 36478.54999999999,
+   "reference": 36478.54999999999,
+   "tolerance": 0.01,
+   "ok": true,
+   "note": "SGOV includes the $6,319.55 cash row"
+  },
+  {
+   "group": "D funds",
+   "check": "SHY falls >= 20%",
+   "computed": 0.0,
+   "reference": 0.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "D funds",
+   "check": "SHY lambda",
+   "computed": 0.0,
+   "reference": 0.0,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "D funds",
+   "check": "SHY P(>=1) in 2031-32",
+   "computed": 0.0,
+   "reference": 0.0,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "D funds",
+   "check": "SHY worst drawdown",
+   "computed": -0.053620559910305454,
+   "reference": -0.053620559910305454,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "D funds",
+   "check": "SHY Garwood upper bound",
+   "computed": 0.08264089030493764,
+   "reference": 0.08264089030493764,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "D funds",
+   "check": "SHY dollars held",
+   "computed": 40590.0,
+   "reference": 40590.0,
+   "tolerance": 0.01,
+   "ok": true,
+   "note": "SGOV includes the $6,319.55 cash row"
+  },
+  {
+   "group": "D funds",
+   "check": "VGIT falls >= 20%",
+   "computed": 0.0,
+   "reference": 0.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "D funds",
+   "check": "VGIT lambda",
+   "computed": 0.0,
+   "reference": 0.0,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "D funds",
+   "check": "VGIT P(>=1) in 2031-32",
+   "computed": 0.0,
+   "reference": 0.0,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "D funds",
+   "check": "VGIT worst drawdown",
+   "computed": -0.14960277889363272,
+   "reference": -0.14960277889363272,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "D funds",
+   "check": "VGIT Garwood upper bound",
+   "computed": 0.08264089030493764,
+   "reference": 0.08264089030493764,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "D funds",
+   "check": "VGIT dollars held",
+   "computed": 40446.0,
+   "reference": 40446.0,
+   "tolerance": 0.01,
+   "ok": true,
+   "note": "SGOV includes the $6,319.55 cash row"
+  },
+  {
+   "group": "D funds",
+   "check": "fund weights add to 100%",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "D funds",
+   "check": "history length (years)",
+   "computed": 36.25,
+   "reference": 36.25,
+   "tolerance": 0.01,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "E compound",
+   "check": "type shares add to 1",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "E compound",
+   "check": "mean loss per crash, $300k portfolio",
+   "computed": 39873.22221036306,
+   "reference": 39881.7432942836,
+   "tolerance": 40.0,
+   "ok": true,
+   "note": "stored value is a Monte Carlo mean; formula value is exact"
+  },
+  {
+   "group": "E compound",
+   "check": "T1 fund dollars add to portfolio loss",
+   "computed": 43992.13465623732,
+   "reference": 43992.13465623734,
+   "tolerance": 1.0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "E compound",
+   "check": "T2 fund dollars add to portfolio loss",
+   "computed": 25962.119700851552,
+   "reference": 25962.11970085155,
+   "tolerance": 1.0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "E compound",
+   "check": "T3 fund dollars add to portfolio loss",
+   "computed": 54220.20392691813,
+   "reference": 54220.20392691813,
+   "tolerance": 1.0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "E compound",
+   "check": "T4 fund dollars add to portfolio loss",
+   "computed": 29986.456318583034,
+   "reference": 29986.456318583038,
+   "tolerance": 1.0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "E compound",
+   "check": "E[S] 2027 only: lambda * E[L] * exposure multiple",
+   "computed": 3974.0753033584447,
+   "reference": 3981.4021017067043,
+   "tolerance": 44.81402101706704,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "E compound",
+   "check": "E[S] 2027 only: simulation vs formula",
+   "computed": 3957.922446378905,
+   "reference": 3981.4021017067043,
+   "tolerance": 169.44206305120113,
+   "ok": true,
+   "note": "within 3% (Monte Carlo)"
+  },
+  {
+   "group": "E compound",
+   "check": "P(N=0) 2027 only: Poisson pmf",
+   "computed": 0.9051380784146643,
+   "reference": 0.9051380784146643,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "E compound",
+   "check": "P(N=1) 2027 only: Poisson pmf",
+   "computed": 0.09021309751641172,
+   "reference": 0.09021309751641172,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "E compound",
+   "check": "2027 only: simulated P(N=0) vs exact",
+   "computed": 0.90574,
+   "reference": 0.9051380784146643,
+   "tolerance": 0.01,
+   "ok": true,
+   "note": "Monte Carlo"
+  },
+  {
+   "group": "E compound",
+   "check": "2027 only: P(loss>=$50k) <= P(N>=1)",
+   "computed": 0.03113,
+   "reference": 0.03113,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": "a loss needs at least one crash"
+  },
+  {
+   "group": "E compound",
+   "check": "2027 only: VaR95 <= VaR99 <= CVaR99",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "E compound",
+   "check": "E[S] 2031-32: lambda * E[L] * exposure multiple",
+   "computed": 11922.225910075334,
+   "reference": 11981.027041265996,
+   "tolerance": 124.81027041265996,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "E compound",
+   "check": "E[S] 2031-32: simulation vs formula",
+   "computed": 12037.793147387514,
+   "reference": 11981.027041265996,
+   "tolerance": 409.43081123797987,
+   "ok": true,
+   "note": "within 3% (Monte Carlo)"
+  },
+  {
+   "group": "E compound",
+   "check": "P(N=0) 2031-32: Poisson pmf",
+   "computed": 0.819274940996191,
+   "reference": 0.819274940996191,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "E compound",
+   "check": "P(N=1) 2031-32: Poisson pmf",
+   "computed": 0.1633106194676793,
+   "reference": 0.16331061946767927,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "E compound",
+   "check": "2031-32: simulated P(N=0) vs exact",
+   "computed": 0.818375,
+   "reference": 0.819274940996191,
+   "tolerance": 0.01,
+   "ok": true,
+   "note": "Monte Carlo"
+  },
+  {
+   "group": "E compound",
+   "check": "2031-32: P(loss>=$50k) <= P(N>=1)",
+   "computed": 0.11587,
+   "reference": 0.11587,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": "a loss needs at least one crash"
+  },
+  {
+   "group": "E compound",
+   "check": "2031-32: VaR95 <= VaR99 <= CVaR99",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "E compound",
+   "check": "E[S] 2027-32: lambda * E[L] * exposure multiple",
+   "computed": 33779.64007854678,
+   "reference": 33797.107760852596,
+   "tolerance": 342.97107760852595,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "E compound",
+   "check": "E[S] 2027-32: simulation vs formula",
+   "computed": 33676.35257244017,
+   "reference": 33797.107760852596,
+   "tolerance": 1063.9132328255778,
+   "ok": true,
+   "note": "within 3% (Monte Carlo)"
+  },
+  {
+   "group": "E compound",
+   "check": "P(N=0) 2027-32: Poisson pmf",
+   "computed": 0.5499067038443206,
+   "reference": 0.5499067038443206,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "E compound",
+   "check": "P(N=1) 2027-32: Poisson pmf",
+   "computed": 0.32884786276404554,
+   "reference": 0.32884786276404554,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "E compound",
+   "check": "2027-32: simulated P(N=0) vs exact",
+   "computed": 0.55151,
+   "reference": 0.5499067038443206,
+   "tolerance": 0.01,
+   "ok": true,
+   "note": "Monte Carlo"
+  },
+  {
+   "group": "E compound",
+   "check": "2027-32: P(loss>=$50k) <= P(N>=1)",
+   "computed": 0.296055,
+   "reference": 0.296055,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": "a loss needs at least one crash"
+  },
+  {
+   "group": "E compound",
+   "check": "2027-32: VaR95 <= VaR99 <= CVaR99",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T1 P(occurs 2031-32) = 1-exp(-2 lambda)",
+   "computed": 0.01973619504947277,
+   "reference": 0.01973619504947277,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T1 S9 shortfall = P(occurs) x P(short | crash)",
+   "computed": 0.004491957993260003,
+   "reference": 0.004491957993260003,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T1 S9 promise broken = P(occurs) x P(broken | crash)",
+   "computed": 0.01871583376541503,
+   "reference": 0.01871583376541503,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T1 S9: shortfall <= promise broken",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T1 S10 shortfall = P(occurs) x P(short | crash)",
+   "computed": 3.947239009894119e-06,
+   "reference": 3.947239009894119e-06,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T1 S10 promise broken = P(occurs) x P(broken | crash)",
+   "computed": 0.0043676199644483256,
+   "reference": 0.0043676199644483256,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T1 S10: shortfall <= promise broken",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T1 S10C shortfall = P(occurs) x P(short | crash)",
+   "computed": 3.947239009894119e-06,
+   "reference": 3.947239009894119e-06,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T1 S10C promise broken = P(occurs) x P(broken | crash)",
+   "computed": 1.184171702968455e-05,
+   "reference": 1.184171702968455e-05,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T1 S10C: shortfall <= promise broken",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T2 P(occurs 2031-32) = 1-exp(-2 lambda)",
+   "computed": 0.05804772055460916,
+   "reference": 0.05804772055460916,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T2 S9 shortfall = P(occurs) x P(short | crash)",
+   "computed": 0.0019794272709121735,
+   "reference": 0.0019794272709121735,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T2 S9 promise broken = P(occurs) x P(broken | crash)",
+   "computed": 0.008004780664480605,
+   "reference": 0.008004780664480605,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T2 S9: shortfall <= promise broken",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T2 S10 shortfall = P(occurs) x P(short | crash)",
+   "computed": 0.0001219002131646787,
+   "reference": 0.0001219002131646787,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T2 S10 promise broken = P(occurs) x P(broken | crash)",
+   "computed": 0.0026643903734565634,
+   "reference": 0.0026643903734565634,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T2 S10: shortfall <= promise broken",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T2 S10C shortfall = P(occurs) x P(short | crash)",
+   "computed": 0.00011029066905375814,
+   "reference": 0.00011029066905375814,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T2 S10C promise broken = P(occurs) x P(broken | crash)",
+   "computed": 0.000940373072984668,
+   "reference": 0.000940373072984668,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T2 S10C: shortfall <= promise broken",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T3 P(occurs 2031-32) = 1-exp(-2 lambda)",
+   "computed": 0.03908287270391464,
+   "reference": 0.03908287270391464,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T3 S9 shortfall = P(occurs) x P(short | crash)",
+   "computed": 0.0042834828483490454,
+   "reference": 0.0042834828483490454,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T3 S9 promise broken = P(occurs) x P(broken | crash)",
+   "computed": 0.021218091590955255,
+   "reference": 0.021218091590955255,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T3 S9: shortfall <= promise broken",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T3 S10 shortfall = P(occurs) x P(short | crash)",
+   "computed": 0.0022277237441231364,
+   "reference": 0.0022277237441231364,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T3 S10 promise broken = P(occurs) x P(broken | crash)",
+   "computed": 0.024075049585611418,
+   "reference": 0.024075049585611418,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T3 S10: shortfall <= promise broken",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T3 S10C shortfall = P(occurs) x P(short | crash)",
+   "computed": 0.0018134452934616392,
+   "reference": 0.0018134452934616392,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T3 S10C promise broken = P(occurs) x P(broken | crash)",
+   "computed": 0.020041697122567426,
+   "reference": 0.020041697122567426,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T3 S10C: shortfall <= promise broken",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T3+ P(occurs 2031-32) = 1-exp(-2 lambda)",
+   "computed": 0.03908287270391464,
+   "reference": 0.03908287270391464,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T3+ S9 shortfall = P(occurs) x P(short | crash)",
+   "computed": 0.0067535204032364475,
+   "reference": 0.0067535204032364475,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T3+ S9 promise broken = P(occurs) x P(broken | crash)",
+   "computed": 0.03598360089849421,
+   "reference": 0.03598360089849421,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T3+ S9: shortfall <= promise broken",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T3+ S10 shortfall = P(occurs) x P(short | crash)",
+   "computed": 7.816574540782067e-06,
+   "reference": 7.816574540782067e-06,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T3+ S10 promise broken = P(occurs) x P(broken | crash)",
+   "computed": 0.003415843074322141,
+   "reference": 0.003415843074322141,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T3+ S10: shortfall <= promise broken",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T3+ S10C shortfall = P(occurs) x P(short | crash)",
+   "computed": 7.816574540782067e-06,
+   "reference": 7.816574540782067e-06,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T3+ S10C promise broken = P(occurs) x P(broken | crash)",
+   "computed": 7.816574540782067e-06,
+   "reference": 7.816574540782067e-06,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T3+ S10C: shortfall <= promise broken",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T4 P(occurs 2031-32) = 1-exp(-2 lambda)",
+   "computed": 0.03908287270391464,
+   "reference": 0.03908287270391464,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T4 S9 shortfall = P(occurs) x P(short | crash)",
+   "computed": 0.0025091204275913214,
+   "reference": 0.0025091204275913214,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T4 S9 promise broken = P(occurs) x P(broken | crash)",
+   "computed": 0.01372981318088521,
+   "reference": 0.01372981318088521,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T4 S9: shortfall <= promise broken",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T4 S10 shortfall = P(occurs) x P(short | crash)",
+   "computed": 0.0,
+   "reference": 0.0,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T4 S10 promise broken = P(occurs) x P(broken | crash)",
+   "computed": 0.0,
+   "reference": 0.0,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T4 S10: shortfall <= promise broken",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T4 S10C shortfall = P(occurs) x P(short | crash)",
+   "computed": 0.0,
+   "reference": 0.0,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T4 S10C promise broken = P(occurs) x P(broken | crash)",
+   "computed": 0.0,
+   "reference": 0.0,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T4 S10C: shortfall <= promise broken",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T5 P(occurs 2031-32) = 1-exp(-2 lambda)",
+   "computed": 0.222331688421604,
+   "reference": 0.222331688421604,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T5 S9 shortfall = P(occurs) x P(short | crash)",
+   "computed": 0.0003779638703167345,
+   "reference": 0.0003779638703167345,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T5 S9 promise broken = P(occurs) x P(broken | crash)",
+   "computed": 0.00042243020800105047,
+   "reference": 0.00042243020800105047,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T5 S9: shortfall <= promise broken",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T5 S10 shortfall = P(occurs) x P(short | crash)",
+   "computed": 2.2233168842157952e-05,
+   "reference": 2.2233168842157952e-05,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T5 S10 promise broken = P(occurs) x P(broken | crash)",
+   "computed": 2.2233168842157952e-05,
+   "reference": 2.2233168842157952e-05,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T5 S10: shortfall <= promise broken",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T5 S10C shortfall = P(occurs) x P(short | crash)",
+   "computed": 2.2233168842157952e-05,
+   "reference": 2.2233168842157952e-05,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T5 S10C promise broken = P(occurs) x P(broken | crash)",
+   "computed": 2.2233168842157952e-05,
+   "reference": 2.2233168842157952e-05,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "F affects",
+   "check": "T5 S10C: shortfall <= promise broken",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  }
+ ]
+}
