@@ -30,7 +30,7 @@ flowchart TD
 | Markov chain (two-state Hamilton) | Is the market calm or turbulent now, and how long does a state last? | Fitted to the same monthly returns | Transition matrix, stationary mix, today's state; makes λ depend on the state |
 | Markov-modulated Poisson | How do crash odds change given the current state? | Combines the two rows above | Clustering: 2-year odds from calm today against just after a crash starts |
 | Compound Poisson | How many dollars does Laura lose, not just how many crashes? | Poisson count × loss per crash from her actual holdings | E[S], Var[S], exceedance curve, VaR, CVaR |
-| Monte Carlo (block bootstrap) | Given a crash, does each strategy still fund the reserve and keep the 2031 promise? | `strategy_sim.py`: 274 monthly steps, 2027 to 2033, four cases (H historical, S stressed, C current yields, J jump-diffusion) | P(shortfall | crash), P(promise broken | crash) |
+| Monte Carlo (block bootstrap) | Given a crash, does each strategy still fund the reserve and keep the 2031 promise? | `strategy_sim.py`: 72 monthly steps (2027 to 2033) on 10,000 paths drawn from 274 months of history (2004 to 2026), four cases (H historical, S stressed, C current yields, J jump-diffusion) | P(shortfall | crash), P(promise broken | crash) |
 | Probability product | Which crash type can actually hurt Laura? | P(type occurs) × P(harm | type) | Figure 6 and Table 8.14b of the Research Pack |
 
 ## Links to the earlier repositories

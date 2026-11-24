@@ -198,3 +198,316 @@ F affects,T5 S10: shortfall <= promise broken,1.0,1.0,0.0,True,
 F affects,T5 S10C shortfall = P(occurs) x P(short | crash),2.2233168842157952e-05,2.2233168842157952e-05,1e-09,True,
 F affects,T5 S10C promise broken = P(occurs) x P(broken | crash),2.2233168842157952e-05,2.2233168842157952e-05,1e-09,True,
 F affects,T5 S10C: shortfall <= promise broken,1.0,1.0,0.0,True,
+G liability,"R4 stored in simulation = guide's $421,767",421766.5805264618,421767.0,1.0,True,guide s3.1
+G liability,"R3 stored in simulation = guide's $439,305",439305.44609395554,439305.0,1.0,True,guide s3.1
+G liability,"simulation set-up in the code is 10,000 paths x 72 months x 6-month blocks",1.0,1.0,0.0,True,72 months = 2027-01 to 2033-01
+G liability,stress case subtracts 3.25 points a year,1.0,1.0,0.0,True,
+G liability,bootstrap pool = 274 months (2004-01 to 2026-10),274.0,274.0,0.0,True,
+G liability,2027 PV of the ten payments at 4%,333328.25505759567,333328.25505759567,0.01,True,
+G liability,2027 Macaulay duration,10.177263917465874,10.177263917465874,1e-06,True,
+G liability,2027 modified duration,9.785830689871032,9.785830689871032,1e-06,True,
+G liability,2027 convexity,112.7406305242314,112.74063052423142,0.0001,True,
+G liability,2027 PV01 ($ per 1bp),326.1893868143779,326.1893868143779,0.0001,True,
+G liability,2028 PV of the ten payments at 4%,346661.38525989954,346661.38525989954,0.01,True,
+G liability,2028 Macaulay duration,9.177263917465872,9.177263917465872,1e-06,True,
+G liability,2028 modified duration,8.824292228332569,8.824292228332569,1e-06,True,
+G liability,2028 convexity,93.92172535140251,93.92172535140251,0.0001,True,
+G liability,2028 PV01 ($ per 1bp),305.9041367811934,305.9041367811934,0.0001,True,
+G liability,2029 PV of the ten payments at 4%,360527.8406702955,360527.8406702955,0.01,True,
+G liability,2029 Macaulay duration,8.177263917465872,8.177263917465872,1e-06,True,
+G liability,2029 modified duration,7.862753766794108,7.862753766794108,1e-06,True,
+G liability,2029 convexity,76.95193260460913,76.95193260460913,0.0001,True,
+G liability,2029 PV01 ($ per 1bp),283.4741637264512,283.4741637264512,0.0001,True,
+G liability,2030 PV of the ten payments at 4%,374948.95429710735,374948.95429710735,0.01,True,
+G liability,2030 Macaulay duration,7.177263917465873,7.177263917465873,1e-06,True,
+G liability,2030 modified duration,6.901215305255647,6.901215305255647,1e-06,True,
+G liability,2030 convexity,61.831252283851214,61.831252283851214,0.0001,True,
+G liability,2030 PV01 ($ per 1bp),258.76034620847975,258.76034620847975,0.0001,True,
+G liability,2031 PV of the ten payments at 4%,389946.9124689917,389946.9124689917,0.01,True,
+G liability,2031 Macaulay duration,6.177263917465873,6.177263917465873,1e-06,True,
+G liability,2031 modified duration,5.939676843717185,5.939676843717185,1e-06,True,
+G liability,2031 convexity,48.55968438912881,48.55968438912881,0.0001,True,
+G liability,2031 PV01 ($ per 1bp),231.6158646271082,231.6158646271082,0.0001,True,
+G liability,2032 PV of the ten payments at 4%,405544.7889677514,405544.7889677514,0.01,True,
+G liability,2032 Macaulay duration,5.177263917465873,5.177263917465873,1e-06,True,
+G liability,2032 modified duration,4.978138382178724,4.978138382178724,1e-06,True,
+G liability,2032 convexity,37.13722892044192,37.13722892044192,0.0001,True,
+G liability,2032 PV01 ($ per 1bp),201.88580796529337,201.88580796529337,0.0001,True,
+G liability,2033 PV of the ten payments at 4%,421766.5805264614,421766.5805264614,0.01,True,
+G liability,2033 Macaulay duration,4.177263917465872,4.177263917465872,1e-06,True,
+G liability,2033 modified duration,4.016599920640261,4.016599920640261,1e-06,True,
+G liability,2033 convexity,27.56388587779053,27.56388587779053,0.0001,True,
+G liability,2033 PV01 ($ per 1bp),169.40676138712993,169.40676138712993,0.0001,True,
+G liability,PV grows 4% a year: PV(2032)/PV(2031),1.04,1.04,1e-09,True,
+G liability,equity share as built,0.39683816666666666,0.39683816666666666,1e-09,True,
+H re-sim,S4 case H: funding certainty,0.9537,0.9548,0.012,True,"20,000 paths, own bootstrap; Monte Carlo error about 0.5 pt"
+H re-sim,S4 case H: median contribution,415793.8525022155,421688.7533889984,20867.550135559937,True,within 4% (Monte Carlo)
+H re-sim,S4 case H: 5th percentile contribution,7227.116884023646,11196.011030590136,8671.760661835408,True,within 6% (Monte Carlo)
+H re-sim,S4 case H: 95th percentile contribution,980713.3490274412,984658.3852474677,57232.91926237338,True,within 5% (Monte Carlo)
+H re-sim,S4 case S: funding certainty,0.8975,0.8986,0.012,True,"20,000 paths, own bootstrap; Monte Carlo error about 0.5 pt"
+H re-sim,S4 case S: median contribution,275432.01485087984,280546.96382271743,15221.878552908698,True,within 4% (Monte Carlo)
+H re-sim,S4 case S: 5th percentile contribution,-65070.31193677187,-61604.832052354584,11696.289923141274,True,within 6% (Monte Carlo)
+H re-sim,S4 case S: 95th percentile contribution,746871.4989302356,750212.988488767,45510.64942443835,True,within 5% (Monte Carlo)
+H re-sim,S1 case H: funding certainty,1.0,1.0,0.012,True,"20,000 paths, own bootstrap; Monte Carlo error about 0.5 pt"
+H re-sim,S1 case H: median contribution,74383.90902704079,74398.18172825337,6975.927269130135,True,within 4% (Monte Carlo)
+H re-sim,S1 case H: 5th percentile contribution,51471.39663566969,51251.244630642585,11075.074677838555,True,within 6% (Monte Carlo)
+H re-sim,S1 case H: 95th percentile contribution,102153.01173269004,101271.72268617236,13063.586134308618,True,within 5% (Monte Carlo)
+H re-sim,S1 case S: funding certainty,0.2472,0.2462,0.012,True,"20,000 paths, own bootstrap; Monte Carlo error about 0.5 pt"
+H re-sim,S1 case S: median contribution,-9065.700460079592,-9058.13918521456,4362.325567408582,True,within 4% (Monte Carlo)
+H re-sim,S1 case S: 5th percentile contribution,-28142.763017274072,-28334.26550685025,9700.055930411016,True,within 6% (Monte Carlo)
+H re-sim,S1 case S: 95th percentile contribution,14060.390854144838,13392.832008841047,8669.641600442052,True,within 5% (Monte Carlo)
+I invariants,H S1: percentiles non-decreasing,1.0,1.0,0.0,True,
+I invariants,H S1: P(fund at 3%) <= P(fund at 4%),1.0,1.0,0.0,True,a higher reserve is harder to meet
+I invariants,H S1: funding certainty lies between the bounds implied by the percentiles,1.0,1.0,0.0,True,bounds 0.99 to 1.00
+I invariants,"H S1: promise_kept within [0,1]",1.0,1.0,0.0,True,
+I invariants,H S2: percentiles non-decreasing,1.0,1.0,0.0,True,
+I invariants,H S2: P(fund at 3%) <= P(fund at 4%),1.0,1.0,0.0,True,a higher reserve is harder to meet
+I invariants,H S2: funding certainty lies between the bounds implied by the percentiles,1.0,1.0,0.0,True,bounds 0.99 to 1.00
+I invariants,"H S2: promise_kept within [0,1]",1.0,1.0,0.0,True,
+I invariants,H S4: percentiles non-decreasing,1.0,1.0,0.0,True,
+I invariants,H S4: P(fund at 3%) <= P(fund at 4%),1.0,1.0,0.0,True,a higher reserve is harder to meet
+I invariants,H S4: funding certainty lies between the bounds implied by the percentiles,1.0,1.0,0.0,True,bounds 0.95 to 0.99
+I invariants,"H S4: promise_kept within [0,1]",1.0,1.0,0.0,True,
+I invariants,H S6: percentiles non-decreasing,1.0,1.0,0.0,True,
+I invariants,H S6: P(fund at 3%) <= P(fund at 4%),1.0,1.0,0.0,True,a higher reserve is harder to meet
+I invariants,H S6: funding certainty lies between the bounds implied by the percentiles,1.0,1.0,0.0,True,bounds 0.95 to 0.99
+I invariants,"H S6: promise_kept within [0,1]",1.0,1.0,0.0,True,
+I invariants,H S7: percentiles non-decreasing,1.0,1.0,0.0,True,
+I invariants,H S7: P(fund at 3%) <= P(fund at 4%),1.0,1.0,0.0,True,a higher reserve is harder to meet
+I invariants,H S7: funding certainty lies between the bounds implied by the percentiles,1.0,1.0,0.0,True,bounds 0.99 to 1.00
+I invariants,"H S7: promise_kept within [0,1]",1.0,1.0,0.0,True,
+I invariants,H S8: percentiles non-decreasing,1.0,1.0,0.0,True,
+I invariants,H S8: P(fund at 3%) <= P(fund at 4%),1.0,1.0,0.0,True,a higher reserve is harder to meet
+I invariants,H S8: funding certainty lies between the bounds implied by the percentiles,1.0,1.0,0.0,True,bounds 0.90 to 0.95
+I invariants,"H S8: promise_kept within [0,1]",1.0,1.0,0.0,True,
+I invariants,H S9: percentiles non-decreasing,1.0,1.0,0.0,True,
+I invariants,H S9: P(fund at 3%) <= P(fund at 4%),1.0,1.0,0.0,True,a higher reserve is harder to meet
+I invariants,H S9: funding certainty lies between the bounds implied by the percentiles,1.0,1.0,0.0,True,bounds 0.95 to 0.99
+I invariants,"H S9: promise_kept within [0,1]",1.0,1.0,0.0,True,
+I invariants,H S9A: percentiles non-decreasing,1.0,1.0,0.0,True,
+I invariants,H S9A: P(fund at 3%) <= P(fund at 4%),1.0,1.0,0.0,True,a higher reserve is harder to meet
+I invariants,H S9A: funding certainty lies between the bounds implied by the percentiles,1.0,1.0,0.0,True,bounds 0.99 to 1.00
+I invariants,"H S9A: promise_kept within [0,1]",1.0,1.0,0.0,True,
+I invariants,H S10: percentiles non-decreasing,1.0,1.0,0.0,True,
+I invariants,H S10: P(fund at 3%) <= P(fund at 4%),1.0,1.0,0.0,True,a higher reserve is harder to meet
+I invariants,H S10: funding certainty lies between the bounds implied by the percentiles,1.0,1.0,0.0,True,bounds 0.99 to 1.00
+I invariants,"H S10: promise_kept within [0,1]",1.0,1.0,0.0,True,
+I invariants,H S10C: percentiles non-decreasing,1.0,1.0,0.0,True,
+I invariants,H S10C: P(fund at 3%) <= P(fund at 4%),1.0,1.0,0.0,True,a higher reserve is harder to meet
+I invariants,H S10C: funding certainty lies between the bounds implied by the percentiles,1.0,1.0,0.0,True,bounds 0.99 to 1.00
+I invariants,"H S10C: promise_kept within [0,1]",1.0,1.0,0.0,True,
+I invariants,S S1: percentiles non-decreasing,1.0,1.0,0.0,True,
+I invariants,S S1: P(fund at 3%) <= P(fund at 4%),1.0,1.0,0.0,True,a higher reserve is harder to meet
+I invariants,S S1: funding certainty lies between the bounds implied by the percentiles,1.0,1.0,0.0,True,bounds 0.10 to 0.25
+I invariants,"S S1: promise_kept within [0,1]",1.0,1.0,0.0,True,
+I invariants,S S2: percentiles non-decreasing,1.0,1.0,0.0,True,
+I invariants,S S2: P(fund at 3%) <= P(fund at 4%),1.0,1.0,0.0,True,a higher reserve is harder to meet
+I invariants,S S2: funding certainty lies between the bounds implied by the percentiles,1.0,1.0,0.0,True,bounds 0.50 to 0.75
+I invariants,"S S2: promise_kept within [0,1]",1.0,1.0,0.0,True,
+I invariants,S S4: percentiles non-decreasing,1.0,1.0,0.0,True,
+I invariants,S S4: P(fund at 3%) <= P(fund at 4%),1.0,1.0,0.0,True,a higher reserve is harder to meet
+I invariants,S S4: funding certainty lies between the bounds implied by the percentiles,1.0,1.0,0.0,True,bounds 0.75 to 0.90
+I invariants,"S S4: promise_kept within [0,1]",1.0,1.0,0.0,True,
+I invariants,S S6: percentiles non-decreasing,1.0,1.0,0.0,True,
+I invariants,S S6: P(fund at 3%) <= P(fund at 4%),1.0,1.0,0.0,True,a higher reserve is harder to meet
+I invariants,S S6: funding certainty lies between the bounds implied by the percentiles,1.0,1.0,0.0,True,bounds 0.75 to 0.90
+I invariants,"S S6: promise_kept within [0,1]",1.0,1.0,0.0,True,
+I invariants,S S7: percentiles non-decreasing,1.0,1.0,0.0,True,
+I invariants,S S7: P(fund at 3%) <= P(fund at 4%),1.0,1.0,0.0,True,a higher reserve is harder to meet
+I invariants,S S7: funding certainty lies between the bounds implied by the percentiles,1.0,1.0,0.0,True,bounds 0.75 to 0.90
+I invariants,"S S7: promise_kept within [0,1]",1.0,1.0,0.0,True,
+I invariants,S S8: percentiles non-decreasing,1.0,1.0,0.0,True,
+I invariants,S S8: P(fund at 3%) <= P(fund at 4%),1.0,1.0,0.0,True,a higher reserve is harder to meet
+I invariants,S S8: funding certainty lies between the bounds implied by the percentiles,1.0,1.0,0.0,True,bounds 0.75 to 0.90
+I invariants,"S S8: promise_kept within [0,1]",1.0,1.0,0.0,True,
+I invariants,S S9: percentiles non-decreasing,1.0,1.0,0.0,True,
+I invariants,S S9: P(fund at 3%) <= P(fund at 4%),1.0,1.0,0.0,True,a higher reserve is harder to meet
+I invariants,S S9: funding certainty lies between the bounds implied by the percentiles,1.0,1.0,0.0,True,bounds 0.90 to 0.95
+I invariants,"S S9: promise_kept within [0,1]",1.0,1.0,0.0,True,
+I invariants,S S9A: percentiles non-decreasing,1.0,1.0,0.0,True,
+I invariants,S S9A: P(fund at 3%) <= P(fund at 4%),1.0,1.0,0.0,True,a higher reserve is harder to meet
+I invariants,S S9A: funding certainty lies between the bounds implied by the percentiles,1.0,1.0,0.0,True,bounds 0.75 to 0.90
+I invariants,"S S9A: promise_kept within [0,1]",1.0,1.0,0.0,True,
+I invariants,S S10: percentiles non-decreasing,1.0,1.0,0.0,True,
+I invariants,S S10: P(fund at 3%) <= P(fund at 4%),1.0,1.0,0.0,True,a higher reserve is harder to meet
+I invariants,S S10: funding certainty lies between the bounds implied by the percentiles,1.0,1.0,0.0,True,bounds 0.75 to 0.90
+I invariants,"S S10: promise_kept within [0,1]",1.0,1.0,0.0,True,
+I invariants,S S10C: percentiles non-decreasing,1.0,1.0,0.0,True,
+I invariants,S S10C: P(fund at 3%) <= P(fund at 4%),1.0,1.0,0.0,True,a higher reserve is harder to meet
+I invariants,S S10C: funding certainty lies between the bounds implied by the percentiles,1.0,1.0,0.0,True,bounds 0.75 to 0.90
+I invariants,"S S10C: promise_kept within [0,1]",1.0,1.0,0.0,True,
+I invariants,C S1: percentiles non-decreasing,1.0,1.0,0.0,True,
+I invariants,C S1: P(fund at 3%) <= P(fund at 4%),1.0,1.0,0.0,True,a higher reserve is harder to meet
+I invariants,C S1: funding certainty lies between the bounds implied by the percentiles,1.0,1.0,0.0,True,bounds 0.99 to 1.00
+I invariants,"C S1: promise_kept within [0,1]",1.0,1.0,0.0,True,
+I invariants,C S2: percentiles non-decreasing,1.0,1.0,0.0,True,
+I invariants,C S2: P(fund at 3%) <= P(fund at 4%),1.0,1.0,0.0,True,a higher reserve is harder to meet
+I invariants,C S2: funding certainty lies between the bounds implied by the percentiles,1.0,1.0,0.0,True,bounds 0.99 to 1.00
+I invariants,"C S2: promise_kept within [0,1]",1.0,1.0,0.0,True,
+I invariants,C S4: percentiles non-decreasing,1.0,1.0,0.0,True,
+I invariants,C S4: P(fund at 3%) <= P(fund at 4%),1.0,1.0,0.0,True,a higher reserve is harder to meet
+I invariants,C S4: funding certainty lies between the bounds implied by the percentiles,1.0,1.0,0.0,True,bounds 0.95 to 0.99
+I invariants,"C S4: promise_kept within [0,1]",1.0,1.0,0.0,True,
+I invariants,C S6: percentiles non-decreasing,1.0,1.0,0.0,True,
+I invariants,C S6: P(fund at 3%) <= P(fund at 4%),1.0,1.0,0.0,True,a higher reserve is harder to meet
+I invariants,C S6: funding certainty lies between the bounds implied by the percentiles,1.0,1.0,0.0,True,bounds 0.99 to 1.00
+I invariants,"C S6: promise_kept within [0,1]",1.0,1.0,0.0,True,
+I invariants,C S7: percentiles non-decreasing,1.0,1.0,0.0,True,
+I invariants,C S7: P(fund at 3%) <= P(fund at 4%),1.0,1.0,0.0,True,a higher reserve is harder to meet
+I invariants,C S7: funding certainty lies between the bounds implied by the percentiles,1.0,1.0,0.0,True,bounds 0.99 to 1.00
+I invariants,"C S7: promise_kept within [0,1]",1.0,1.0,0.0,True,
+I invariants,C S8: percentiles non-decreasing,1.0,1.0,0.0,True,
+I invariants,C S8: P(fund at 3%) <= P(fund at 4%),1.0,1.0,0.0,True,a higher reserve is harder to meet
+I invariants,C S8: funding certainty lies between the bounds implied by the percentiles,1.0,1.0,0.0,True,bounds 0.95 to 0.99
+I invariants,"C S8: promise_kept within [0,1]",1.0,1.0,0.0,True,
+I invariants,C S9: percentiles non-decreasing,1.0,1.0,0.0,True,
+I invariants,C S9: P(fund at 3%) <= P(fund at 4%),1.0,1.0,0.0,True,a higher reserve is harder to meet
+I invariants,C S9: funding certainty lies between the bounds implied by the percentiles,1.0,1.0,0.0,True,bounds 0.99 to 1.00
+I invariants,"C S9: promise_kept within [0,1]",1.0,1.0,0.0,True,
+I invariants,C S9A: percentiles non-decreasing,1.0,1.0,0.0,True,
+I invariants,C S9A: P(fund at 3%) <= P(fund at 4%),1.0,1.0,0.0,True,a higher reserve is harder to meet
+I invariants,C S9A: funding certainty lies between the bounds implied by the percentiles,1.0,1.0,0.0,True,bounds 0.99 to 1.00
+I invariants,"C S9A: promise_kept within [0,1]",1.0,1.0,0.0,True,
+I invariants,C S10: percentiles non-decreasing,1.0,1.0,0.0,True,
+I invariants,C S10: P(fund at 3%) <= P(fund at 4%),1.0,1.0,0.0,True,a higher reserve is harder to meet
+I invariants,C S10: funding certainty lies between the bounds implied by the percentiles,1.0,1.0,0.0,True,bounds 0.99 to 1.00
+I invariants,"C S10: promise_kept within [0,1]",1.0,1.0,0.0,True,
+I invariants,C S10C: percentiles non-decreasing,1.0,1.0,0.0,True,
+I invariants,C S10C: P(fund at 3%) <= P(fund at 4%),1.0,1.0,0.0,True,a higher reserve is harder to meet
+I invariants,C S10C: funding certainty lies between the bounds implied by the percentiles,1.0,1.0,0.0,True,bounds 0.99 to 1.00
+I invariants,"C S10C: promise_kept within [0,1]",1.0,1.0,0.0,True,
+I invariants,J S1: percentiles non-decreasing,1.0,1.0,0.0,True,
+I invariants,J S1: P(fund at 3%) <= P(fund at 4%),1.0,1.0,0.0,True,a higher reserve is harder to meet
+I invariants,J S1: funding certainty lies between the bounds implied by the percentiles,1.0,1.0,0.0,True,bounds 0.99 to 1.00
+I invariants,"J S1: promise_kept within [0,1]",1.0,1.0,0.0,True,
+I invariants,J S2: percentiles non-decreasing,1.0,1.0,0.0,True,
+I invariants,J S2: P(fund at 3%) <= P(fund at 4%),1.0,1.0,0.0,True,a higher reserve is harder to meet
+I invariants,J S2: funding certainty lies between the bounds implied by the percentiles,1.0,1.0,0.0,True,bounds 0.95 to 0.99
+I invariants,"J S2: promise_kept within [0,1]",1.0,1.0,0.0,True,
+I invariants,J S4: percentiles non-decreasing,1.0,1.0,0.0,True,
+I invariants,J S4: P(fund at 3%) <= P(fund at 4%),1.0,1.0,0.0,True,a higher reserve is harder to meet
+I invariants,J S4: funding certainty lies between the bounds implied by the percentiles,1.0,1.0,0.0,True,bounds 0.75 to 0.90
+I invariants,"J S4: promise_kept within [0,1]",1.0,1.0,0.0,True,
+I invariants,J S6: percentiles non-decreasing,1.0,1.0,0.0,True,
+I invariants,J S6: P(fund at 3%) <= P(fund at 4%),1.0,1.0,0.0,True,a higher reserve is harder to meet
+I invariants,J S6: funding certainty lies between the bounds implied by the percentiles,1.0,1.0,0.0,True,bounds 0.75 to 0.90
+I invariants,"J S6: promise_kept within [0,1]",1.0,1.0,0.0,True,
+I invariants,J S7: percentiles non-decreasing,1.0,1.0,0.0,True,
+I invariants,J S7: P(fund at 3%) <= P(fund at 4%),1.0,1.0,0.0,True,a higher reserve is harder to meet
+I invariants,J S7: funding certainty lies between the bounds implied by the percentiles,1.0,1.0,0.0,True,bounds 0.90 to 0.95
+I invariants,"J S7: promise_kept within [0,1]",1.0,1.0,0.0,True,
+I invariants,J S8: percentiles non-decreasing,1.0,1.0,0.0,True,
+I invariants,J S8: P(fund at 3%) <= P(fund at 4%),1.0,1.0,0.0,True,a higher reserve is harder to meet
+I invariants,J S8: funding certainty lies between the bounds implied by the percentiles,1.0,1.0,0.0,True,bounds 0.75 to 0.90
+I invariants,"J S8: promise_kept within [0,1]",1.0,1.0,0.0,True,
+I invariants,J S9: percentiles non-decreasing,1.0,1.0,0.0,True,
+I invariants,J S9: P(fund at 3%) <= P(fund at 4%),1.0,1.0,0.0,True,a higher reserve is harder to meet
+I invariants,J S9: funding certainty lies between the bounds implied by the percentiles,1.0,1.0,0.0,True,bounds 0.75 to 0.90
+I invariants,"J S9: promise_kept within [0,1]",1.0,1.0,0.0,True,
+I invariants,J S9A: percentiles non-decreasing,1.0,1.0,0.0,True,
+I invariants,J S9A: P(fund at 3%) <= P(fund at 4%),1.0,1.0,0.0,True,a higher reserve is harder to meet
+I invariants,J S9A: funding certainty lies between the bounds implied by the percentiles,1.0,1.0,0.0,True,bounds 0.75 to 0.90
+I invariants,"J S9A: promise_kept within [0,1]",1.0,1.0,0.0,True,
+I invariants,J S10: percentiles non-decreasing,1.0,1.0,0.0,True,
+I invariants,J S10: P(fund at 3%) <= P(fund at 4%),1.0,1.0,0.0,True,a higher reserve is harder to meet
+I invariants,J S10: funding certainty lies between the bounds implied by the percentiles,1.0,1.0,0.0,True,bounds 0.90 to 0.95
+I invariants,"J S10: promise_kept within [0,1]",1.0,1.0,0.0,True,
+I invariants,J S10C: percentiles non-decreasing,1.0,1.0,0.0,True,
+I invariants,J S10C: P(fund at 3%) <= P(fund at 4%),1.0,1.0,0.0,True,a higher reserve is harder to meet
+I invariants,J S10C: funding certainty lies between the bounds implied by the percentiles,1.0,1.0,0.0,True,bounds 0.90 to 0.95
+I invariants,"J S10C: promise_kept within [0,1]",1.0,1.0,0.0,True,
+I invariants,S1: S stress lowers funding certainty vs H,1.0,1.0,1e-12,True,
+I invariants,S2: S stress lowers funding certainty vs H,1.0,1.0,1e-12,True,
+I invariants,all-equity paths do not depend on yield case (S4 H vs C),0.9548,0.9548,1e-12,True,
+I invariants,S6: S stress lowers funding certainty vs H,1.0,1.0,1e-12,True,
+I invariants,S7: S stress lowers funding certainty vs H,1.0,1.0,1e-12,True,
+I invariants,S8: S stress lowers funding certainty vs H,1.0,1.0,1e-12,True,
+I invariants,S9: S stress lowers funding certainty vs H,1.0,1.0,1e-12,True,
+I invariants,S9A: S stress lowers funding certainty vs H,1.0,1.0,1e-12,True,
+I invariants,S10: S stress lowers funding certainty vs H,1.0,1.0,1e-12,True,
+I invariants,S10C: S stress lowers funding certainty vs H,1.0,1.0,1e-12,True,
+J replay link,T1 S9: P(shortfall | crash) = 1 - replay funding certainty,0.22760000000000002,0.22760000000000002,0.0005,True,
+J replay link,T1 S9: P(promise broken | crash) = 1 - replay promise kept,0.9483,0.9483,0.0005,True,
+J replay link,T1 S10: P(shortfall | crash) = 1 - replay funding certainty,0.00019999999999997797,0.00019999999999997797,0.0005,True,
+J replay link,T1 S10: P(promise broken | crash) = 1 - replay promise kept,0.22130000000000005,0.22130000000000005,0.0005,True,
+J replay link,T1 S10C: P(shortfall | crash) = 1 - replay funding certainty,0.00019999999999997797,0.00019999999999997797,0.0005,True,
+J replay link,T1 S10C: P(promise broken | crash) = 1 - replay promise kept,0.0006000000000000449,0.0006000000000000449,0.0005,True,
+J replay link,T2 S9: P(shortfall | crash) = 1 - replay funding certainty,0.03410000000000002,0.03410000000000002,0.0005,True,
+J replay link,T2 S9: P(promise broken | crash) = 1 - replay promise kept,0.13790000000000002,0.13790000000000002,0.0005,True,
+J replay link,T2 S10: P(shortfall | crash) = 1 - replay funding certainty,0.0020999999999999908,0.0020999999999999908,0.0005,True,
+J replay link,T2 S10: P(promise broken | crash) = 1 - replay promise kept,0.04590000000000005,0.04590000000000005,0.0005,True,
+J replay link,T2 S10C: P(shortfall | crash) = 1 - replay funding certainty,0.0019000000000000128,0.0019000000000000128,0.0005,True,
+J replay link,T2 S10C: P(promise broken | crash) = 1 - replay promise kept,0.016199999999999992,0.016199999999999992,0.0005,True,
+J replay link,T3 S9: P(shortfall | crash) = 1 - replay funding certainty,0.10960000000000003,0.10960000000000003,0.0005,True,
+J replay link,T3 S9: P(promise broken | crash) = 1 - replay promise kept,0.5428999999999999,0.5428999999999999,0.0005,True,
+J replay link,T3 S10: P(shortfall | crash) = 1 - replay funding certainty,0.05700000000000005,0.05700000000000005,0.0005,True,
+J replay link,T3 S10: P(promise broken | crash) = 1 - replay promise kept,0.616,0.616,0.0005,True,
+J replay link,T3 S10C: P(shortfall | crash) = 1 - replay funding certainty,0.0464,0.0464,0.0005,True,
+J replay link,T3 S10C: P(promise broken | crash) = 1 - replay promise kept,0.5127999999999999,0.5127999999999999,0.0005,True,
+J replay link,T3+ S9: P(shortfall | crash) = 1 - replay funding certainty,0.17279999999999995,0.17279999999999995,0.0005,True,
+J replay link,T3+ S9: P(promise broken | crash) = 1 - replay promise kept,0.9207,0.9207,0.0005,True,
+J replay link,T3+ S10: P(shortfall | crash) = 1 - replay funding certainty,0.00019999999999997797,0.00019999999999997797,0.0005,True,
+J replay link,T3+ S10: P(promise broken | crash) = 1 - replay promise kept,0.08740000000000003,0.08740000000000003,0.0005,True,
+J replay link,T3+ S10C: P(shortfall | crash) = 1 - replay funding certainty,0.00019999999999997797,0.00019999999999997797,0.0005,True,
+J replay link,T3+ S10C: P(promise broken | crash) = 1 - replay promise kept,0.00019999999999997797,0.00019999999999997797,0.0005,True,
+J replay link,T4 S9: P(shortfall | crash) = 1 - replay funding certainty,0.06420000000000003,0.06420000000000003,0.0005,True,
+J replay link,T4 S9: P(promise broken | crash) = 1 - replay promise kept,0.35129999999999995,0.35129999999999995,0.0005,True,
+J replay link,T4 S10: P(shortfall | crash) = 1 - replay funding certainty,0.0,0.0,0.0005,True,
+J replay link,T4 S10: P(promise broken | crash) = 1 - replay promise kept,0.0,0.0,0.0005,True,
+J replay link,T4 S10C: P(shortfall | crash) = 1 - replay funding certainty,0.0,0.0,0.0005,True,
+J replay link,T4 S10C: P(promise broken | crash) = 1 - replay promise kept,0.0,0.0,0.0005,True,
+J replay link,T5 S9: P(shortfall | crash) = 1 - replay funding certainty,0.0017000000000000348,0.0017000000000000348,0.0005,True,
+J replay link,T5 S9: P(promise broken | crash) = 1 - replay promise kept,0.0019000000000000128,0.0019000000000000128,0.0005,True,
+J replay link,T5 S10: P(shortfall | crash) = 1 - replay funding certainty,9.999999999998899e-05,9.999999999998899e-05,0.0005,True,
+J replay link,T5 S10: P(promise broken | crash) = 1 - replay promise kept,9.999999999998899e-05,9.999999999998899e-05,0.0005,True,
+J replay link,T5 S10C: P(shortfall | crash) = 1 - replay funding certainty,9.999999999998899e-05,9.999999999998899e-05,0.0005,True,
+J replay link,T5 S10C: P(promise broken | crash) = 1 - replay promise kept,9.999999999998899e-05,9.999999999998899e-05,0.0005,True,
+K tables,strategy_summary H S1 funding certainty,1.0,1.0,1e-12,True,
+K tables,strategy_summary H S2 funding certainty,0.9935,0.9935,1e-12,True,
+K tables,strategy_summary H S4 funding certainty,0.9548,0.9548,1e-12,True,
+K tables,strategy_summary H S6 funding certainty,0.9843,0.9843,1e-12,True,
+K tables,strategy_summary H S7 funding certainty,0.9981,0.9981,1e-12,True,
+K tables,strategy_summary H S8 funding certainty,0.9471,0.9471,1e-12,True,
+K tables,strategy_summary H S9 funding certainty,0.9875,0.9875,1e-12,True,
+K tables,strategy_summary H S9A funding certainty,0.9946,0.9946,1e-12,True,
+K tables,strategy_summary H S10 funding certainty,0.9964,0.9964,1e-12,True,
+K tables,strategy_summary H S10C funding certainty,0.9958,0.9958,1e-12,True,
+K tables,strategy_summary S S1 funding certainty,0.2462,0.2462,1e-12,True,
+K tables,strategy_summary S S2 funding certainty,0.5606,0.5606,1e-12,True,
+K tables,strategy_summary S S4 funding certainty,0.8986,0.8986,1e-12,True,
+K tables,strategy_summary S S6 funding certainty,0.8966,0.8966,1e-12,True,
+K tables,strategy_summary S S7 funding certainty,0.8772,0.8772,1e-12,True,
+K tables,strategy_summary S S8 funding certainty,0.7613,0.7613,1e-12,True,
+K tables,strategy_summary S S9 funding certainty,0.9033,0.9033,1e-12,True,
+K tables,strategy_summary S S9A funding certainty,0.8989,0.8989,1e-12,True,
+K tables,strategy_summary S S10 funding certainty,0.847,0.847,1e-12,True,
+K tables,strategy_summary S S10C funding certainty,0.83,0.83,1e-12,True,
+K tables,strategy_summary C S1 funding certainty,1.0,1.0,1e-12,True,
+K tables,strategy_summary C S2 funding certainty,1.0,1.0,1e-12,True,
+K tables,strategy_summary C S4 funding certainty,0.9548,0.9548,1e-12,True,
+K tables,strategy_summary C S6 funding certainty,0.9935,0.9935,1e-12,True,
+K tables,strategy_summary C S7 funding certainty,0.9999,0.9999,1e-12,True,
+K tables,strategy_summary C S8 funding certainty,0.9861,0.9861,1e-12,True,
+K tables,strategy_summary C S9 funding certainty,0.9961,0.9961,1e-12,True,
+K tables,strategy_summary C S9A funding certainty,0.999,0.999,1e-12,True,
+K tables,strategy_summary C S10 funding certainty,0.9998,0.9998,1e-12,True,
+K tables,strategy_summary C S10C funding certainty,0.9999,0.9999,1e-12,True,
+K tables,strategy_summary J S1 funding certainty,1.0,1.0,1e-12,True,
+K tables,strategy_summary J S2 funding certainty,0.9749,0.9749,1e-12,True,
+K tables,strategy_summary J S4 funding certainty,0.7676,0.7676,1e-12,True,
+K tables,strategy_summary J S6 funding certainty,0.8456,0.8456,1e-12,True,
+K tables,strategy_summary J S7 funding certainty,0.9279,0.9279,1e-12,True,
+K tables,strategy_summary J S8 funding certainty,0.7539,0.7539,1e-12,True,
+K tables,strategy_summary J S9 funding certainty,0.8467,0.8467,1e-12,True,
+K tables,strategy_summary J S9A funding certainty,0.8923,0.8923,1e-12,True,
+K tables,strategy_summary J S10 funding certainty,0.9331,0.9331,1e-12,True,
+K tables,strategy_summary J S10C funding certainty,0.9394,0.9394,1e-12,True,
+K tables,affects_laura csv T1 S9 promise broken,0.018715833765415,0.01871583376541503,1e-12,True,
+K tables,affects_laura csv T2 S9 promise broken,0.0080047806644806,0.008004780664480605,1e-12,True,
+K tables,affects_laura csv T3 S9 promise broken,0.0212180915909552,0.021218091590955255,1e-12,True,
+K tables,affects_laura csv T3+ S9 promise broken,0.0359836008984942,0.03598360089849421,1e-12,True,
+K tables,affects_laura csv T4 S9 promise broken,0.0137298131808852,0.01372981318088521,1e-12,True,
+K tables,affects_laura csv T5 S9 promise broken,0.000422430208001,0.00042243020800105047,1e-12,True,
+K tables,crash_episodes.csv has the ten falls,10.0,10.0,0.0,True,
+K tables,poisson_by_window 2031-32 = 1-exp(-2 lambda),0.1807250590038089,0.18072505900380897,1e-09,True,
+L regimes,"falls that overlap a turbulent spell (probability > 50%), of 10",10.0,10.0,3.0,True,reported in REPORT.md section 10

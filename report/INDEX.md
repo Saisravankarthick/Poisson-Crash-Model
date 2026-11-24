@@ -36,7 +36,7 @@ Every chart in `figures/`, the table behind it in `results/tables/`, and the fil
 | [`poisson_by_window.csv`](../results/tables/poisson_by_window.csv) | 8 | threshold, window, lam, p_at_least_one, lo90, hi90 |
 | [`probability_crash_affects_laura.csv`](../results/tables/probability_crash_affects_laura.csv) | 6 | type, scenario, lam, p_occurs_2031_32, S9_p_shortfall, S9_p_promise_broken … |
 | [`strategy_summary.csv`](../results/tables/strategy_summary.csv) | 40 | case, strategy, funding_certainty_4pct, funding_certainty_3pct, funding_certainty_ladder, contribution_p5 … |
-| [`verification_checks.csv`](../results/tables/verification_checks.csv) | 199 | group, check, computed, reference, tolerance, ok … |
+| [`verification_checks.csv`](../results/tables/verification_checks.csv) | 512 | group, check, computed, reference, tolerance, ok … |
 
 ## Documents
 

@@ -57,7 +57,7 @@ That makes 39.7% equities and 60.3% bonds and cash.
 
    P(N = k) = e^(−λt) (λt)^k / k!,  so P(at least one) = 1 − e^(−λt).
 
-   Worked example for 2031–32 (t = 2): λt = 0.1994, so P(at least one) = 1 − e^(−0.1994) = **18.1%**. Treating each of the 24 months as a separate trial with p = λ/12 gives a binomial answer of 18.1% (18.14% against 18.07%), which shows Poisson is the limit of the binomial.
+   Worked example for 2031–32 (t = 2): λt = 0.1993, so P(at least one) = 1 − e^(−0.1993) = **18.1%**. Treating each of the 24 months as a separate trial with p = λ/12 gives a binomial answer of 18.1% (18.14% against 18.07%), which shows Poisson is the limit of the binomial.
 
 | Window | P(≥1 fall of 20%+) | 90% range | P(≥1 fall of 30%+) |
 |---|---|---|---|
@@ -122,16 +122,22 @@ These are upper bounds, because they assume the worst timing.
 
 ## Verification
 
-`python src/verify.py` recomputes the numbers a second way and checks them against the competition guide (WGHS 2026-27 Team Study Pack, sections 3.1-3.3). It runs **199 checks, all passing** (report in `results/verification.json`):
+`python src/verify.py` recomputes the numbers a second way and checks them against the competition guide (WGHS 2026-27 Team Study Pack, sections 3.1-3.3). It runs **512 checks, all passing** (report in `results/verification.json` and `results/tables/verification_checks.csv`):
 
 | Group | Checks | What is compared |
 |---|---|---|
-| Guide tables | 28 | Reserve at 0-6% ($421,767 at 4%, $439,305 at 3%), portfolio at the start of 2033 at 0-8%, remainder after the reserve, 2031 illustrations, holdings sum to $300,000 |
-| Market-wide Poisson | 22 | Independent crash counter, lambda, P(at least one), binomial limit, Garwood bounds by chi-square and by inverting the Poisson cdf, dispersion test |
-| Markov model | 12 | Stationary distribution by eigenvector and closed form, expected stay, P^12, month-by-month MMPP recursion |
-| Fund level | 50 | Falls, lambda, P(2031-32), worst drawdown, upper bound and dollars held for all eight funds |
-| Compound Poisson | 27 | Type shares, mean loss per crash, E[S] = lambda t E[L], Poisson pmf, ordering of VaR and CVaR |
-| Probability that a type affects Laura | 60 | P(occurs) = 1 - exp(-2 lambda) and the product with P(harm given crash) |
+| A Guide tables | 28 | Reserve at 0-6% ($421,767 at 4%, $439,305 at 3%), portfolio at the start of 2033 at 0-8%, remainder after the reserve, 2031 illustrations, holdings sum to $300,000 |
+| B Market-wide Poisson | 22 | Independent crash counter, lambda, P(at least one), binomial limit, Garwood bounds by chi-square and by inverting the Poisson cdf, dispersion test |
+| C Markov model | 12 | Stationary distribution by eigenvector and closed form, expected stay, P^12, month-by-month MMPP recursion |
+| D Fund level | 50 | Falls, lambda, P(2031-32), worst drawdown, upper bound and dollars held for all eight funds |
+| E Compound Poisson | 27 | Type shares, mean loss per crash, E[S] = lambda t E[L], Poisson pmf, ordering of VaR and CVaR |
+| F Type affects Laura | 60 | P(occurs) = 1 - exp(-2 lambda) and the product with P(harm given crash) |
+| G Liability maths | 43 | Present value, Macaulay and modified duration, convexity and PV01 of the ten payments for 2027-2033 recomputed from first principles; simulation settings match the code |
+| H Independent re-simulation | 16 | A separate bootstrap of the all-equity (S4) and T-bill (S1) strategies, 20,000 paths, against the stored Monte Carlo results |
+| I Invariants | 170 | Percentiles ordered, 3% reserve harder than 4%, funding certainty consistent with where the percentiles cross zero, stress lowers certainty |
+| J Replay link | 36 | P(harm given crash) in the "affects Laura" table equals 1 minus the replayed funding certainty and promise-kept |
+| K Tables | 48 | CSV tables on disk equal the JSON they come from |
+| L Regimes | 1 | Every crash overlaps a turbulent spell |
 
 `docs/Poisson_Graphs_and_Data.pdf` shows all six figures with their data tables.
 
@@ -163,7 +169,7 @@ These are upper bounds, because they assume the worst timing.
 pip install -r requirements.txt
 python src/run_all.py           # about 10 minutes, mostly the strategy simulation
 python -m pytest tests -q       # 6 checks on the mathematics
-python src/verify.py            # 199 independent checks against the guide
+python src/verify.py            # 512 independent checks against the guide
 ```
 
 | Script | What it does |
@@ -174,7 +180,7 @@ python src/verify.py            # 199 independent checks against the guide
 | `src/laura_poisson.py` | Applies the model to Laura's holdings |
 | `src/figures.py` | Draws charts 01 to 06 |
 | `src/figures_more.py` | Draws charts 07 to 15 and writes the CSV tables |
-| `src/verify.py` | 199 independent checks against the competition guide |
+| `src/verify.py` | 512 independent checks against the competition guide |
 | `src/make_report.py` | Builds `report/*.md` from the results |
 
 ## Data

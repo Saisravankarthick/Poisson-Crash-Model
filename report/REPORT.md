@@ -16,7 +16,7 @@ Other documents: [Interconnections](INTERCONNECTIONS.md) · [Data catalogue](DAT
 | Cost to Laura of one crash ($300k portfolio) | about $39,882 (-13.3%) before any recovery |
 | Expected crash damage, 2027–32 | $33,676; P(≥ $50k) = 29.6%; 99% VaR $190,419 |
 | Is Poisson a fair description of the timing? | Yes, not rejected: variance/mean = 0.91, p = 0.73 |
-| Independent checks | 199 of 199 pass (`python src/verify.py`) |
+| Independent checks | 512 of 512 pass (`python src/verify.py`) |
 
 ## 1. The inputs (Case Study only)
 
@@ -167,13 +167,13 @@ Figure 8 tests the Poisson assumption two ways that must agree. If crashes arriv
 
 ![Figure 9](../figures/09_fat_tails_normal_vs_observed.png)
 
-Figure 9 is the reason a jump (Poisson) component is used at all. A normal model with the same mean and standard deviation expects 0.01 monthly falls of 20% or more in 1,204 months; the data has 5. The same gap holds at 15% and 10%.
+Figure 9 is the reason a jump (Poisson) component is used at all. A normal model with the same mean and standard deviation expects 0.01 monthly falls of 20% or more in 1,204 months; the data has 5. At 15% the data has 11 against 0.74 expected. At 10% the gap is much smaller (31 against 19), so the normal model fails mainly in the far tail, which is where crashes live.
 
 ## 10. Figures 10 and 11: the Markov chain behind the clustering
 
 ![Figure 10](../figures/10_markov_regime_probability.png)
 
-Figure 10 is the smoothed probability that the market was in the turbulent state each month. The dotted lines mark the start of each 20% fall: nearly all of them sit inside or just before a turbulent spell, which is the clustering that plain Poisson ignores (and the circularity caveat in section 7 applies).
+Figure 10 is the smoothed probability that the market was in the turbulent state each month. The dotted lines mark the start of each 20% fall: 10 of the 10 falls overlap a turbulent spell (probability above 50% at some point from three months before the peak to the trough), which is the clustering that plain Poisson ignores (and the circularity caveat in section 7 applies).
 
 ![Figure 11](../figures/11_markov_transition_matrix.png)
 
@@ -229,7 +229,7 @@ The written version, with the comparison to the Markov-Model and Monte-Carlo-Sim
 
 ## 13. How it was checked
 
-`python src/verify.py` runs **199 independent checks, 199 passing**. They recompute the numbers a second way (a separate crash counter, Garwood by inverting the Poisson cdf, the Markov recursion month by month) and compare the case arithmetic with the Team Study Pack tables (reserve at 0–6%, 2033 portfolio at 0–8%). `python -m pytest tests -q` runs six unit tests of the mathematics.
+`python src/verify.py` runs **512 independent checks, 512 passing**. They recompute the numbers a second way (a separate crash counter, Garwood by inverting the Poisson cdf, the Markov recursion month by month, the liability duration and convexity from first principles, and a separate 20,000-path bootstrap of the all-equity and T-bill strategies) and compare the case arithmetic with the Team Study Pack tables (reserve at 0–6%, 2033 portfolio at 0–8%, remainder after the reserve, 2031 illustrations). They also check that the tables on disk equal the results files and that the probability-of-harm table uses the replayed crash results. `python -m pytest tests -q` runs six unit tests of the mathematics.
 
 ## 14. Limits
 

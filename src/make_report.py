@@ -34,6 +34,8 @@ for e in e20["episodes"]: _yr[int(e["peak"][:4])] += 1
 OBS = _yr.value_counts().reindex([0, 1, 2], fill_value=0).values; EXP = [len(_yr) * stats.poisson.pmf(k, lam) for k in range(3)]
 nc = E["normal_check"]; mo = nc["moments"]; P_ = mk["P"]; P12_ = mk["P12"]
 ST = json.load(open(RES / "strategy_results.json"))
+_rg = pd.read_csv(PROC / "regime_probability.csv", index_col=0, parse_dates=True).iloc[:, 0]
+INSIDE = sum(int(_rg.loc[pd.Timestamp(e["peak"] + "-01") - pd.DateOffset(months=3): pd.Timestamp(e["trough"] + "-01")].max() > 0.5) for e in e20["episodes"])
 STRATS_ = ["S1", "S2", "S4", "S6", "S7", "S8", "S9", "S9A", "S10", "S10C"]
 SN = {"S1": "S1 T-bills", "S2": "S2 pure LDI", "S4": "S4 all-equity", "S6": "S6 target-date", "S7": "S7 risk parity", "S8": "S8 CPPI m=3", "S9": "S9 LDCS static", "S9A": "S9A LDCS + glide", "S10": "S10 LDCS + cushion", "S10C": "S10C cushion + lock-in"}
 
@@ -137,13 +139,13 @@ Figure 8 tests the Poisson assumption two ways that must agree. If crashes arriv
 
 ![Figure 9](../figures/09_fat_tails_normal_vs_observed.png)
 
-Figure 9 is the reason a jump (Poisson) component is used at all. A normal model with the same mean and standard deviation expects {nc['<= -20%']['normal_expected']:.2f} monthly falls of 20% or more in {mo['months']:,} months; the data has {nc['<= -20%']['observed']}. The same gap holds at 15% and 10%.
+Figure 9 is the reason a jump (Poisson) component is used at all. A normal model with the same mean and standard deviation expects {nc['<= -20%']['normal_expected']:.2f} monthly falls of 20% or more in {mo['months']:,} months; the data has {nc['<= -20%']['observed']}. At 15% the data has {nc['<= -15%']['observed']} against {nc['<= -15%']['normal_expected']:.2f} expected. At 10% the gap is much smaller ({nc['<= -10%']['observed']} against {nc['<= -10%']['normal_expected']:.0f}), so the normal model fails mainly in the far tail, which is where crashes live.
 
 ## 10. Figures 10 and 11: the Markov chain behind the clustering
 
 ![Figure 10](../figures/10_markov_regime_probability.png)
 
-Figure 10 is the smoothed probability that the market was in the turbulent state each month. The dotted lines mark the start of each 20% fall: nearly all of them sit inside or just before a turbulent spell, which is the clustering that plain Poisson ignores (and the circularity caveat in section 7 applies).
+Figure 10 is the smoothed probability that the market was in the turbulent state each month. The dotted lines mark the start of each 20% fall: {INSIDE} of the {e20['n']} falls overlap a turbulent spell (probability above 50% at some point from three months before the peak to the trough), which is the clustering that plain Poisson ignores (and the circularity caveat in section 7 applies).
 
 ![Figure 11](../figures/11_markov_transition_matrix.png)
 
@@ -177,7 +179,7 @@ The written version, with the comparison to the Markov-Model and Monte-Carlo-Sim
 
 ## 13. How it was checked
 
-`python src/verify.py` runs **{V['n_checks']} independent checks, {V['n_checks'] - V['n_failed']} passing**. They recompute the numbers a second way (a separate crash counter, Garwood by inverting the Poisson cdf, the Markov recursion month by month) and compare the case arithmetic with the Team Study Pack tables (reserve at 0–6%, 2033 portfolio at 0–8%). `python -m pytest tests -q` runs six unit tests of the mathematics.
+`python src/verify.py` runs **{V['n_checks']} independent checks, {V['n_checks'] - V['n_failed']} passing**. They recompute the numbers a second way (a separate crash counter, Garwood by inverting the Poisson cdf, the Markov recursion month by month, the liability duration and convexity from first principles, and a separate 20,000-path bootstrap of the all-equity and T-bill strategies) and compare the case arithmetic with the Team Study Pack tables (reserve at 0–6%, 2033 portfolio at 0–8%, remainder after the reserve, 2031 illustrations). They also check that the tables on disk equal the results files and that the probability-of-harm table uses the replayed crash results. `python -m pytest tests -q` runs six unit tests of the mathematics.
 
 ## 14. Limits
 
@@ -281,7 +283,7 @@ flowchart TD
     ['Markov chain (two-state Hamilton)', 'Is the market calm or turbulent now, and how long does a state last?', 'Fitted to the same monthly returns', 'Transition matrix, stationary mix, today\'s state; makes λ depend on the state'],
     ['Markov-modulated Poisson', 'How do crash odds change given the current state?', 'Combines the two rows above', 'Clustering: 2-year odds from calm today against just after a crash starts'],
     ['Compound Poisson', 'How many dollars does Laura lose, not just how many crashes?', 'Poisson count × loss per crash from her actual holdings', 'E[S], Var[S], exceedance curve, VaR, CVaR'],
-    ['Monte Carlo (block bootstrap)', 'Given a crash, does each strategy still fund the reserve and keep the 2031 promise?', f"`strategy_sim.py`: {st['meta'].get('months', 72)} monthly steps, 2027 to 2033, four cases (H historical, S stressed, C current yields, J jump-diffusion)", 'P(shortfall | crash), P(promise broken | crash)'],
+    ['Monte Carlo (block bootstrap)', 'Given a crash, does each strategy still fund the reserve and keep the 2031 promise?', f"`strategy_sim.py`: 72 monthly steps (2027 to 2033) on 10,000 paths drawn from {st['meta']['months']} months of history (2004 to 2026), four cases (H historical, S stressed, C current yields, J jump-diffusion)", 'P(shortfall | crash), P(promise broken | crash)'],
     ['Probability product', 'Which crash type can actually hurt Laura?', 'P(type occurs) × P(harm | type)', 'Figure 6 and Table 8.14b of the Research Pack']])}
 
 ## Links to the earlier repositories

@@ -6,7 +6,7 @@ import math
 import numpy as np
 import pandas as pd
 from scipy import stats, optimize
-from config import PROC, RES, HOLDINGS, CASH, INITIAL, TOP_UP, PAYMENT, N_PAYMENTS, FUNDS, EQUITY
+from config import ROOT, PROC, RES, HOLDINGS, CASH, INITIAL, TOP_UP, PAYMENT, N_PAYMENTS, FUNDS, EQUITY
 
 checks = []
 
@@ -155,6 +155,91 @@ for a in L["affects_laura"]:
         chk("F affects", f"{a['type']} {s} shortfall = P(occurs) x P(short | crash)", p_occ * a[f"{s}_shortfall_given_crash"], a[f"{s}_p_shortfall"], 1e-9)
         chk("F affects", f"{a['type']} {s} promise broken = P(occurs) x P(broken | crash)", p_occ * a[f"{s}_promise_broken_given_crash"], a[f"{s}_p_promise_broken"], 1e-9)
         chk("F affects", f"{a['type']} {s}: shortfall <= promise broken", float(a[f"{s}_p_shortfall"] <= a[f"{s}_p_promise_broken"] + 1e-12), 1.0, 0)
+
+# ------------------------------------------------------------------ G. liability maths (Research Pack Section 8 / IPS)
+SR = json.load(open(RES / "strategy_results.json")); meta = SR["meta"]
+chk("G liability", "R4 stored in simulation = guide's $421,767", meta["R4"], 421767, 1, "guide s3.1")
+chk("G liability", "R3 stored in simulation = guide's $439,305", meta["R3"], 439305, 1, "guide s3.1")
+src_ = (ROOT / "src" / "strategy_sim.py").read_text()
+chk("G liability", "simulation set-up in the code is 10,000 paths x 72 months x 6-month blocks", float("PATHS, MON, BLK = 10000, 72, 6" in src_), 1.0, 0, "72 months = 2027-01 to 2033-01")
+chk("G liability", "stress case subtracts 3.25 points a year", float("RH - 0.0325 / 12" in src_), 1.0, 0)
+chk("G liability", "bootstrap pool = 274 months (2004-01 to 2026-10)", meta["months"], 274, 0)
+r_ = 0.04
+for yr_, d in SR["liab"].items():
+    t_ = int(yr_) - 2027                      # years since the start of 2027
+    ks = np.arange(6, 16)                      # payments at 2033..2042 = year index 6..15
+    cf = 50000.0; pvs = cf / (1 + r_) ** (ks - t_); pv = pvs.sum()
+    mac = (pvs * (ks - t_)).sum() / pv
+    mod = mac / (1 + r_)
+    conv = (pvs * (ks - t_) * (ks - t_ + 1)).sum() / pv / (1 + r_) ** 2
+    pv01 = pv * mod * 1e-4
+    chk("G liability", f"{yr_} PV of the ten payments at 4%", pv, d["pv"], 0.01)
+    chk("G liability", f"{yr_} Macaulay duration", mac, d["mac"], 1e-6)
+    chk("G liability", f"{yr_} modified duration", mod, d["mod"], 1e-6)
+    chk("G liability", f"{yr_} convexity", conv, d["conv"], 1e-4)
+    chk("G liability", f"{yr_} PV01 ($ per 1bp)", pv01, d["pv01"], 1e-4)
+chk("G liability", "PV grows 4% a year: PV(2032)/PV(2031)", SR["liab"]["2032"]["pv"] / SR["liab"]["2031"]["pv"], 1.04, 1e-9)
+chk("G liability", "equity share as built", meta["E0"], 0.39683816666666666, 1e-9)
+
+# ------------------------------------------------------------------ H. independent re-simulation of S1 and S4 (separate code, different seed)
+Mo = pd.read_csv(PROC / "monthly.csv", index_col=0, parse_dates=True).loc["2004-01-01":"2026-10-01"]
+rng_ = np.random.default_rng(2026); NP_, MON_, BLK_ = 20000, 72, 6
+for fund, strat in (("VTI", "S4"), ("SGOV", "S1")):
+    x = Mo[fund].to_numpy(); starts_ = rng_.integers(0, len(x) - BLK_ + 1, size=(NP_, MON_ // BLK_))
+    path = np.concatenate([x[st_:st_ + BLK_] for st_ in starts_.T], axis=0) if False else np.stack([x[starts_[:, b][:, None] + np.arange(BLK_)] for b in range(MON_ // BLK_)], 1).reshape(NP_, MON_)
+    for case, shift in (("H", 0.0), ("S", -0.0325 / 12)):
+        g = 1 + path + shift
+        V33 = 300000 * g.prod(1) + 150000 * g[:, 12:].prod(1)
+        c = V33 - 421766.58
+        ref = SR[case][strat]
+        chk("H re-sim", f"{strat} case {case}: funding certainty", float((c >= 0).mean()), ref["f4"], 0.012, "20,000 paths, own bootstrap; Monte Carlo error about 0.5 pt")
+        chk("H re-sim", f"{strat} case {case}: median contribution", float(np.median(c)), ref["p50"], 0.04 * abs(ref["p50"]) + 4000, "within 4% (Monte Carlo)")
+        chk("H re-sim", f"{strat} case {case}: 5th percentile contribution", float(np.percentile(c, 5)), ref["p5"], 0.06 * abs(ref["p5"]) + 8000, "within 6% (Monte Carlo)")
+        chk("H re-sim", f"{strat} case {case}: 95th percentile contribution", float(np.percentile(c, 95)), ref["p95"], 0.05 * abs(ref["p95"]) + 8000, "within 5% (Monte Carlo)")
+
+# ------------------------------------------------------------------ I. invariants of the Monte Carlo output
+pk = ["p1", "p5", "p10", "p25", "p50", "p75", "p90", "p95", "p99"]
+for c_ in "HSCJ":
+    for s_, d in SR[c_].items():
+        chk("I invariants", f"{c_} {s_}: percentiles non-decreasing", float(all(d[a] <= d[b] + 1e-9 for a, b in zip(pk, pk[1:]))), 1.0, 0)
+        chk("I invariants", f"{c_} {s_}: P(fund at 3%) <= P(fund at 4%)", float(d["f3"] <= d["f4"] + 1e-12), 1.0, 0, "a higher reserve is harder to meet")
+        ks_ = [(float(p[1:]), d[p]) for p in pk]
+        k_pos = [k for k, v in ks_ if v >= 0]; k_neg = [k for k, v in ks_ if v < 0]
+        lower = 1 - min(k_pos) / 100 if k_pos else 0.0       # all paths above the first non-negative percentile are funded
+        upper = 1 - max(k_neg) / 100 if k_neg else 1.0       # no path below the last negative percentile is funded
+        chk("I invariants", f"{c_} {s_}: funding certainty lies between the bounds implied by the percentiles", float(lower - 0.011 <= d["f4"] <= upper + 0.011), 1.0, 0, f"bounds {lower:.2f} to {upper:.2f}")
+        chk("I invariants", f"{c_} {s_}: promise_kept within [0,1]", float(0 <= d["promise_kept"] <= 1), 1.0, 0)
+for s_ in SR["H"]:
+    chk("I invariants", f"all-equity paths do not depend on yield case ({s_} H vs C)" if s_ == "S4" else f"{s_}: S stress lowers funding certainty vs H",
+        float(SR["H"]["S4"]["f4"]) if s_ == "S4" else float(SR["S"][s_]["f4"] <= SR["H"][s_]["f4"] + 1e-12),
+        float(SR["C"]["S4"]["f4"]) if s_ == "S4" else 1.0, 1e-12)
+
+# ------------------------------------------------------------------ J. 'affects Laura' uses the replay results
+for a in L["affects_laura"]:
+    key = a["scenario"]; w_ = SR["crash"][key]["timing"]["worst"]
+    for s_ in ("S9", "S10", "S10C"):
+        chk("J replay link", f"{a['type']} {s_}: P(shortfall | crash) = 1 - replay funding certainty", 1 - w_[s_]["f4"], a[f"{s_}_shortfall_given_crash"], 5e-4)
+        chk("J replay link", f"{a['type']} {s_}: P(promise broken | crash) = 1 - replay promise kept", 1 - w_[s_]["promise_kept"], a[f"{s_}_promise_broken_given_crash"], 5e-4)
+
+# ------------------------------------------------------------------ K. tables on disk equal the JSON they claim to come from
+T_ = pd.read_csv(RES / "tables" / "strategy_summary.csv")
+for _, row in T_.iterrows():
+    chk("K tables", f"strategy_summary {row['case']} {row['strategy']} funding certainty", row["funding_certainty_4pct"], SR[row["case"]][row["strategy"]]["f4"], 1e-12)
+Ta = pd.read_csv(RES / "tables" / "probability_crash_affects_laura.csv")
+for a, (_, row) in zip(L["affects_laura"], Ta.iterrows()):
+    chk("K tables", f"affects_laura csv {a['type']} S9 promise broken", row["S9_p_promise_broken"], a["S9_p_promise_broken"], 1e-12)
+Te = pd.read_csv(RES / "tables" / "crash_episodes.csv")
+chk("K tables", "crash_episodes.csv has the ten falls", len(Te), 10, 0)
+Tw = pd.read_csv(RES / "tables" / "poisson_by_window.csv"); r2 = Tw[(Tw.threshold == "20%") & (Tw.window == "2031-32 (critical years)")].iloc[0]
+chk("K tables", "poisson_by_window 2031-32 = 1-exp(-2 lambda)", r2["p_at_least_one"], 1 - math.exp(-2 * lam), 1e-9)
+
+# ------------------------------------------------------------------ L. regime model against the crash dates (supports the clustering sentence in the report)
+reg = pd.read_csv(PROC / "regime_probability.csv", index_col=0, parse_dates=True).iloc[:, 0]
+inside = 0
+for e in E["equity"]["20"]["episodes"]:
+    seg = reg.loc[pd.Timestamp(e["peak"] + "-01") - pd.DateOffset(months=3): pd.Timestamp(e["trough"] + "-01")]
+    inside += int(seg.max() > 0.5)
+chk("L regimes", "falls that overlap a turbulent spell (probability > 50%), of 10", inside, E["equity"]["20"]["n"], 3, "reported in REPORT.md section 10")
 
 bad = [c for c in checks if not c["ok"]]
 json.dump(dict(n_checks=len(checks), n_failed=len(bad), checks=checks), open(RES / "verification.json", "w"), indent=1)

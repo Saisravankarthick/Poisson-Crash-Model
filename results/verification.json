@@ -1,5 +1,5 @@
 {
- "n_checks": 199,
+ "n_checks": 512,
  "n_failed": 0,
  "checks": [
   {
@@ -1792,6 +1792,2823 @@
    "tolerance": 0,
    "ok": true,
    "note": ""
+  },
+  {
+   "group": "G liability",
+   "check": "R4 stored in simulation = guide's $421,767",
+   "computed": 421766.5805264618,
+   "reference": 421767.0,
+   "tolerance": 1,
+   "ok": true,
+   "note": "guide s3.1"
+  },
+  {
+   "group": "G liability",
+   "check": "R3 stored in simulation = guide's $439,305",
+   "computed": 439305.44609395554,
+   "reference": 439305.0,
+   "tolerance": 1,
+   "ok": true,
+   "note": "guide s3.1"
+  },
+  {
+   "group": "G liability",
+   "check": "simulation set-up in the code is 10,000 paths x 72 months x 6-month blocks",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "72 months = 2027-01 to 2033-01"
+  },
+  {
+   "group": "G liability",
+   "check": "stress case subtracts 3.25 points a year",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "G liability",
+   "check": "bootstrap pool = 274 months (2004-01 to 2026-10)",
+   "computed": 274.0,
+   "reference": 274.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "G liability",
+   "check": "2027 PV of the ten payments at 4%",
+   "computed": 333328.25505759567,
+   "reference": 333328.25505759567,
+   "tolerance": 0.01,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "G liability",
+   "check": "2027 Macaulay duration",
+   "computed": 10.177263917465874,
+   "reference": 10.177263917465874,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "G liability",
+   "check": "2027 modified duration",
+   "computed": 9.785830689871032,
+   "reference": 9.785830689871032,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "G liability",
+   "check": "2027 convexity",
+   "computed": 112.7406305242314,
+   "reference": 112.74063052423142,
+   "tolerance": 0.0001,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "G liability",
+   "check": "2027 PV01 ($ per 1bp)",
+   "computed": 326.1893868143779,
+   "reference": 326.1893868143779,
+   "tolerance": 0.0001,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "G liability",
+   "check": "2028 PV of the ten payments at 4%",
+   "computed": 346661.38525989954,
+   "reference": 346661.38525989954,
+   "tolerance": 0.01,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "G liability",
+   "check": "2028 Macaulay duration",
+   "computed": 9.177263917465872,
+   "reference": 9.177263917465872,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "G liability",
+   "check": "2028 modified duration",
+   "computed": 8.824292228332569,
+   "reference": 8.824292228332569,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "G liability",
+   "check": "2028 convexity",
+   "computed": 93.92172535140251,
+   "reference": 93.92172535140251,
+   "tolerance": 0.0001,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "G liability",
+   "check": "2028 PV01 ($ per 1bp)",
+   "computed": 305.9041367811934,
+   "reference": 305.9041367811934,
+   "tolerance": 0.0001,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "G liability",
+   "check": "2029 PV of the ten payments at 4%",
+   "computed": 360527.8406702955,
+   "reference": 360527.8406702955,
+   "tolerance": 0.01,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "G liability",
+   "check": "2029 Macaulay duration",
+   "computed": 8.177263917465872,
+   "reference": 8.177263917465872,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "G liability",
+   "check": "2029 modified duration",
+   "computed": 7.862753766794108,
+   "reference": 7.862753766794108,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "G liability",
+   "check": "2029 convexity",
+   "computed": 76.95193260460913,
+   "reference": 76.95193260460913,
+   "tolerance": 0.0001,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "G liability",
+   "check": "2029 PV01 ($ per 1bp)",
+   "computed": 283.4741637264512,
+   "reference": 283.4741637264512,
+   "tolerance": 0.0001,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "G liability",
+   "check": "2030 PV of the ten payments at 4%",
+   "computed": 374948.95429710735,
+   "reference": 374948.95429710735,
+   "tolerance": 0.01,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "G liability",
+   "check": "2030 Macaulay duration",
+   "computed": 7.177263917465873,
+   "reference": 7.177263917465873,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "G liability",
+   "check": "2030 modified duration",
+   "computed": 6.901215305255647,
+   "reference": 6.901215305255647,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "G liability",
+   "check": "2030 convexity",
+   "computed": 61.831252283851214,
+   "reference": 61.831252283851214,
+   "tolerance": 0.0001,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "G liability",
+   "check": "2030 PV01 ($ per 1bp)",
+   "computed": 258.76034620847975,
+   "reference": 258.76034620847975,
+   "tolerance": 0.0001,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "G liability",
+   "check": "2031 PV of the ten payments at 4%",
+   "computed": 389946.9124689917,
+   "reference": 389946.9124689917,
+   "tolerance": 0.01,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "G liability",
+   "check": "2031 Macaulay duration",
+   "computed": 6.177263917465873,
+   "reference": 6.177263917465873,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "G liability",
+   "check": "2031 modified duration",
+   "computed": 5.939676843717185,
+   "reference": 5.939676843717185,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "G liability",
+   "check": "2031 convexity",
+   "computed": 48.55968438912881,
+   "reference": 48.55968438912881,
+   "tolerance": 0.0001,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "G liability",
+   "check": "2031 PV01 ($ per 1bp)",
+   "computed": 231.6158646271082,
+   "reference": 231.6158646271082,
+   "tolerance": 0.0001,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "G liability",
+   "check": "2032 PV of the ten payments at 4%",
+   "computed": 405544.7889677514,
+   "reference": 405544.7889677514,
+   "tolerance": 0.01,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "G liability",
+   "check": "2032 Macaulay duration",
+   "computed": 5.177263917465873,
+   "reference": 5.177263917465873,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "G liability",
+   "check": "2032 modified duration",
+   "computed": 4.978138382178724,
+   "reference": 4.978138382178724,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "G liability",
+   "check": "2032 convexity",
+   "computed": 37.13722892044192,
+   "reference": 37.13722892044192,
+   "tolerance": 0.0001,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "G liability",
+   "check": "2032 PV01 ($ per 1bp)",
+   "computed": 201.88580796529337,
+   "reference": 201.88580796529337,
+   "tolerance": 0.0001,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "G liability",
+   "check": "2033 PV of the ten payments at 4%",
+   "computed": 421766.5805264614,
+   "reference": 421766.5805264614,
+   "tolerance": 0.01,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "G liability",
+   "check": "2033 Macaulay duration",
+   "computed": 4.177263917465872,
+   "reference": 4.177263917465872,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "G liability",
+   "check": "2033 modified duration",
+   "computed": 4.016599920640261,
+   "reference": 4.016599920640261,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "G liability",
+   "check": "2033 convexity",
+   "computed": 27.56388587779053,
+   "reference": 27.56388587779053,
+   "tolerance": 0.0001,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "G liability",
+   "check": "2033 PV01 ($ per 1bp)",
+   "computed": 169.40676138712993,
+   "reference": 169.40676138712993,
+   "tolerance": 0.0001,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "G liability",
+   "check": "PV grows 4% a year: PV(2032)/PV(2031)",
+   "computed": 1.04,
+   "reference": 1.04,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "G liability",
+   "check": "equity share as built",
+   "computed": 0.39683816666666666,
+   "reference": 0.39683816666666666,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "H re-sim",
+   "check": "S4 case H: funding certainty",
+   "computed": 0.9537,
+   "reference": 0.9548,
+   "tolerance": 0.012,
+   "ok": true,
+   "note": "20,000 paths, own bootstrap; Monte Carlo error about 0.5 pt"
+  },
+  {
+   "group": "H re-sim",
+   "check": "S4 case H: median contribution",
+   "computed": 415793.8525022155,
+   "reference": 421688.7533889984,
+   "tolerance": 20867.550135559937,
+   "ok": true,
+   "note": "within 4% (Monte Carlo)"
+  },
+  {
+   "group": "H re-sim",
+   "check": "S4 case H: 5th percentile contribution",
+   "computed": 7227.116884023646,
+   "reference": 11196.011030590136,
+   "tolerance": 8671.760661835408,
+   "ok": true,
+   "note": "within 6% (Monte Carlo)"
+  },
+  {
+   "group": "H re-sim",
+   "check": "S4 case H: 95th percentile contribution",
+   "computed": 980713.3490274412,
+   "reference": 984658.3852474677,
+   "tolerance": 57232.91926237338,
+   "ok": true,
+   "note": "within 5% (Monte Carlo)"
+  },
+  {
+   "group": "H re-sim",
+   "check": "S4 case S: funding certainty",
+   "computed": 0.8975,
+   "reference": 0.8986,
+   "tolerance": 0.012,
+   "ok": true,
+   "note": "20,000 paths, own bootstrap; Monte Carlo error about 0.5 pt"
+  },
+  {
+   "group": "H re-sim",
+   "check": "S4 case S: median contribution",
+   "computed": 275432.01485087984,
+   "reference": 280546.96382271743,
+   "tolerance": 15221.878552908698,
+   "ok": true,
+   "note": "within 4% (Monte Carlo)"
+  },
+  {
+   "group": "H re-sim",
+   "check": "S4 case S: 5th percentile contribution",
+   "computed": -65070.31193677187,
+   "reference": -61604.832052354584,
+   "tolerance": 11696.289923141274,
+   "ok": true,
+   "note": "within 6% (Monte Carlo)"
+  },
+  {
+   "group": "H re-sim",
+   "check": "S4 case S: 95th percentile contribution",
+   "computed": 746871.4989302356,
+   "reference": 750212.988488767,
+   "tolerance": 45510.64942443835,
+   "ok": true,
+   "note": "within 5% (Monte Carlo)"
+  },
+  {
+   "group": "H re-sim",
+   "check": "S1 case H: funding certainty",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0.012,
+   "ok": true,
+   "note": "20,000 paths, own bootstrap; Monte Carlo error about 0.5 pt"
+  },
+  {
+   "group": "H re-sim",
+   "check": "S1 case H: median contribution",
+   "computed": 74383.90902704079,
+   "reference": 74398.18172825337,
+   "tolerance": 6975.927269130135,
+   "ok": true,
+   "note": "within 4% (Monte Carlo)"
+  },
+  {
+   "group": "H re-sim",
+   "check": "S1 case H: 5th percentile contribution",
+   "computed": 51471.39663566969,
+   "reference": 51251.244630642585,
+   "tolerance": 11075.074677838555,
+   "ok": true,
+   "note": "within 6% (Monte Carlo)"
+  },
+  {
+   "group": "H re-sim",
+   "check": "S1 case H: 95th percentile contribution",
+   "computed": 102153.01173269004,
+   "reference": 101271.72268617236,
+   "tolerance": 13063.586134308618,
+   "ok": true,
+   "note": "within 5% (Monte Carlo)"
+  },
+  {
+   "group": "H re-sim",
+   "check": "S1 case S: funding certainty",
+   "computed": 0.2472,
+   "reference": 0.2462,
+   "tolerance": 0.012,
+   "ok": true,
+   "note": "20,000 paths, own bootstrap; Monte Carlo error about 0.5 pt"
+  },
+  {
+   "group": "H re-sim",
+   "check": "S1 case S: median contribution",
+   "computed": -9065.700460079592,
+   "reference": -9058.13918521456,
+   "tolerance": 4362.325567408582,
+   "ok": true,
+   "note": "within 4% (Monte Carlo)"
+  },
+  {
+   "group": "H re-sim",
+   "check": "S1 case S: 5th percentile contribution",
+   "computed": -28142.763017274072,
+   "reference": -28334.26550685025,
+   "tolerance": 9700.055930411016,
+   "ok": true,
+   "note": "within 6% (Monte Carlo)"
+  },
+  {
+   "group": "H re-sim",
+   "check": "S1 case S: 95th percentile contribution",
+   "computed": 14060.390854144838,
+   "reference": 13392.832008841047,
+   "tolerance": 8669.641600442052,
+   "ok": true,
+   "note": "within 5% (Monte Carlo)"
+  },
+  {
+   "group": "I invariants",
+   "check": "H S1: percentiles non-decreasing",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "H S1: P(fund at 3%) <= P(fund at 4%)",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "a higher reserve is harder to meet"
+  },
+  {
+   "group": "I invariants",
+   "check": "H S1: funding certainty lies between the bounds implied by the percentiles",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "bounds 0.99 to 1.00"
+  },
+  {
+   "group": "I invariants",
+   "check": "H S1: promise_kept within [0,1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "H S2: percentiles non-decreasing",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "H S2: P(fund at 3%) <= P(fund at 4%)",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "a higher reserve is harder to meet"
+  },
+  {
+   "group": "I invariants",
+   "check": "H S2: funding certainty lies between the bounds implied by the percentiles",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "bounds 0.99 to 1.00"
+  },
+  {
+   "group": "I invariants",
+   "check": "H S2: promise_kept within [0,1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "H S4: percentiles non-decreasing",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "H S4: P(fund at 3%) <= P(fund at 4%)",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "a higher reserve is harder to meet"
+  },
+  {
+   "group": "I invariants",
+   "check": "H S4: funding certainty lies between the bounds implied by the percentiles",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "bounds 0.95 to 0.99"
+  },
+  {
+   "group": "I invariants",
+   "check": "H S4: promise_kept within [0,1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "H S6: percentiles non-decreasing",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "H S6: P(fund at 3%) <= P(fund at 4%)",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "a higher reserve is harder to meet"
+  },
+  {
+   "group": "I invariants",
+   "check": "H S6: funding certainty lies between the bounds implied by the percentiles",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "bounds 0.95 to 0.99"
+  },
+  {
+   "group": "I invariants",
+   "check": "H S6: promise_kept within [0,1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "H S7: percentiles non-decreasing",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "H S7: P(fund at 3%) <= P(fund at 4%)",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "a higher reserve is harder to meet"
+  },
+  {
+   "group": "I invariants",
+   "check": "H S7: funding certainty lies between the bounds implied by the percentiles",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "bounds 0.99 to 1.00"
+  },
+  {
+   "group": "I invariants",
+   "check": "H S7: promise_kept within [0,1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "H S8: percentiles non-decreasing",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "H S8: P(fund at 3%) <= P(fund at 4%)",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "a higher reserve is harder to meet"
+  },
+  {
+   "group": "I invariants",
+   "check": "H S8: funding certainty lies between the bounds implied by the percentiles",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "bounds 0.90 to 0.95"
+  },
+  {
+   "group": "I invariants",
+   "check": "H S8: promise_kept within [0,1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "H S9: percentiles non-decreasing",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "H S9: P(fund at 3%) <= P(fund at 4%)",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "a higher reserve is harder to meet"
+  },
+  {
+   "group": "I invariants",
+   "check": "H S9: funding certainty lies between the bounds implied by the percentiles",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "bounds 0.95 to 0.99"
+  },
+  {
+   "group": "I invariants",
+   "check": "H S9: promise_kept within [0,1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "H S9A: percentiles non-decreasing",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "H S9A: P(fund at 3%) <= P(fund at 4%)",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "a higher reserve is harder to meet"
+  },
+  {
+   "group": "I invariants",
+   "check": "H S9A: funding certainty lies between the bounds implied by the percentiles",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "bounds 0.99 to 1.00"
+  },
+  {
+   "group": "I invariants",
+   "check": "H S9A: promise_kept within [0,1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "H S10: percentiles non-decreasing",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "H S10: P(fund at 3%) <= P(fund at 4%)",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "a higher reserve is harder to meet"
+  },
+  {
+   "group": "I invariants",
+   "check": "H S10: funding certainty lies between the bounds implied by the percentiles",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "bounds 0.99 to 1.00"
+  },
+  {
+   "group": "I invariants",
+   "check": "H S10: promise_kept within [0,1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "H S10C: percentiles non-decreasing",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "H S10C: P(fund at 3%) <= P(fund at 4%)",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "a higher reserve is harder to meet"
+  },
+  {
+   "group": "I invariants",
+   "check": "H S10C: funding certainty lies between the bounds implied by the percentiles",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "bounds 0.99 to 1.00"
+  },
+  {
+   "group": "I invariants",
+   "check": "H S10C: promise_kept within [0,1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "S S1: percentiles non-decreasing",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "S S1: P(fund at 3%) <= P(fund at 4%)",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "a higher reserve is harder to meet"
+  },
+  {
+   "group": "I invariants",
+   "check": "S S1: funding certainty lies between the bounds implied by the percentiles",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "bounds 0.10 to 0.25"
+  },
+  {
+   "group": "I invariants",
+   "check": "S S1: promise_kept within [0,1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "S S2: percentiles non-decreasing",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "S S2: P(fund at 3%) <= P(fund at 4%)",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "a higher reserve is harder to meet"
+  },
+  {
+   "group": "I invariants",
+   "check": "S S2: funding certainty lies between the bounds implied by the percentiles",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "bounds 0.50 to 0.75"
+  },
+  {
+   "group": "I invariants",
+   "check": "S S2: promise_kept within [0,1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "S S4: percentiles non-decreasing",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "S S4: P(fund at 3%) <= P(fund at 4%)",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "a higher reserve is harder to meet"
+  },
+  {
+   "group": "I invariants",
+   "check": "S S4: funding certainty lies between the bounds implied by the percentiles",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "bounds 0.75 to 0.90"
+  },
+  {
+   "group": "I invariants",
+   "check": "S S4: promise_kept within [0,1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "S S6: percentiles non-decreasing",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "S S6: P(fund at 3%) <= P(fund at 4%)",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "a higher reserve is harder to meet"
+  },
+  {
+   "group": "I invariants",
+   "check": "S S6: funding certainty lies between the bounds implied by the percentiles",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "bounds 0.75 to 0.90"
+  },
+  {
+   "group": "I invariants",
+   "check": "S S6: promise_kept within [0,1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "S S7: percentiles non-decreasing",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "S S7: P(fund at 3%) <= P(fund at 4%)",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "a higher reserve is harder to meet"
+  },
+  {
+   "group": "I invariants",
+   "check": "S S7: funding certainty lies between the bounds implied by the percentiles",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "bounds 0.75 to 0.90"
+  },
+  {
+   "group": "I invariants",
+   "check": "S S7: promise_kept within [0,1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "S S8: percentiles non-decreasing",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "S S8: P(fund at 3%) <= P(fund at 4%)",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "a higher reserve is harder to meet"
+  },
+  {
+   "group": "I invariants",
+   "check": "S S8: funding certainty lies between the bounds implied by the percentiles",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "bounds 0.75 to 0.90"
+  },
+  {
+   "group": "I invariants",
+   "check": "S S8: promise_kept within [0,1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "S S9: percentiles non-decreasing",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "S S9: P(fund at 3%) <= P(fund at 4%)",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "a higher reserve is harder to meet"
+  },
+  {
+   "group": "I invariants",
+   "check": "S S9: funding certainty lies between the bounds implied by the percentiles",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "bounds 0.90 to 0.95"
+  },
+  {
+   "group": "I invariants",
+   "check": "S S9: promise_kept within [0,1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "S S9A: percentiles non-decreasing",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "S S9A: P(fund at 3%) <= P(fund at 4%)",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "a higher reserve is harder to meet"
+  },
+  {
+   "group": "I invariants",
+   "check": "S S9A: funding certainty lies between the bounds implied by the percentiles",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "bounds 0.75 to 0.90"
+  },
+  {
+   "group": "I invariants",
+   "check": "S S9A: promise_kept within [0,1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "S S10: percentiles non-decreasing",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "S S10: P(fund at 3%) <= P(fund at 4%)",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "a higher reserve is harder to meet"
+  },
+  {
+   "group": "I invariants",
+   "check": "S S10: funding certainty lies between the bounds implied by the percentiles",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "bounds 0.75 to 0.90"
+  },
+  {
+   "group": "I invariants",
+   "check": "S S10: promise_kept within [0,1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "S S10C: percentiles non-decreasing",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "S S10C: P(fund at 3%) <= P(fund at 4%)",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "a higher reserve is harder to meet"
+  },
+  {
+   "group": "I invariants",
+   "check": "S S10C: funding certainty lies between the bounds implied by the percentiles",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "bounds 0.75 to 0.90"
+  },
+  {
+   "group": "I invariants",
+   "check": "S S10C: promise_kept within [0,1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "C S1: percentiles non-decreasing",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "C S1: P(fund at 3%) <= P(fund at 4%)",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "a higher reserve is harder to meet"
+  },
+  {
+   "group": "I invariants",
+   "check": "C S1: funding certainty lies between the bounds implied by the percentiles",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "bounds 0.99 to 1.00"
+  },
+  {
+   "group": "I invariants",
+   "check": "C S1: promise_kept within [0,1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "C S2: percentiles non-decreasing",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "C S2: P(fund at 3%) <= P(fund at 4%)",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "a higher reserve is harder to meet"
+  },
+  {
+   "group": "I invariants",
+   "check": "C S2: funding certainty lies between the bounds implied by the percentiles",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "bounds 0.99 to 1.00"
+  },
+  {
+   "group": "I invariants",
+   "check": "C S2: promise_kept within [0,1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "C S4: percentiles non-decreasing",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "C S4: P(fund at 3%) <= P(fund at 4%)",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "a higher reserve is harder to meet"
+  },
+  {
+   "group": "I invariants",
+   "check": "C S4: funding certainty lies between the bounds implied by the percentiles",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "bounds 0.95 to 0.99"
+  },
+  {
+   "group": "I invariants",
+   "check": "C S4: promise_kept within [0,1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "C S6: percentiles non-decreasing",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "C S6: P(fund at 3%) <= P(fund at 4%)",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "a higher reserve is harder to meet"
+  },
+  {
+   "group": "I invariants",
+   "check": "C S6: funding certainty lies between the bounds implied by the percentiles",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "bounds 0.99 to 1.00"
+  },
+  {
+   "group": "I invariants",
+   "check": "C S6: promise_kept within [0,1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "C S7: percentiles non-decreasing",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "C S7: P(fund at 3%) <= P(fund at 4%)",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "a higher reserve is harder to meet"
+  },
+  {
+   "group": "I invariants",
+   "check": "C S7: funding certainty lies between the bounds implied by the percentiles",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "bounds 0.99 to 1.00"
+  },
+  {
+   "group": "I invariants",
+   "check": "C S7: promise_kept within [0,1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "C S8: percentiles non-decreasing",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "C S8: P(fund at 3%) <= P(fund at 4%)",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "a higher reserve is harder to meet"
+  },
+  {
+   "group": "I invariants",
+   "check": "C S8: funding certainty lies between the bounds implied by the percentiles",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "bounds 0.95 to 0.99"
+  },
+  {
+   "group": "I invariants",
+   "check": "C S8: promise_kept within [0,1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "C S9: percentiles non-decreasing",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "C S9: P(fund at 3%) <= P(fund at 4%)",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "a higher reserve is harder to meet"
+  },
+  {
+   "group": "I invariants",
+   "check": "C S9: funding certainty lies between the bounds implied by the percentiles",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "bounds 0.99 to 1.00"
+  },
+  {
+   "group": "I invariants",
+   "check": "C S9: promise_kept within [0,1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "C S9A: percentiles non-decreasing",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "C S9A: P(fund at 3%) <= P(fund at 4%)",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "a higher reserve is harder to meet"
+  },
+  {
+   "group": "I invariants",
+   "check": "C S9A: funding certainty lies between the bounds implied by the percentiles",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "bounds 0.99 to 1.00"
+  },
+  {
+   "group": "I invariants",
+   "check": "C S9A: promise_kept within [0,1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "C S10: percentiles non-decreasing",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "C S10: P(fund at 3%) <= P(fund at 4%)",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "a higher reserve is harder to meet"
+  },
+  {
+   "group": "I invariants",
+   "check": "C S10: funding certainty lies between the bounds implied by the percentiles",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "bounds 0.99 to 1.00"
+  },
+  {
+   "group": "I invariants",
+   "check": "C S10: promise_kept within [0,1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "C S10C: percentiles non-decreasing",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "C S10C: P(fund at 3%) <= P(fund at 4%)",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "a higher reserve is harder to meet"
+  },
+  {
+   "group": "I invariants",
+   "check": "C S10C: funding certainty lies between the bounds implied by the percentiles",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "bounds 0.99 to 1.00"
+  },
+  {
+   "group": "I invariants",
+   "check": "C S10C: promise_kept within [0,1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "J S1: percentiles non-decreasing",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "J S1: P(fund at 3%) <= P(fund at 4%)",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "a higher reserve is harder to meet"
+  },
+  {
+   "group": "I invariants",
+   "check": "J S1: funding certainty lies between the bounds implied by the percentiles",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "bounds 0.99 to 1.00"
+  },
+  {
+   "group": "I invariants",
+   "check": "J S1: promise_kept within [0,1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "J S2: percentiles non-decreasing",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "J S2: P(fund at 3%) <= P(fund at 4%)",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "a higher reserve is harder to meet"
+  },
+  {
+   "group": "I invariants",
+   "check": "J S2: funding certainty lies between the bounds implied by the percentiles",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "bounds 0.95 to 0.99"
+  },
+  {
+   "group": "I invariants",
+   "check": "J S2: promise_kept within [0,1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "J S4: percentiles non-decreasing",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "J S4: P(fund at 3%) <= P(fund at 4%)",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "a higher reserve is harder to meet"
+  },
+  {
+   "group": "I invariants",
+   "check": "J S4: funding certainty lies between the bounds implied by the percentiles",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "bounds 0.75 to 0.90"
+  },
+  {
+   "group": "I invariants",
+   "check": "J S4: promise_kept within [0,1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "J S6: percentiles non-decreasing",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "J S6: P(fund at 3%) <= P(fund at 4%)",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "a higher reserve is harder to meet"
+  },
+  {
+   "group": "I invariants",
+   "check": "J S6: funding certainty lies between the bounds implied by the percentiles",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "bounds 0.75 to 0.90"
+  },
+  {
+   "group": "I invariants",
+   "check": "J S6: promise_kept within [0,1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "J S7: percentiles non-decreasing",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "J S7: P(fund at 3%) <= P(fund at 4%)",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "a higher reserve is harder to meet"
+  },
+  {
+   "group": "I invariants",
+   "check": "J S7: funding certainty lies between the bounds implied by the percentiles",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "bounds 0.90 to 0.95"
+  },
+  {
+   "group": "I invariants",
+   "check": "J S7: promise_kept within [0,1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "J S8: percentiles non-decreasing",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "J S8: P(fund at 3%) <= P(fund at 4%)",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "a higher reserve is harder to meet"
+  },
+  {
+   "group": "I invariants",
+   "check": "J S8: funding certainty lies between the bounds implied by the percentiles",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "bounds 0.75 to 0.90"
+  },
+  {
+   "group": "I invariants",
+   "check": "J S8: promise_kept within [0,1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "J S9: percentiles non-decreasing",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "J S9: P(fund at 3%) <= P(fund at 4%)",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "a higher reserve is harder to meet"
+  },
+  {
+   "group": "I invariants",
+   "check": "J S9: funding certainty lies between the bounds implied by the percentiles",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "bounds 0.75 to 0.90"
+  },
+  {
+   "group": "I invariants",
+   "check": "J S9: promise_kept within [0,1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "J S9A: percentiles non-decreasing",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "J S9A: P(fund at 3%) <= P(fund at 4%)",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "a higher reserve is harder to meet"
+  },
+  {
+   "group": "I invariants",
+   "check": "J S9A: funding certainty lies between the bounds implied by the percentiles",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "bounds 0.75 to 0.90"
+  },
+  {
+   "group": "I invariants",
+   "check": "J S9A: promise_kept within [0,1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "J S10: percentiles non-decreasing",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "J S10: P(fund at 3%) <= P(fund at 4%)",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "a higher reserve is harder to meet"
+  },
+  {
+   "group": "I invariants",
+   "check": "J S10: funding certainty lies between the bounds implied by the percentiles",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "bounds 0.90 to 0.95"
+  },
+  {
+   "group": "I invariants",
+   "check": "J S10: promise_kept within [0,1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "J S10C: percentiles non-decreasing",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "J S10C: P(fund at 3%) <= P(fund at 4%)",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "a higher reserve is harder to meet"
+  },
+  {
+   "group": "I invariants",
+   "check": "J S10C: funding certainty lies between the bounds implied by the percentiles",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": "bounds 0.90 to 0.95"
+  },
+  {
+   "group": "I invariants",
+   "check": "J S10C: promise_kept within [0,1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "S1: S stress lowers funding certainty vs H",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "S2: S stress lowers funding certainty vs H",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "all-equity paths do not depend on yield case (S4 H vs C)",
+   "computed": 0.9548,
+   "reference": 0.9548,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "S6: S stress lowers funding certainty vs H",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "S7: S stress lowers funding certainty vs H",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "S8: S stress lowers funding certainty vs H",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "S9: S stress lowers funding certainty vs H",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "S9A: S stress lowers funding certainty vs H",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "S10: S stress lowers funding certainty vs H",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "I invariants",
+   "check": "S10C: S stress lowers funding certainty vs H",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "J replay link",
+   "check": "T1 S9: P(shortfall | crash) = 1 - replay funding certainty",
+   "computed": 0.22760000000000002,
+   "reference": 0.22760000000000002,
+   "tolerance": 0.0005,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "J replay link",
+   "check": "T1 S9: P(promise broken | crash) = 1 - replay promise kept",
+   "computed": 0.9483,
+   "reference": 0.9483,
+   "tolerance": 0.0005,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "J replay link",
+   "check": "T1 S10: P(shortfall | crash) = 1 - replay funding certainty",
+   "computed": 0.00019999999999997797,
+   "reference": 0.00019999999999997797,
+   "tolerance": 0.0005,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "J replay link",
+   "check": "T1 S10: P(promise broken | crash) = 1 - replay promise kept",
+   "computed": 0.22130000000000005,
+   "reference": 0.22130000000000005,
+   "tolerance": 0.0005,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "J replay link",
+   "check": "T1 S10C: P(shortfall | crash) = 1 - replay funding certainty",
+   "computed": 0.00019999999999997797,
+   "reference": 0.00019999999999997797,
+   "tolerance": 0.0005,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "J replay link",
+   "check": "T1 S10C: P(promise broken | crash) = 1 - replay promise kept",
+   "computed": 0.0006000000000000449,
+   "reference": 0.0006000000000000449,
+   "tolerance": 0.0005,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "J replay link",
+   "check": "T2 S9: P(shortfall | crash) = 1 - replay funding certainty",
+   "computed": 0.03410000000000002,
+   "reference": 0.03410000000000002,
+   "tolerance": 0.0005,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "J replay link",
+   "check": "T2 S9: P(promise broken | crash) = 1 - replay promise kept",
+   "computed": 0.13790000000000002,
+   "reference": 0.13790000000000002,
+   "tolerance": 0.0005,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "J replay link",
+   "check": "T2 S10: P(shortfall | crash) = 1 - replay funding certainty",
+   "computed": 0.0020999999999999908,
+   "reference": 0.0020999999999999908,
+   "tolerance": 0.0005,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "J replay link",
+   "check": "T2 S10: P(promise broken | crash) = 1 - replay promise kept",
+   "computed": 0.04590000000000005,
+   "reference": 0.04590000000000005,
+   "tolerance": 0.0005,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "J replay link",
+   "check": "T2 S10C: P(shortfall | crash) = 1 - replay funding certainty",
+   "computed": 0.0019000000000000128,
+   "reference": 0.0019000000000000128,
+   "tolerance": 0.0005,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "J replay link",
+   "check": "T2 S10C: P(promise broken | crash) = 1 - replay promise kept",
+   "computed": 0.016199999999999992,
+   "reference": 0.016199999999999992,
+   "tolerance": 0.0005,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "J replay link",
+   "check": "T3 S9: P(shortfall | crash) = 1 - replay funding certainty",
+   "computed": 0.10960000000000003,
+   "reference": 0.10960000000000003,
+   "tolerance": 0.0005,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "J replay link",
+   "check": "T3 S9: P(promise broken | crash) = 1 - replay promise kept",
+   "computed": 0.5428999999999999,
+   "reference": 0.5428999999999999,
+   "tolerance": 0.0005,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "J replay link",
+   "check": "T3 S10: P(shortfall | crash) = 1 - replay funding certainty",
+   "computed": 0.05700000000000005,
+   "reference": 0.05700000000000005,
+   "tolerance": 0.0005,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "J replay link",
+   "check": "T3 S10: P(promise broken | crash) = 1 - replay promise kept",
+   "computed": 0.616,
+   "reference": 0.616,
+   "tolerance": 0.0005,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "J replay link",
+   "check": "T3 S10C: P(shortfall | crash) = 1 - replay funding certainty",
+   "computed": 0.0464,
+   "reference": 0.0464,
+   "tolerance": 0.0005,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "J replay link",
+   "check": "T3 S10C: P(promise broken | crash) = 1 - replay promise kept",
+   "computed": 0.5127999999999999,
+   "reference": 0.5127999999999999,
+   "tolerance": 0.0005,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "J replay link",
+   "check": "T3+ S9: P(shortfall | crash) = 1 - replay funding certainty",
+   "computed": 0.17279999999999995,
+   "reference": 0.17279999999999995,
+   "tolerance": 0.0005,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "J replay link",
+   "check": "T3+ S9: P(promise broken | crash) = 1 - replay promise kept",
+   "computed": 0.9207,
+   "reference": 0.9207,
+   "tolerance": 0.0005,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "J replay link",
+   "check": "T3+ S10: P(shortfall | crash) = 1 - replay funding certainty",
+   "computed": 0.00019999999999997797,
+   "reference": 0.00019999999999997797,
+   "tolerance": 0.0005,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "J replay link",
+   "check": "T3+ S10: P(promise broken | crash) = 1 - replay promise kept",
+   "computed": 0.08740000000000003,
+   "reference": 0.08740000000000003,
+   "tolerance": 0.0005,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "J replay link",
+   "check": "T3+ S10C: P(shortfall | crash) = 1 - replay funding certainty",
+   "computed": 0.00019999999999997797,
+   "reference": 0.00019999999999997797,
+   "tolerance": 0.0005,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "J replay link",
+   "check": "T3+ S10C: P(promise broken | crash) = 1 - replay promise kept",
+   "computed": 0.00019999999999997797,
+   "reference": 0.00019999999999997797,
+   "tolerance": 0.0005,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "J replay link",
+   "check": "T4 S9: P(shortfall | crash) = 1 - replay funding certainty",
+   "computed": 0.06420000000000003,
+   "reference": 0.06420000000000003,
+   "tolerance": 0.0005,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "J replay link",
+   "check": "T4 S9: P(promise broken | crash) = 1 - replay promise kept",
+   "computed": 0.35129999999999995,
+   "reference": 0.35129999999999995,
+   "tolerance": 0.0005,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "J replay link",
+   "check": "T4 S10: P(shortfall | crash) = 1 - replay funding certainty",
+   "computed": 0.0,
+   "reference": 0.0,
+   "tolerance": 0.0005,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "J replay link",
+   "check": "T4 S10: P(promise broken | crash) = 1 - replay promise kept",
+   "computed": 0.0,
+   "reference": 0.0,
+   "tolerance": 0.0005,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "J replay link",
+   "check": "T4 S10C: P(shortfall | crash) = 1 - replay funding certainty",
+   "computed": 0.0,
+   "reference": 0.0,
+   "tolerance": 0.0005,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "J replay link",
+   "check": "T4 S10C: P(promise broken | crash) = 1 - replay promise kept",
+   "computed": 0.0,
+   "reference": 0.0,
+   "tolerance": 0.0005,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "J replay link",
+   "check": "T5 S9: P(shortfall | crash) = 1 - replay funding certainty",
+   "computed": 0.0017000000000000348,
+   "reference": 0.0017000000000000348,
+   "tolerance": 0.0005,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "J replay link",
+   "check": "T5 S9: P(promise broken | crash) = 1 - replay promise kept",
+   "computed": 0.0019000000000000128,
+   "reference": 0.0019000000000000128,
+   "tolerance": 0.0005,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "J replay link",
+   "check": "T5 S10: P(shortfall | crash) = 1 - replay funding certainty",
+   "computed": 9.999999999998899e-05,
+   "reference": 9.999999999998899e-05,
+   "tolerance": 0.0005,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "J replay link",
+   "check": "T5 S10: P(promise broken | crash) = 1 - replay promise kept",
+   "computed": 9.999999999998899e-05,
+   "reference": 9.999999999998899e-05,
+   "tolerance": 0.0005,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "J replay link",
+   "check": "T5 S10C: P(shortfall | crash) = 1 - replay funding certainty",
+   "computed": 9.999999999998899e-05,
+   "reference": 9.999999999998899e-05,
+   "tolerance": 0.0005,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "J replay link",
+   "check": "T5 S10C: P(promise broken | crash) = 1 - replay promise kept",
+   "computed": 9.999999999998899e-05,
+   "reference": 9.999999999998899e-05,
+   "tolerance": 0.0005,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "strategy_summary H S1 funding certainty",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "strategy_summary H S2 funding certainty",
+   "computed": 0.9935,
+   "reference": 0.9935,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "strategy_summary H S4 funding certainty",
+   "computed": 0.9548,
+   "reference": 0.9548,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "strategy_summary H S6 funding certainty",
+   "computed": 0.9843,
+   "reference": 0.9843,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "strategy_summary H S7 funding certainty",
+   "computed": 0.9981,
+   "reference": 0.9981,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "strategy_summary H S8 funding certainty",
+   "computed": 0.9471,
+   "reference": 0.9471,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "strategy_summary H S9 funding certainty",
+   "computed": 0.9875,
+   "reference": 0.9875,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "strategy_summary H S9A funding certainty",
+   "computed": 0.9946,
+   "reference": 0.9946,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "strategy_summary H S10 funding certainty",
+   "computed": 0.9964,
+   "reference": 0.9964,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "strategy_summary H S10C funding certainty",
+   "computed": 0.9958,
+   "reference": 0.9958,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "strategy_summary S S1 funding certainty",
+   "computed": 0.2462,
+   "reference": 0.2462,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "strategy_summary S S2 funding certainty",
+   "computed": 0.5606,
+   "reference": 0.5606,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "strategy_summary S S4 funding certainty",
+   "computed": 0.8986,
+   "reference": 0.8986,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "strategy_summary S S6 funding certainty",
+   "computed": 0.8966,
+   "reference": 0.8966,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "strategy_summary S S7 funding certainty",
+   "computed": 0.8772,
+   "reference": 0.8772,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "strategy_summary S S8 funding certainty",
+   "computed": 0.7613,
+   "reference": 0.7613,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "strategy_summary S S9 funding certainty",
+   "computed": 0.9033,
+   "reference": 0.9033,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "strategy_summary S S9A funding certainty",
+   "computed": 0.8989,
+   "reference": 0.8989,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "strategy_summary S S10 funding certainty",
+   "computed": 0.847,
+   "reference": 0.847,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "strategy_summary S S10C funding certainty",
+   "computed": 0.83,
+   "reference": 0.83,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "strategy_summary C S1 funding certainty",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "strategy_summary C S2 funding certainty",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "strategy_summary C S4 funding certainty",
+   "computed": 0.9548,
+   "reference": 0.9548,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "strategy_summary C S6 funding certainty",
+   "computed": 0.9935,
+   "reference": 0.9935,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "strategy_summary C S7 funding certainty",
+   "computed": 0.9999,
+   "reference": 0.9999,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "strategy_summary C S8 funding certainty",
+   "computed": 0.9861,
+   "reference": 0.9861,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "strategy_summary C S9 funding certainty",
+   "computed": 0.9961,
+   "reference": 0.9961,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "strategy_summary C S9A funding certainty",
+   "computed": 0.999,
+   "reference": 0.999,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "strategy_summary C S10 funding certainty",
+   "computed": 0.9998,
+   "reference": 0.9998,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "strategy_summary C S10C funding certainty",
+   "computed": 0.9999,
+   "reference": 0.9999,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "strategy_summary J S1 funding certainty",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "strategy_summary J S2 funding certainty",
+   "computed": 0.9749,
+   "reference": 0.9749,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "strategy_summary J S4 funding certainty",
+   "computed": 0.7676,
+   "reference": 0.7676,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "strategy_summary J S6 funding certainty",
+   "computed": 0.8456,
+   "reference": 0.8456,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "strategy_summary J S7 funding certainty",
+   "computed": 0.9279,
+   "reference": 0.9279,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "strategy_summary J S8 funding certainty",
+   "computed": 0.7539,
+   "reference": 0.7539,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "strategy_summary J S9 funding certainty",
+   "computed": 0.8467,
+   "reference": 0.8467,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "strategy_summary J S9A funding certainty",
+   "computed": 0.8923,
+   "reference": 0.8923,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "strategy_summary J S10 funding certainty",
+   "computed": 0.9331,
+   "reference": 0.9331,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "strategy_summary J S10C funding certainty",
+   "computed": 0.9394,
+   "reference": 0.9394,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "affects_laura csv T1 S9 promise broken",
+   "computed": 0.018715833765415,
+   "reference": 0.01871583376541503,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "affects_laura csv T2 S9 promise broken",
+   "computed": 0.0080047806644806,
+   "reference": 0.008004780664480605,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "affects_laura csv T3 S9 promise broken",
+   "computed": 0.0212180915909552,
+   "reference": 0.021218091590955255,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "affects_laura csv T3+ S9 promise broken",
+   "computed": 0.0359836008984942,
+   "reference": 0.03598360089849421,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "affects_laura csv T4 S9 promise broken",
+   "computed": 0.0137298131808852,
+   "reference": 0.01372981318088521,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "affects_laura csv T5 S9 promise broken",
+   "computed": 0.000422430208001,
+   "reference": 0.00042243020800105047,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "crash_episodes.csv has the ten falls",
+   "computed": 10.0,
+   "reference": 10.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "K tables",
+   "check": "poisson_by_window 2031-32 = 1-exp(-2 lambda)",
+   "computed": 0.1807250590038089,
+   "reference": 0.18072505900380897,
+   "tolerance": 1e-09,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "L regimes",
+   "check": "falls that overlap a turbulent spell (probability > 50%), of 10",
+   "computed": 10.0,
+   "reference": 10.0,
+   "tolerance": 3,
+   "ok": true,
+   "note": "reported in REPORT.md section 10"
   }
  ]
 }
