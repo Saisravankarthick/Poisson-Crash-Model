@@ -583,7 +583,7 @@ A negative figure is a gain. We left the falling-rate replay out of the total: i
 What the two tables show:
 
 - **The 2022-type stock-and-bond inflation shock is the crash that hurts LDCS most.** It supplies 1.98% of LDCS's 2.37% risk and the largest dollar fall (\$76k). This is the failure the proposition of Section 4.2 predicts: when bonds fall with stocks, the floor stops protecting the promise. Pure LDI is hit hardest of all by this crash type, because it holds only bonds.
-- **Without the floor rule the same ETFs are far more exposed.** Core-satellite holds LDCS's funds without the rule and carries 9.81% risk, 4.1 times LDCS's; it is hit hardest by the 2008-type (1.87%) and 1973–74-type (3.60%) crashes and loses \$158k of median contribution in a 2008-type crash against \$43k for LDCS.
+- **Without the floor rule the same ETFs are far more exposed.** Core-satellite holds LDCS's funds without the rule and carries 9.81% risk, 4.1 times LDCS's; it is hit hardest by the 1973–74-type (3.60%), 2022-type (2.12%) and 2008-type (1.87%) crashes and loses \$158k of median contribution in a 2008-type crash against \$43k for LDCS.
 - **The most exposed strategies overall** (all nine, by summed risk): CPPI m=3 13.71%, All-equity 13.69%, Core-satellite 9.81%, Target-date 5.90%, Bucket ladder 4.60%, Risk parity 3.54%, Pure LDI 3.15%, LDCS (ours) 2.37%, T-bills 0.00%.
 - **T-bills carry no crash risk to the promise** but give up the most facility money in every normal market (Section 7), which is why they rank fourth rather than first.
 

@@ -138,7 +138,7 @@ These are upper bounds, because they assume the worst timing.
 
 - **Seeds:** the whole Monte Carlo (four cases, six crash replays, 10,000 paths) re-run on 20 fresh seeds puts LDCS first under all three weightings every time.
 - **Paired tests** on identical paths, the **Poisson assumption tests** (dispersion by year and decade, exponential gaps) and the **Markov conditional shortfall** are in [`report/ROBUSTNESS.md`](report/ROBUSTNESS.md), with the one-line definition of each criterion and the limits of these tests. [`report/MATHEMATICS.md`](report/MATHEMATICS.md) derives every formula behind them: the annuity-due reserve, duration, the strategy rules (with a proof that the cushion rule protects the floor), the four Monte Carlo cases, the six crash replays, McNemar's test, the Dirichlet weights, the Poisson process and Garwood interval, compound Poisson damage, the dispersion and Kolmogorov–Smirnov tests and the Hamilton regime model.
-- **Which crash hurts Laura most** (`ROBUSTNESS.md` section H, `results/tables/crash_impact_by_strategy.csv`): for each crash type, its Poisson probability in 2031-32 times the damage it does to each strategy when replayed to end in January 2033. The 2022-type stock-and-bond inflation shock is the biggest single risk for LDCS (1.98% of its 2.37%); core-satellite, the same ETFs without the rule, is hit hardest by the 2008-type and 1973-74-type crashes.
+- **Which crash hurts Laura most** (`ROBUSTNESS.md` section H, `results/tables/crash_impact_by_strategy.csv`): for each crash type, its Poisson probability in 2031-32 times the damage it does to each strategy when replayed to end in January 2033. The 2022-type stock-and-bond inflation shock is the biggest single risk for LDCS (1.98% of its 2.37%); core-satellite, the same ETFs without the rule, is hit hardest by the 1973-74-type, 2022-type and 2008-type crashes.
 - **Consistency with the IPS** (`ROBUSTNESS.md` section I): LDCS run with the IPS ±2% tolerance band, with and without the 2031 yield condition, and the IPS cushion rule alone. Every version ranks first under all three weightings.
 - With all ten original strategies LDCS ties the calendar glide path S9A on equal weights (4.00 each); leaving out our own two earlier versions is what makes the first place clear.
 
@@ -190,6 +190,8 @@ These are upper bounds, because they assume the worst timing.
 | `19_markov_conditional_shortfall.png` | Shortfall and broken promise by months spent in the turbulent regime in 2031-32 |
 
 [`report/INDEX.md`](report/INDEX.md) lists the table (`results/tables/*.csv`) and source data behind each chart.
+
+**Figures quoted in the Final Report.** `python src/final_report_figures.py` (about two seconds) writes `results/tables/final_report_figures.csv`: the pooled four-case range, median and minimum (Table 4), the range net of the \$17,539 flexibility buffer, the confidence that the contribution lands in \$85,000-\$185,000 (at the typical 2031 value and seen from today), the share of paths where the 2031 lock-in is off, the share reaching the IPS's \$236,000 and the steady return it needs, the steady-return check table, the history-case plan line (Table 7), the reserve slices (Table 3), the day-one floor and cushion, the inflation arithmetic and the expected contribution lost to stock crashes. Each row states how the figure is computed. Every other number in the Final Report is read directly from `results/strategy_results.json`, `results/robustness.json`, `results/laura_poisson.json`, `results/crash_events.json` or `results/tables/*.csv`.
 
 ## Run it
 
