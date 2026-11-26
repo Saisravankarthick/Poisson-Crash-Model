@@ -241,6 +241,69 @@ for e in E["equity"]["20"]["episodes"]:
     inside += int(seg.max() > 0.5)
 chk("L regimes", "falls that overlap a turbulent spell (probability > 50%), of 10", inside, E["equity"]["20"]["n"], 3, "reported in REPORT.md section 10")
 
+
+# ------------------------------------------------------------------ M. bucket ladder (S0) and the robustness tests (src/robustness.py)
+import strategy_sim as ss_
+Z_ = np.zeros((4, 72, 8)); D_ = np.zeros((4, 72))
+chk("M S0 engine", "S0 with zero returns ends at $300k + $150k", ss_.simulate_s0(Z_, D_, "S0")["V33"].mean(), 450000, 1e-6)
+G_ = np.full((4, 72, 8), 0.004)
+chk("M S0 engine", "S0 with 0.4% a month on every fund = 300k*1.004^72 + 150k*1.004^60", ss_.simulate_s0(G_, D_, "S0")["V33"].mean(),
+    300000 * 1.004 ** 72 + 150000 * 1.004 ** 60, 1e-6)
+for t_ in range(6):
+    b_ = ss_.bucket_pv(t_)
+    chk("M S0 engine", f"buckets B1+B2+B3 = liability PV at start of {2027 + t_}", sum(b_), ss_.pv_liab(t_), 1e-6)
+    for V0 in (250e3, 460e3, 900e3):
+        Vv = np.full(3, V0); Eq_ = np.minimum(np.maximum(Vv - sum(b_), 0), ss_.E0 * Vv); H_ = ss_.s0_alloc(Vv, t_, Eq_)
+        chk("M S0 engine", f"S0 allocation sums to V, no negatives, equity <= cap (t={t_}, V={V0:.0f})",
+            float(abs(H_.sum(1) - Vv).max() < 1e-6 and (H_ >= -1e-9).all() and (H_[:, :3].sum(1) <= ss_.E0 * Vv + 1e-6).all()), 1.0, 0)
+RB = json.load(open(RES / "robustness.json"))
+crit_ = RB["criteria"]; S_ = RB["set"]
+for c_ in crit_:
+    vals = RB["scoreboard"]["values"][c_]
+    for s_ in S_:
+        chk("M scoreboard", f"rank of {s_} on '{c_}' = 1 + number strictly better", RB["scoreboard"]["ranks"][c_][s_], 1 + sum(vals[x] > vals[s_] for x in S_), 0)
+for s_ in S_:
+    for w_, ws_ in {"equal": [1] * 6, "safety": [2, 2, 1, 1, 2, 2], "growth": [1, 1, 3, 1, 1, 1]}.items():
+        chk("M scoreboard", f"{s_} {w_} average rank recomputed", RB["scoreboard"]["totals"][w_][s_],
+            sum(a * RB["scoreboard"]["ranks"][c_][s_] for a, c_ in zip(ws_, crit_)) / sum(ws_), 1e-12)
+PUB = {"S10C": (4.0, 3.8, 4.75), "S9A": (4.0, 3.7, 4.25), "S7": (4.1667, 3.7, 5.125), "S10": (4.1667, 4.0, 4.625), "S1": (5.5, 5.5, 6.625), "S4": (7.3333, 7.7, 5.75)}
+for s_, v_ in PUB.items():
+    for w_, x_ in zip(("equal", "safety", "growth"), v_):
+        chk("M scoreboard", f"ten-strategy Table 8.21 {s_} {w_} reproduced", RB["full10_totals"][w_][s_], x_, 5e-4, "Research Pack p.13")
+chk("M scoreboard", "base seed re-run through robustness.py reproduces the scoreboard", RB["base_rerun_matches"], 0, 1e-12)
+chk("M weights", "P(ranked 1st) sums to 1 over strategies", sum(RB["weights"]["p_first"].values()), 1, 1e-9)
+chk("M weights", "P(top 3) sums to 3 over strategies", sum(RB["weights"]["p_top3"].values()), 3, 1e-9)
+chk("M seeds", "twenty fresh seeds", RB["seeds"]["n"], 20, 0)
+PT_ = pd.read_csv(RES / "tables" / "paired_tests.csv")
+for _, r_ in PT_.iterrows():
+    chk("M paired", f"{r_['case']} {r_['rival']}: (LDCS-only minus rival-only funded paths)/n = difference in funding certainty",
+        (r_["ldcs_only_funded"] - r_["rival_only_funded"]) / 10000, r_["f4_ldcs"] - r_["f4_rival"], 1e-12)
+    chk("M paired", f"{r_['case']} {r_['rival']}: LDCS funding certainty equals the stored Monte Carlo value", r_["f4_ldcs"], SR[r_["case"]]["S10C"]["f4"], 1e-12)
+    chk("M paired", f"{r_['case']} {r_['rival']}: rival funding certainty equals the stored Monte Carlo value", r_["f4_rival"], SR[r_["case"]][r_["rival"]]["f4"], 1e-12)
+CT_ = pd.read_csv(RES / "tables" / "crash_type_promise.csv")
+for _, r_ in CT_.iterrows():
+    n_, T__ = r_["events"], r_["years"]
+    chk("M joint Poisson", f"{r_['type']} lambda 90% lower bound by gamma quantile", r_["lambda_lo90"], stats.gamma.ppf(0.05, n_) / T__ if n_ else 0, 1e-9)
+    chk("M joint Poisson", f"{r_['type']} lambda 90% upper bound by gamma quantile", r_["lambda_hi90"], stats.gamma.ppf(0.95, n_ + 1) / T__, 1e-9)
+    chk("M joint Poisson", f"{r_['type']} P(in 2031-32) = 1-exp(-2 lambda)", r_["p_2031_32"], 1 - math.exp(-2 * r_["lambda"]), 1e-12)
+JP_ = pd.read_csv(RES / "tables" / "joint_poisson_shortfall.csv").set_index("strategy")
+for s_ in S_:
+    q_ = sum(r_["p_2031_32"] * (1 - r_[f"funded_{s_}"]) for _, r_ in CT_.iterrows())
+    chk("M joint Poisson", f"{s_} joint shortfall recomputed from the crash table", JP_.loc[s_, "shortfall_sum"], q_, 1e-12)
+    chk("M joint Poisson", f"{s_} union <= sum <= upper-lambda sum", float(JP_.loc[s_, "shortfall_union"] <= JP_.loc[s_, "shortfall_sum"] + 1e-15 <= JP_.loc[s_, "shortfall_sum_hi"] + 2e-15), 1.0, 0)
+pt_ = RB["poisson_tests"]
+chk("M Poisson tests", "decade counts add to the ten crashes", sum(pt_["decade"]["counts"]), 10, 0)
+chk("M Poisson tests", "no overdispersion by decade at 5%", float(pt_["decade"]["p_overdispersed"] > 0.05), 1.0, 0)
+mk_ = RB["markov"]; P_ = np.array(mk_["P"]); pi_ = np.array(mk_["stationary"])
+chk("M Markov", "stationary distribution solves pi P = pi", float(np.abs(pi_ @ P_ - pi_).max()), 0, 1e-9)
+chk("M Markov", "P(any turbulent month in 2031-32): matrix powers vs simulated paths", mk_["p_any_turbulent_2031_32_exact"], mk_["p_any_turbulent_2031_32_sim"], 0.02)
+MC_ = pd.read_csv(RES / "tables" / "markov_conditional_shortfall.csv")
+for s_ in S_:
+    q_ = MC_[MC_.strategy == s_]
+    chk("M Markov", f"{s_}: sum of share x conditional shortfall = case J shortfall", (q_.share_of_paths * q_.p_shortfall).sum(), 1 - SR["J"][s_]["f4"], 1e-9)
+    chk("M Markov", f"{s_}: sum of share x conditional broken promise = case J broken promise", (q_.share_of_paths * q_.p_promise_broken).sum(), 1 - SR["J"][s_]["promise_kept"], 1e-9)
+chk("M Markov", "regime-bucket shares sum to 1", MC_.drop_duplicates("turbulent_months_2031_32").share_of_paths.sum(), 1, 1e-12)
+
 bad = [c for c in checks if not c["ok"]]
 json.dump(dict(n_checks=len(checks), n_failed=len(bad), checks=checks), open(RES / "verification.json", "w"), indent=1)
 by = {}

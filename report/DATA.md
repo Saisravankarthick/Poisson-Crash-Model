@@ -63,12 +63,12 @@ Before Dec 2016 the funds did not exist (or have no usable history), so proxies 
 | `crash_events.json` | `src/crash_events.py` | The ten crashes with types, λ and 90% ranges, dispersion test, Markov model, Merton jump parameters, current yields |
 | `laura_poisson.json` | `src/laura_poisson.py` | Fund-level λ, loss per crash by type, compound-Poisson damage distribution, Markov-modulated version, probability each type affects Laura |
 | `strategy_results.json` | `src/strategy_sim.py` | 10,000-path simulation of the ten strategies under four cases and six crash replays (the Monte Carlo layer) |
-| `verification.json` | `src/verify.py` | All 512 independent checks with computed and reference values |
+| `verification.json` | `src/verify.py` | All 830 independent checks with computed and reference values |
 | `tables/*.csv` | `src/laura_poisson.py` | Fund-level rates, dollar loss by fund and type, probability each type affects Laura |
 
 ## Figures (`figures/`) and tables (`results/tables/`)
 
-Fifteen charts and thirteen CSV tables: see the [index](INDEX.md) for which file feeds which chart.
+Nineteen charts and the CSV tables: see the [index](INDEX.md) for which file feeds which chart.
 
 
 All charts use one muted palette (blue `#3b6ea8`, orange `#c8733f`, violet `#8a64b0`, green `#2e9474`), checked for adjacent-pair separation under colour-vision deficiency. Labels, markers and line styles carry identity as well, so colour is never the only cue.

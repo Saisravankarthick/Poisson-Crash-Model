@@ -16,7 +16,7 @@ Other documents: [Interconnections](INTERCONNECTIONS.md) · [Data catalogue](DAT
 | Cost to Laura of one crash ($300k portfolio) | about $39,882 (-13.3%) before any recovery |
 | Expected crash damage, 2027–32 | $33,676; P(≥ $50k) = 29.6%; 99% VaR $190,419 |
 | Is Poisson a fair description of the timing? | Yes, not rejected: variance/mean = 0.91, p = 0.73 |
-| Independent checks | 512 of 512 pass (`python src/verify.py`) |
+| Independent checks | 830 of 830 pass (`python src/verify.py`) |
 
 ## 1. The inputs (Case Study only)
 
@@ -229,7 +229,7 @@ The written version, with the comparison to the Markov-Model and Monte-Carlo-Sim
 
 ## 13. How it was checked
 
-`python src/verify.py` runs **512 independent checks, 512 passing**. They recompute the numbers a second way (a separate crash counter, Garwood by inverting the Poisson cdf, the Markov recursion month by month, the liability duration and convexity from first principles, and a separate 20,000-path bootstrap of the all-equity and T-bill strategies) and compare the case arithmetic with the Team Study Pack tables (reserve at 0–6%, 2033 portfolio at 0–8%, remainder after the reserve, 2031 illustrations). They also check that the tables on disk equal the results files and that the probability-of-harm table uses the replayed crash results. `python -m pytest tests -q` runs six unit tests of the mathematics.
+`python src/verify.py` runs **830 independent checks, 830 passing**. They recompute the numbers a second way (a separate crash counter, Garwood by inverting the Poisson cdf, the Markov recursion month by month, the liability duration and convexity from first principles, and a separate 20,000-path bootstrap of the all-equity and T-bill strategies) and compare the case arithmetic with the Team Study Pack tables (reserve at 0–6%, 2033 portfolio at 0–8%, remainder after the reserve, 2031 illustrations). They also check that the tables on disk equal the results files and that the probability-of-harm table uses the replayed crash results. `python -m pytest tests -q` runs six unit tests of the mathematics.
 
 ## 14. Limits
 

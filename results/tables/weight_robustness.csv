@@ -1,0 +1,10 @@
+strategy,name,p_rank_1,p_top_3
+S10C,LDCS (ours),0.6816,0.9824
+S9,Core-satellite,0.00125,0.12355
+S7,Risk parity,0.23535,0.87335
+S0,Bucket ladder,0.0,0.38195
+S1,T-bills,0.05965,0.38685
+S2,Pure LDI,0.0,0.06015
+S6,Target-date,0.0036,0.10745
+S8,CPPI m=3,0.0013,0.0336
+S4,All-equity,0.01725,0.0507

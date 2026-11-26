@@ -246,7 +246,7 @@ D.append("\n## Proxy validation\n\nBefore Dec 2016 the funds did not exist (or h
 D.append(md(["Fund", "Months compared", "Correlation", "Tracking error (monthly)", "Real return (annualised)", "Proxy return (annualised)"], [[k, v["months"], f"{v['corr']:.3f}", pcf(v["tracking_error"], 2), pcf(v["actual_return"]), pcf(v["proxy_return"])] for k, v in PV.items()]))
 D.append("\n## Results (`results/`)\n")
 D.append(md(["File", "Produced by", "Holds"], [["`crash_events.json`", "`src/crash_events.py`", "The ten crashes with types, λ and 90% ranges, dispersion test, Markov model, Merton jump parameters, current yields"], ["`laura_poisson.json`", "`src/laura_poisson.py`", "Fund-level λ, loss per crash by type, compound-Poisson damage distribution, Markov-modulated version, probability each type affects Laura"], ["`strategy_results.json`", "`src/strategy_sim.py`", "10,000-path simulation of the ten strategies under four cases and six crash replays (the Monte Carlo layer)"], ["`verification.json`", "`src/verify.py`", f"All {V['n_checks']} independent checks with computed and reference values"], ["`tables/*.csv`", "`src/laura_poisson.py`", "Fund-level rates, dollar loss by fund and type, probability each type affects Laura"]]))
-D.append("\n## Figures (`figures/`) and tables (`results/tables/`)\n\nFifteen charts and thirteen CSV tables: see the [index](INDEX.md) for which file feeds which chart.\n")
+D.append("\n## Figures (`figures/`) and tables (`results/tables/`)\n\nNineteen charts and the CSV tables: see the [index](INDEX.md) for which file feeds which chart.\n")
 D.append("\nAll charts use one muted palette (blue `#3b6ea8`, orange `#c8733f`, violet `#8a64b0`, green `#2e9474`), checked for adjacent-pair separation under colour-vision deficiency. Labels, markers and line styles carry identity as well, so colour is never the only cue.\n")
 (REP / "DATA.md").write_text("\n".join(D))
 
@@ -316,7 +316,11 @@ FIGS = [("01", "01_poisson_pmf_windows.png", "Poisson probability of 0, 1, 2, 3+
         ("12", "12_mc_funding_certainty.png", "Funding certainty by strategy and return case", "strategy_summary.csv", "strategy_results.json"),
         ("13", "13_mc_contribution_range.png", "Facility contribution range by strategy (H and S)", "strategy_summary.csv", "strategy_results.json"),
         ("14", "14_mc_crash_replay_certainty.png", "Funding certainty when each crash type is replayed at the worst timing", "crash_replay_summary.csv", "strategy_results.json"),
-        ("15", "15_model_interconnections.png", "How the Poisson, Markov and Monte Carlo layers connect", "(diagram)", "(none)")]
+        ("15", "15_model_interconnections.png", "How the Poisson, Markov and Monte Carlo layers connect", "(diagram)", "(none)"),
+        ("16", "16_crash_type_promise_by_strategy.png", "Promise kept under each crash type, LDCS against six alternatives, and the joint Poisson risk", "crash_type_promise.csv", "robustness.json"),
+        ("17", "17_contribution_ogive.png", "Ogive (cumulative distribution) of the 2033 contribution, nine strategies, cases H and J", "(simulated paths)", "strategy_sim.py"),
+        ("18", "18_rank_robustness.png", "How often each strategy ranks 1st or top 3 under 20,000 random criterion weightings", "weight_robustness.csv", "robustness.json"),
+        ("19", "19_markov_conditional_shortfall.png", "Shortfall and broken promise by months spent in the turbulent regime in 2031-32", "markov_conditional_shortfall.csv", "robustness.json")]
 N = ["# Index of figures and tables\n", "Every chart in `figures/`, the table behind it in `results/tables/`, and the file the numbers come from. Regenerate everything with `python src/run_all.py`.\n",
      md(["#", "Figure", "Shows", "Table", "Source data"], [[n, f"[`{f}`](../figures/{f})", d, f"`{t}`" if t.endswith(".csv") else t, f"`{src}`" if src.endswith((".json", ".csv")) else src] for n, f, d, t, src in FIGS]),
      "\n## All tables in `results/tables/`\n"]
@@ -325,6 +329,6 @@ for p in sorted((RES / "tables").glob("*.csv")):
     d = pd.read_csv(p); rows.append([f"[`{p.name}`](../results/tables/{p.name})", len(d), ", ".join(d.columns[:6]) + (" …" if len(d.columns) > 6 else "")])
 N.append(md(["Table", "Rows", "Columns"], rows))
 N.append("\n## Documents\n")
-N.append(md(["Document", "What it is"], [["[REPORT.md](REPORT.md)", "The final report: every figure with its data, how each number is calculated"], ["[INTERCONNECTIONS.md](INTERCONNECTIONS.md)", "How the Poisson, Markov and Monte Carlo layers connect, and how this repository relates to the two earlier ones"], ["[DATA.md](DATA.md)", "Every input and output file, with sources, row counts and proxy validation"], ["[SENSITIVITY.md](SENSITIVITY.md)", "How λ changes with the crash threshold and the length of history"], ["[../docs/Poisson_Crash_Model_Final_Report.pdf](../docs/Poisson_Crash_Model_Final_Report.pdf)", "The same material as one printable PDF"]]))
+N.append(md(["Document", "What it is"], [["[REPORT.md](REPORT.md)", "The final report: every figure with its data, how each number is calculated"], ["[INTERCONNECTIONS.md](INTERCONNECTIONS.md)", "How the Poisson, Markov and Monte Carlo layers connect, and how this repository relates to the two earlier ones"], ["[DATA.md](DATA.md)", "Every input and output file, with sources, row counts and proxy validation"], ["[SENSITIVITY.md](SENSITIVITY.md)", "How λ changes with the crash threshold and the length of history"], ["[ROBUSTNESS.md](ROBUSTNESS.md)", "Nine-strategy scoreboard with one-line criterion definitions, random-weight and seed-stability tests, paired tests, joint Poisson shortfall, Poisson assumption tests, Markov conditional shortfall"], ["[../docs/Poisson_Crash_Model_Final_Report.pdf](../docs/Poisson_Crash_Model_Final_Report.pdf)", "The same material as one printable PDF"]]))
 (REP / "INDEX.md").write_text("\n".join(N))
 print("wrote", [p.name for p in REP.glob("*.md")])

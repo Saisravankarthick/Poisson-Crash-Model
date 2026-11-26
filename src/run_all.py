@@ -4,9 +4,11 @@ build_data.main()
 crash_events.main()
 runpy.run_module("strategy_sim", run_name="__main__")
 laura_poisson.main()
+import robustness
+robustness.main()                                          # step 4: ranking robustness (about 3 minutes)
 figures.main()
 try:
-    runpy.run_module("verify", run_name="__main__")      # 512 independent checks; raises SystemExit
+    runpy.run_module("verify", run_name="__main__")      # independent checks; raises SystemExit
 except SystemExit as e:
     if e.code:
         raise

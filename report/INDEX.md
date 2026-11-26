@@ -19,6 +19,10 @@ Every chart in `figures/`, the table behind it in `results/tables/`, and the fil
 | 13 | [`13_mc_contribution_range.png`](../figures/13_mc_contribution_range.png) | Facility contribution range by strategy (H and S) | `strategy_summary.csv` | `strategy_results.json` |
 | 14 | [`14_mc_crash_replay_certainty.png`](../figures/14_mc_crash_replay_certainty.png) | Funding certainty when each crash type is replayed at the worst timing | `crash_replay_summary.csv` | `strategy_results.json` |
 | 15 | [`15_model_interconnections.png`](../figures/15_model_interconnections.png) | How the Poisson, Markov and Monte Carlo layers connect | (diagram) | (none) |
+| 16 | [`16_crash_type_promise_by_strategy.png`](../figures/16_crash_type_promise_by_strategy.png) | Promise kept under each crash type, LDCS against six alternatives, and the joint Poisson risk | `crash_type_promise.csv` | `robustness.json` |
+| 17 | [`17_contribution_ogive.png`](../figures/17_contribution_ogive.png) | Ogive (cumulative distribution) of the 2033 contribution, nine strategies, cases H and J | (simulated paths) | strategy_sim.py |
+| 18 | [`18_rank_robustness.png`](../figures/18_rank_robustness.png) | How often each strategy ranks 1st or top 3 under 20,000 random criterion weightings | `weight_robustness.csv` | `robustness.json` |
+| 19 | [`19_markov_conditional_shortfall.png`](../figures/19_markov_conditional_shortfall.png) | Shortfall and broken promise by months spent in the turbulent regime in 2031-32 | `markov_conditional_shortfall.csv` | `robustness.json` |
 
 ## All tables in `results/tables/`
 
@@ -27,16 +31,23 @@ Every chart in `figures/`, the table behind it in `results/tables/`, and the fil
 | [`compound_poisson_damage.csv`](../results/tables/compound_poisson_damage.csv) | 4 | window, lam_t, expected, expected_formula, sd, p_ge_50k … |
 | [`crash_episodes.csv`](../results/tables/crash_episodes.csv) | 10 | peak, trough, recovered, depth, type, d10y … |
 | [`crash_replay_summary.csv`](../results/tables/crash_replay_summary.csv) | 120 | crash, timing, strategy, funding_certainty_4pct, contribution_p50 |
+| [`crash_type_promise.csv`](../results/tables/crash_type_promise.csv) | 6 | type, name, events, years, lambda, lambda_lo90 … |
 | [`dollar_loss_by_fund_and_type.csv`](../results/tables/dollar_loss_by_fund_and_type.csv) | 8 | fund, T1 Recession bear, T2 Exogenous V-shock, T3 Inflation / rate shock, T4 Valuation bust |
 | [`fund_level_poisson.csv`](../results/tables/fund_level_poisson.csv) | 8 | fund, dollars, weight, max_drawdown, n10, lam10 … |
 | [`gaps_between_crashes.csv`](../results/tables/gaps_between_crashes.csv) | 9 | gap_years |
+| [`joint_poisson_shortfall.csv`](../results/tables/joint_poisson_shortfall.csv) | 9 | strategy, name, shortfall_sum, shortfall_union, shortfall_sum_lo, shortfall_sum_hi … |
+| [`markov_conditional_shortfall.csv`](../results/tables/markov_conditional_shortfall.csv) | 36 | turbulent_months_2031_32, share_of_paths, strategy, name, p_shortfall, p_promise_broken … |
 | [`markov_modulated_curves.csv`](../results/tables/markov_modulated_curves.csv) | 16 | years, plain_poisson, from today's state, from the long-run mix, just after turbulence starts |
 | [`markov_states.csv`](../results/tables/markov_states.csv) | 2 | state, stationary, expected_months, lam, to_calm, to_turbulent |
+| [`paired_tests.csv`](../results/tables/paired_tests.csv) | 32 | case, rival, rival_name, f4_ldcs, f4_rival, se_f4_ldcs … |
 | [`poisson_by_type.csv`](../results/tables/poisson_by_type.csv) | 6 | type, n, lam, lam_lo90, lam_hi90, mean_wait_years … |
 | [`poisson_by_window.csv`](../results/tables/poisson_by_window.csv) | 8 | threshold, window, lam, p_at_least_one, lo90, hi90 |
 | [`probability_crash_affects_laura.csv`](../results/tables/probability_crash_affects_laura.csv) | 6 | type, scenario, lam, p_occurs_2031_32, S9_p_shortfall, S9_p_promise_broken … |
+| [`scoreboard_ranked.csv`](../results/tables/scoreboard_ranked.csv) | 9 | strategy, name, Minimum funding certainty, Average funding certainty, Median contribution, Bad-case contribution (P5, J) … |
+| [`seed_stability.csv`](../results/tables/seed_stability.csv) | 9 | strategy, name, equal: share of seeds ranked 1st, equal: best-worst place, safety: share of seeds ranked 1st, safety: best-worst place … |
 | [`strategy_summary.csv`](../results/tables/strategy_summary.csv) | 40 | case, strategy, funding_certainty_4pct, funding_certainty_3pct, funding_certainty_ladder, contribution_p5 … |
-| [`verification_checks.csv`](../results/tables/verification_checks.csv) | 512 | group, check, computed, reference, tolerance, ok … |
+| [`verification_checks.csv`](../results/tables/verification_checks.csv) | 830 | group, check, computed, reference, tolerance, ok … |
+| [`weight_robustness.csv`](../results/tables/weight_robustness.csv) | 9 | strategy, name, p_rank_1, p_top_3 |
 
 ## Documents
 
@@ -46,4 +57,5 @@ Every chart in `figures/`, the table behind it in `results/tables/`, and the fil
 | [INTERCONNECTIONS.md](INTERCONNECTIONS.md) | How the Poisson, Markov and Monte Carlo layers connect, and how this repository relates to the two earlier ones |
 | [DATA.md](DATA.md) | Every input and output file, with sources, row counts and proxy validation |
 | [SENSITIVITY.md](SENSITIVITY.md) | How λ changes with the crash threshold and the length of history |
+| [ROBUSTNESS.md](ROBUSTNESS.md) | Nine-strategy scoreboard with one-line criterion definitions, random-weight and seed-stability tests, paired tests, joint Poisson shortfall, Poisson assumption tests, Markov conditional shortfall |
 | [../docs/Poisson_Crash_Model_Final_Report.pdf](../docs/Poisson_Crash_Model_Final_Report.pdf) | The same material as one printable PDF |
