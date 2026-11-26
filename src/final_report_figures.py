@@ -109,6 +109,37 @@ for sid, nm in (("S10C", "LDCS"), ("S9", "Core-satellite")):
     add("Table 5 note", f"Expected contribution lost to the five stock-crash types, {nm}",
         round(float(stock.loc[stock.strategy == sid, "expected_hit_stock_crashes"].sum())), "sum of expected_hit_stock_crashes, crash_impact_by_strategy.csv")
 
+# ---------------------------------------------------------------- Section 2, Table 2: risk profile of the final WInS portfolio
+monthly = pd.read_csv(ROOT / "data/processed/monthly.csv", index_col=0, parse_dates=True).loc["2004-01-01":"2026-10-01"]
+W1 = dict(VTI=20.82, VXUS=13.00, EQAL=4.76, IEF=12.43, SCHP=9.53, SGOV=10.20, SHY=13.81, VGIT=13.67)   # Table 1 weights (%)
+CASH = 1.78                                                                                         # cash earns nothing in WInS
+def profile(ws, cash=0.0):
+    tot = sum(ws.values()) + cash
+    r = sum(monthly[k] * v for k, v in ws.items()) / tot                                            # rebalanced monthly
+    r12 = (1 + r).rolling(12).apply(np.prod, raw=True) - 1
+    return dict(ret=(1 + r).prod() ** (12 / len(r)) - 1, vol=r.std() * np.sqrt(12), worst12=r12.min(),
+                worst12_end=str(r12.idxmin().date()), y2022=(1 + r.loc["2022"]).prod() - 1)
+import json  # noqa: E402
+dur = json.load(open(ROOT / "results/strategy_results.json"))["sleeve_duration"]
+eq = {k: W1[k] for k in ("VTI", "VXUS", "EQAL")}; bd = {k: W1[k] for k in ("IEF", "SCHP", "SGOV", "SHY", "VGIT")}
+for nm, ws, cash, d_ in (("Equity funds", eq, 0.0, None), ("Treasury funds", bd, 0.0, dur), ("Whole portfolio", W1, CASH, dur * sum(bd.values()) / 100)):
+    st = profile(ws, cash)
+    add("Table 2 (Section 2)", f"{nm}: return a year / volatility / worst 12 months (end) / 2022 / duration",
+        f"{st['ret']:.1%} / {st['vol']:.1%} / {st['worst12']:.1%} ({st['worst12_end']}) / {st['y2022']:.1%} / " + ("-" if d_ is None else f"{d_:.1f} years"),
+        "monthly returns Jan 2004-Oct 2026, Table 1 weights, compound annual return")
+
+# ---------------------------------------------------------------- inflation figures (FRED series stored in data/raw/fred)
+def fred_series(code):
+    x = pd.read_csv(ROOT / f"data/raw/fred/{code}.csv", index_col=0, parse_dates=True).iloc[:, 0]
+    return pd.to_numeric(x, errors="coerce").dropna()
+cpi = fred_series("CPIAUCSL")
+yoy = (cpi / cpi.reindex(cpi.index - pd.DateOffset(months=12)).set_axis(cpi.index) - 1).dropna()
+add("Inflation", f"CPI 12-month change, latest available ({yoy.index[-1]:%B %Y})", round(float(yoy.iloc[-1]), 4),
+    "CPIAUCSL matched by date; October 2025 CPI was not published, so October 2026 has no 12-month figure")
+be = fred_series("T5YIE")
+add("Inflation", f"Five-year breakeven inflation, latest ({be.index[-1].date()})", round(float(be.iloc[-1]), 2), "T5YIE, percent a year")
+add("Inflation", "Five-year breakeven inflation, October 2026 average", round(float(be.loc["2026-10"].mean()), 2), "T5YIE monthly mean")
+
 out = ROOT / "results/tables/final_report_figures.csv"
 with open(out, "w", newline="") as f:
     w = csv.DictWriter(f, fieldnames=["section", "figure", "value", "how"]); w.writeheader(); w.writerows(rows)

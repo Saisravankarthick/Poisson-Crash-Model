@@ -36,7 +36,9 @@ def main():
     cape = sh["PE10"].replace(0, np.nan)
     y10 = pd.concat([sh["Long Interest Rate"].replace(0, np.nan).loc[:"1953-03-01"], fred("GS10")])
     cpi = pd.concat([sh["Consumer Price Index"].replace(0, np.nan).dropna().loc[:"1946-12-01"], fred("CPIAUCSL")])
-    infl = (cpi / cpi.shift(12) - 1) * 100
+    # 12-month change matched by date, not by row: FRED has no CPI for October 2025 (not published), so a row shift
+    # would compare October 2026 with September 2025 (a 13-month change).
+    infl = (cpi / cpi.reindex(cpi.index - pd.DateOffset(months=12)).set_axis(cpi.index) - 1) * 100
     usrec = fred("USREC")
 
     def classify(e):
@@ -106,7 +108,7 @@ def main():
                          muJ=float(lr[jm].mean()), sdJ=float(lr[jm].std()),
                          lam_J_calm=float((jm.sum() - reg[jm].sum()) / t_calm), lam_J_turb=float(reg[jm].sum() / t_turb))
     out["now"] = dict(date=str(fred("DGS5").index[-1].date()), y5=float(fred("DGS5").iloc[-1]), y2=float(fred("DGS2").iloc[-1]),
-                      y10=float(fred("DGS10").iloc[-1]), tbill=float(fred("DTB3").iloc[-1]), cpi_yoy=float(infl.iloc[-1]),
+                      y10=float(fred("DGS10").iloc[-1]), tbill=float(fred("DTB3").iloc[-1]), cpi_yoy=float(infl.dropna().iloc[-1]), cpi_yoy_month=str(infl.dropna().index[-1].date()),
                       fed_funds=float(fred("FEDFUNDS").iloc[-1]), twd_per_usd=float(fred("DEXTAUS").iloc[-1]))
     reg.to_csv(PROC / "regime_probability.csv")
     json.dump(out, open(RES / "crash_events.json", "w"), indent=1, default=str)

@@ -40,3 +40,9 @@ Inflation,Cost rise 2027-2033 at 4% a year,0.2653,1.04^6 - 1
 Inflation,"$137,000 in 2027 dollars",108273,"137,000 / 1.04^6"
 Table 5 note,"Expected contribution lost to the five stock-crash types, LDCS",6268,"sum of expected_hit_stock_crashes, crash_impact_by_strategy.csv"
 Table 5 note,"Expected contribution lost to the five stock-crash types, Core-satellite",20679,"sum of expected_hit_stock_crashes, crash_impact_by_strategy.csv"
+Table 2 (Section 2),Equity funds: return a year / volatility / worst 12 months (end) / 2022 / duration,9.8% / 15.1% / -46.3% (2009-02-01) / -17.5% / -,"monthly returns Jan 2004-Oct 2026, Table 1 weights, compound annual return"
+Table 2 (Section 2),Treasury funds: return a year / volatility / worst 12 months (end) / 2022 / duration,2.4% / 3.4% / -9.1% (2022-10-01) / -8.2% / 4.1 years,"monthly returns Jan 2004-Oct 2026, Table 1 weights, compound annual return"
+Table 2 (Section 2),Whole portfolio: return a year / volatility / worst 12 months (end) / 2022 / duration,5.4% / 6.2% / -18.9% (2009-02-01) / -11.4% / 2.4 years,"monthly returns Jan 2004-Oct 2026, Table 1 weights, compound annual return"
+Inflation,"CPI 12-month change, latest available (September 2026)",0.0372,"CPIAUCSL matched by date; October 2025 CPI was not published, so October 2026 has no 12-month figure"
+Inflation,"Five-year breakeven inflation, latest (2026-11-23)",2.15,"T5YIE, percent a year"
+Inflation,"Five-year breakeven inflation, October 2026 average",2.4,T5YIE monthly mean
