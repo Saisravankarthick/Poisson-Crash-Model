@@ -62,12 +62,16 @@ LOCK_Y2 = 0.04                                     # S10C adds the promise to th
 SPREAD_52 = (EV["now"]["y5"] - EV["now"]["y2"]) / 100   # today's 5y-2y spread (0.08 pts); the model tracks the 5y yield only
 
 
-def simulate(RET, DY, name, y0=Y_NOW, lock_cond=True, band=None, trigger=True):
+LDCS_BAND = 0.02                                   # the IPS tolerance band, applied to LDCS (S10C) by default
+
+
+def simulate(RET, DY, name, y0=Y_NOW, lock_cond=True, band="ips", trigger=True):
     """RET: PATHS x MON x 8 monthly returns; DY: PATHS x MON yield changes.
     lock_cond: S10C locks in the promise only where the January 2031 2-year yield (5-year yield minus today's 5y-2y spread) is >= 4%.
-    band: if set (e.g. 0.02), check every month-end and rebalance to the rule's target when the equity share is more than `band`
+    band: "ips" = the IPS +/-2% band for S10C and none for the rivals; a number (e.g. 0.02) or None overrides. If set, check every month-end and rebalance to the rule's target when the equity share is more than `band`
           away from it (the IPS tolerance band).  trigger: extra review after a 20% fall in the equity sleeve."""
     if name in ("S0", "S0b"): return simulate_s0(RET, DY, name, y0)
+    if band == "ips": band = LDCS_BAND if name == "S10C" else None   # LDCS = cushion rule + IPS band + 20% review + 2031 lock-in
     n = RET.shape[0]
     V = np.full(n, 300000.0); L = None; Lf = None; lock = np.zeros(n, bool)
     e, _ = target(name, 0, V); w = weights(name, e)

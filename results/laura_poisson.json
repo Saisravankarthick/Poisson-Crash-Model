@@ -1424,9 +1424,9 @@
    "S10_shortfall_given_crash": 0.00019999999999997797,
    "S10_promise_broken_given_crash": 0.22130000000000005,
    "S10C_p_shortfall": 3.947239009894119e-06,
-   "S10C_p_promise_broken": 0.0014703465311857217,
+   "S10C_p_promise_broken": 0.0014940299652450885,
    "S10C_shortfall_given_crash": 0.00019999999999997797,
-   "S10C_promise_broken_given_crash": 0.07450000000000001
+   "S10C_promise_broken_given_crash": 0.07569999999999999
   },
   {
    "type": "T2",
@@ -1441,10 +1441,10 @@
    "S10_p_promise_broken": 0.0026643903734565634,
    "S10_shortfall_given_crash": 0.0020999999999999908,
    "S10_promise_broken_given_crash": 0.04590000000000005,
-   "S10C_p_shortfall": 0.00011609544110921843,
-   "S10C_p_promise_broken": 0.0014628025579761508,
-   "S10C_shortfall_given_crash": 0.0020000000000000018,
-   "S10C_promise_broken_given_crash": 0.0252
+   "S10C_p_shortfall": 8.70715808319106e-05,
+   "S10C_p_promise_broken": 0.001282854624256863,
+   "S10C_shortfall_given_crash": 0.0014999999999999458,
+   "S10C_promise_broken_given_crash": 0.02210000000000001
   },
   {
    "type": "T3",
@@ -1459,10 +1459,10 @@
    "S10_p_promise_broken": 0.024075049585611418,
    "S10_shortfall_given_crash": 0.05700000000000005,
    "S10_promise_broken_given_crash": 0.616,
-   "S10C_p_shortfall": 0.0019189690497622102,
-   "S10C_p_promise_broken": 0.02159719545618323,
-   "S10C_shortfall_given_crash": 0.04910000000000003,
-   "S10C_promise_broken_given_crash": 0.5526
+   "S10C_p_shortfall": 0.0017860872825688975,
+   "S10C_p_promise_broken": 0.019764208726369636,
+   "S10C_shortfall_given_crash": 0.04569999999999996,
+   "S10C_promise_broken_given_crash": 0.5057
   },
   {
    "type": "T3+",
@@ -1477,10 +1477,10 @@
    "S10_p_promise_broken": 0.003415843074322141,
    "S10_shortfall_given_crash": 0.00019999999999997797,
    "S10_promise_broken_given_crash": 0.08740000000000003,
-   "S10C_p_shortfall": 7.816574540782067e-06,
-   "S10C_p_promise_broken": 0.0011920276174693953,
-   "S10C_shortfall_given_crash": 0.00019999999999997797,
-   "S10C_promise_broken_given_crash": 0.03049999999999997
+   "S10C_p_shortfall": 3.908287270391034e-06,
+   "S10C_p_promise_broken": 0.0011294950211431344,
+   "S10C_shortfall_given_crash": 9.999999999998899e-05,
+   "S10C_promise_broken_given_crash": 0.028900000000000037
   },
   {
    "type": "T4",

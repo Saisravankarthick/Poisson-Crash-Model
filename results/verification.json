@@ -1328,8 +1328,8 @@
   {
    "group": "F affects",
    "check": "T1 S10C promise broken = P(occurs) x P(broken | crash)",
-   "computed": 0.0014703465311857217,
-   "reference": 0.0014703465311857217,
+   "computed": 0.0014940299652450885,
+   "reference": 0.0014940299652450885,
    "tolerance": 1e-09,
    "ok": true,
    "note": ""
@@ -1409,8 +1409,8 @@
   {
    "group": "F affects",
    "check": "T2 S10C shortfall = P(occurs) x P(short | crash)",
-   "computed": 0.00011609544110921843,
-   "reference": 0.00011609544110921843,
+   "computed": 8.70715808319106e-05,
+   "reference": 8.70715808319106e-05,
    "tolerance": 1e-09,
    "ok": true,
    "note": ""
@@ -1418,8 +1418,8 @@
   {
    "group": "F affects",
    "check": "T2 S10C promise broken = P(occurs) x P(broken | crash)",
-   "computed": 0.0014628025579761508,
-   "reference": 0.0014628025579761508,
+   "computed": 0.001282854624256863,
+   "reference": 0.001282854624256863,
    "tolerance": 1e-09,
    "ok": true,
    "note": ""
@@ -1499,8 +1499,8 @@
   {
    "group": "F affects",
    "check": "T3 S10C shortfall = P(occurs) x P(short | crash)",
-   "computed": 0.0019189690497622102,
-   "reference": 0.0019189690497622102,
+   "computed": 0.0017860872825688975,
+   "reference": 0.0017860872825688975,
    "tolerance": 1e-09,
    "ok": true,
    "note": ""
@@ -1508,8 +1508,8 @@
   {
    "group": "F affects",
    "check": "T3 S10C promise broken = P(occurs) x P(broken | crash)",
-   "computed": 0.02159719545618323,
-   "reference": 0.02159719545618323,
+   "computed": 0.019764208726369636,
+   "reference": 0.019764208726369636,
    "tolerance": 1e-09,
    "ok": true,
    "note": ""
@@ -1589,8 +1589,8 @@
   {
    "group": "F affects",
    "check": "T3+ S10C shortfall = P(occurs) x P(short | crash)",
-   "computed": 7.816574540782067e-06,
-   "reference": 7.816574540782067e-06,
+   "computed": 3.908287270391034e-06,
+   "reference": 3.908287270391034e-06,
    "tolerance": 1e-09,
    "ok": true,
    "note": ""
@@ -1598,8 +1598,8 @@
   {
    "group": "F affects",
    "check": "T3+ S10C promise broken = P(occurs) x P(broken | crash)",
-   "computed": 0.0011920276174693953,
-   "reference": 0.0011920276174693953,
+   "computed": 0.0011294950211431344,
+   "reference": 0.0011294950211431344,
    "tolerance": 1e-09,
    "ok": true,
    "note": ""
@@ -4199,8 +4199,8 @@
   {
    "group": "J replay link",
    "check": "T1 S10C: P(promise broken | crash) = 1 - replay promise kept",
-   "computed": 0.07450000000000001,
-   "reference": 0.07450000000000001,
+   "computed": 0.07569999999999999,
+   "reference": 0.07569999999999999,
    "tolerance": 0.0005,
    "ok": true,
    "note": ""
@@ -4244,8 +4244,8 @@
   {
    "group": "J replay link",
    "check": "T2 S10C: P(shortfall | crash) = 1 - replay funding certainty",
-   "computed": 0.0020000000000000018,
-   "reference": 0.0020000000000000018,
+   "computed": 0.0014999999999999458,
+   "reference": 0.0014999999999999458,
    "tolerance": 0.0005,
    "ok": true,
    "note": ""
@@ -4253,8 +4253,8 @@
   {
    "group": "J replay link",
    "check": "T2 S10C: P(promise broken | crash) = 1 - replay promise kept",
-   "computed": 0.0252,
-   "reference": 0.0252,
+   "computed": 0.02210000000000001,
+   "reference": 0.02210000000000001,
    "tolerance": 0.0005,
    "ok": true,
    "note": ""
@@ -4298,8 +4298,8 @@
   {
    "group": "J replay link",
    "check": "T3 S10C: P(shortfall | crash) = 1 - replay funding certainty",
-   "computed": 0.04910000000000003,
-   "reference": 0.04910000000000003,
+   "computed": 0.04569999999999996,
+   "reference": 0.04569999999999996,
    "tolerance": 0.0005,
    "ok": true,
    "note": ""
@@ -4307,8 +4307,8 @@
   {
    "group": "J replay link",
    "check": "T3 S10C: P(promise broken | crash) = 1 - replay promise kept",
-   "computed": 0.5526,
-   "reference": 0.5526,
+   "computed": 0.5057,
+   "reference": 0.5057,
    "tolerance": 0.0005,
    "ok": true,
    "note": ""
@@ -4352,8 +4352,8 @@
   {
    "group": "J replay link",
    "check": "T3+ S10C: P(shortfall | crash) = 1 - replay funding certainty",
-   "computed": 0.00019999999999997797,
-   "reference": 0.00019999999999997797,
+   "computed": 9.999999999998899e-05,
+   "reference": 9.999999999998899e-05,
    "tolerance": 0.0005,
    "ok": true,
    "note": ""
@@ -4361,8 +4361,8 @@
   {
    "group": "J replay link",
    "check": "T3+ S10C: P(promise broken | crash) = 1 - replay promise kept",
-   "computed": 0.03049999999999997,
-   "reference": 0.03049999999999997,
+   "computed": 0.028900000000000037,
+   "reference": 0.028900000000000037,
    "tolerance": 0.0005,
    "ok": true,
    "note": ""
@@ -4559,8 +4559,8 @@
   {
    "group": "K tables",
    "check": "strategy_summary H S10C funding certainty",
-   "computed": 0.9958,
-   "reference": 0.9958,
+   "computed": 0.9954,
+   "reference": 0.9954,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -4649,8 +4649,8 @@
   {
    "group": "K tables",
    "check": "strategy_summary S S10C funding certainty",
-   "computed": 0.8353,
-   "reference": 0.8353,
+   "computed": 0.8227,
+   "reference": 0.8227,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -4829,8 +4829,8 @@
   {
    "group": "K tables",
    "check": "strategy_summary J S10C funding certainty",
-   "computed": 0.9367,
-   "reference": 0.9367,
+   "computed": 0.9371,
+   "reference": 0.9371,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6080,8 +6080,8 @@
   {
    "group": "M paired",
    "check": "H S9: (LDCS-only minus rival-only funded paths)/n = difference in funding certainty",
-   "computed": 0.0083,
-   "reference": 0.008299999999999974,
+   "computed": 0.0079,
+   "reference": 0.007899999999999907,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6089,8 +6089,8 @@
   {
    "group": "M paired",
    "check": "H S9: LDCS funding certainty equals the stored Monte Carlo value",
-   "computed": 0.9958,
-   "reference": 0.9958,
+   "computed": 0.9954,
+   "reference": 0.9954,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6107,8 +6107,8 @@
   {
    "group": "M paired",
    "check": "H S7: (LDCS-only minus rival-only funded paths)/n = difference in funding certainty",
-   "computed": -0.0023,
-   "reference": -0.0022999999999999687,
+   "computed": -0.0027,
+   "reference": -0.0027000000000000357,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6116,8 +6116,8 @@
   {
    "group": "M paired",
    "check": "H S7: LDCS funding certainty equals the stored Monte Carlo value",
-   "computed": 0.9958,
-   "reference": 0.9958,
+   "computed": 0.9954,
+   "reference": 0.9954,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6134,8 +6134,8 @@
   {
    "group": "M paired",
    "check": "H S0: (LDCS-only minus rival-only funded paths)/n = difference in funding certainty",
-   "computed": -0.0003,
-   "reference": -0.00029999999999996696,
+   "computed": -0.0007,
+   "reference": -0.0007000000000000339,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6143,8 +6143,8 @@
   {
    "group": "M paired",
    "check": "H S0: LDCS funding certainty equals the stored Monte Carlo value",
-   "computed": 0.9958,
-   "reference": 0.9958,
+   "computed": 0.9954,
+   "reference": 0.9954,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6161,8 +6161,8 @@
   {
    "group": "M paired",
    "check": "H S1: (LDCS-only minus rival-only funded paths)/n = difference in funding certainty",
-   "computed": -0.0042,
-   "reference": -0.0041999999999999815,
+   "computed": -0.0046,
+   "reference": -0.0046000000000000485,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6170,8 +6170,8 @@
   {
    "group": "M paired",
    "check": "H S1: LDCS funding certainty equals the stored Monte Carlo value",
-   "computed": 0.9958,
-   "reference": 0.9958,
+   "computed": 0.9954,
+   "reference": 0.9954,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6188,8 +6188,8 @@
   {
    "group": "M paired",
    "check": "H S2: (LDCS-only minus rival-only funded paths)/n = difference in funding certainty",
-   "computed": 0.0023,
-   "reference": 0.0022999999999999687,
+   "computed": 0.0019,
+   "reference": 0.0018999999999999018,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6197,8 +6197,8 @@
   {
    "group": "M paired",
    "check": "H S2: LDCS funding certainty equals the stored Monte Carlo value",
-   "computed": 0.9958,
-   "reference": 0.9958,
+   "computed": 0.9954,
+   "reference": 0.9954,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6215,8 +6215,8 @@
   {
    "group": "M paired",
    "check": "H S6: (LDCS-only minus rival-only funded paths)/n = difference in funding certainty",
-   "computed": 0.0115,
-   "reference": 0.011500000000000066,
+   "computed": 0.0111,
+   "reference": 0.011099999999999999,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6224,8 +6224,8 @@
   {
    "group": "M paired",
    "check": "H S6: LDCS funding certainty equals the stored Monte Carlo value",
-   "computed": 0.9958,
-   "reference": 0.9958,
+   "computed": 0.9954,
+   "reference": 0.9954,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6242,8 +6242,8 @@
   {
    "group": "M paired",
    "check": "H S8: (LDCS-only minus rival-only funded paths)/n = difference in funding certainty",
-   "computed": 0.0487,
-   "reference": 0.048699999999999966,
+   "computed": 0.0483,
+   "reference": 0.0482999999999999,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6251,8 +6251,8 @@
   {
    "group": "M paired",
    "check": "H S8: LDCS funding certainty equals the stored Monte Carlo value",
-   "computed": 0.9958,
-   "reference": 0.9958,
+   "computed": 0.9954,
+   "reference": 0.9954,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6269,8 +6269,8 @@
   {
    "group": "M paired",
    "check": "H S4: (LDCS-only minus rival-only funded paths)/n = difference in funding certainty",
-   "computed": 0.041,
-   "reference": 0.041000000000000036,
+   "computed": 0.0406,
+   "reference": 0.04059999999999997,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6278,8 +6278,8 @@
   {
    "group": "M paired",
    "check": "H S4: LDCS funding certainty equals the stored Monte Carlo value",
-   "computed": 0.9958,
-   "reference": 0.9958,
+   "computed": 0.9954,
+   "reference": 0.9954,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6296,8 +6296,8 @@
   {
    "group": "M paired",
    "check": "S S9: (LDCS-only minus rival-only funded paths)/n = difference in funding certainty",
-   "computed": -0.068,
-   "reference": -0.06799999999999995,
+   "computed": -0.0806,
+   "reference": -0.0806,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6305,8 +6305,8 @@
   {
    "group": "M paired",
    "check": "S S9: LDCS funding certainty equals the stored Monte Carlo value",
-   "computed": 0.8353,
-   "reference": 0.8353,
+   "computed": 0.8227,
+   "reference": 0.8227,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6323,8 +6323,8 @@
   {
    "group": "M paired",
    "check": "S S7: (LDCS-only minus rival-only funded paths)/n = difference in funding certainty",
-   "computed": -0.0419,
-   "reference": -0.04189999999999994,
+   "computed": -0.0545,
+   "reference": -0.05449999999999999,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6332,8 +6332,8 @@
   {
    "group": "M paired",
    "check": "S S7: LDCS funding certainty equals the stored Monte Carlo value",
-   "computed": 0.8353,
-   "reference": 0.8353,
+   "computed": 0.8227,
+   "reference": 0.8227,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6350,8 +6350,8 @@
   {
    "group": "M paired",
    "check": "S S0: (LDCS-only minus rival-only funded paths)/n = difference in funding certainty",
-   "computed": 0.0149,
-   "reference": 0.014900000000000024,
+   "computed": 0.0023,
+   "reference": 0.0022999999999999687,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6359,8 +6359,8 @@
   {
    "group": "M paired",
    "check": "S S0: LDCS funding certainty equals the stored Monte Carlo value",
-   "computed": 0.8353,
-   "reference": 0.8353,
+   "computed": 0.8227,
+   "reference": 0.8227,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6377,8 +6377,8 @@
   {
    "group": "M paired",
    "check": "S S1: (LDCS-only minus rival-only funded paths)/n = difference in funding certainty",
-   "computed": 0.5891,
-   "reference": 0.5891000000000001,
+   "computed": 0.5765,
+   "reference": 0.5765,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6386,8 +6386,8 @@
   {
    "group": "M paired",
    "check": "S S1: LDCS funding certainty equals the stored Monte Carlo value",
-   "computed": 0.8353,
-   "reference": 0.8353,
+   "computed": 0.8227,
+   "reference": 0.8227,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6404,8 +6404,8 @@
   {
    "group": "M paired",
    "check": "S S2: (LDCS-only minus rival-only funded paths)/n = difference in funding certainty",
-   "computed": 0.2747,
-   "reference": 0.27470000000000006,
+   "computed": 0.2621,
+   "reference": 0.2621,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6413,8 +6413,8 @@
   {
    "group": "M paired",
    "check": "S S2: LDCS funding certainty equals the stored Monte Carlo value",
-   "computed": 0.8353,
-   "reference": 0.8353,
+   "computed": 0.8227,
+   "reference": 0.8227,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6431,8 +6431,8 @@
   {
    "group": "M paired",
    "check": "S S6: (LDCS-only minus rival-only funded paths)/n = difference in funding certainty",
-   "computed": -0.0613,
-   "reference": -0.06129999999999991,
+   "computed": -0.0739,
+   "reference": -0.07389999999999997,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6440,8 +6440,8 @@
   {
    "group": "M paired",
    "check": "S S6: LDCS funding certainty equals the stored Monte Carlo value",
-   "computed": 0.8353,
-   "reference": 0.8353,
+   "computed": 0.8227,
+   "reference": 0.8227,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6458,8 +6458,8 @@
   {
    "group": "M paired",
    "check": "S S8: (LDCS-only minus rival-only funded paths)/n = difference in funding certainty",
-   "computed": 0.074,
-   "reference": 0.07400000000000007,
+   "computed": 0.0614,
+   "reference": 0.06140000000000001,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6467,8 +6467,8 @@
   {
    "group": "M paired",
    "check": "S S8: LDCS funding certainty equals the stored Monte Carlo value",
-   "computed": 0.8353,
-   "reference": 0.8353,
+   "computed": 0.8227,
+   "reference": 0.8227,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6485,8 +6485,8 @@
   {
    "group": "M paired",
    "check": "S S4: (LDCS-only minus rival-only funded paths)/n = difference in funding certainty",
-   "computed": -0.0633,
-   "reference": -0.06329999999999991,
+   "computed": -0.0759,
+   "reference": -0.07589999999999997,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6494,8 +6494,8 @@
   {
    "group": "M paired",
    "check": "S S4: LDCS funding certainty equals the stored Monte Carlo value",
-   "computed": 0.8353,
-   "reference": 0.8353,
+   "computed": 0.8227,
+   "reference": 0.8227,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6512,8 +6512,8 @@
   {
    "group": "M paired",
    "check": "J S9: (LDCS-only minus rival-only funded paths)/n = difference in funding certainty",
-   "computed": 0.09,
-   "reference": 0.08999999999999997,
+   "computed": 0.0904,
+   "reference": 0.09040000000000004,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6521,8 +6521,8 @@
   {
    "group": "M paired",
    "check": "J S9: LDCS funding certainty equals the stored Monte Carlo value",
-   "computed": 0.9367,
-   "reference": 0.9367,
+   "computed": 0.9371,
+   "reference": 0.9371,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6539,8 +6539,8 @@
   {
    "group": "M paired",
    "check": "J S7: (LDCS-only minus rival-only funded paths)/n = difference in funding certainty",
-   "computed": 0.0088,
-   "reference": 0.00880000000000003,
+   "computed": 0.0092,
+   "reference": 0.009200000000000097,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6548,8 +6548,8 @@
   {
    "group": "M paired",
    "check": "J S7: LDCS funding certainty equals the stored Monte Carlo value",
-   "computed": 0.9367,
-   "reference": 0.9367,
+   "computed": 0.9371,
+   "reference": 0.9371,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6566,8 +6566,8 @@
   {
    "group": "M paired",
    "check": "J S0: (LDCS-only minus rival-only funded paths)/n = difference in funding certainty",
-   "computed": 0.0138,
-   "reference": 0.013799999999999923,
+   "computed": 0.0142,
+   "reference": 0.01419999999999999,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6575,8 +6575,8 @@
   {
    "group": "M paired",
    "check": "J S0: LDCS funding certainty equals the stored Monte Carlo value",
-   "computed": 0.9367,
-   "reference": 0.9367,
+   "computed": 0.9371,
+   "reference": 0.9371,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6593,8 +6593,8 @@
   {
    "group": "M paired",
    "check": "J S1: (LDCS-only minus rival-only funded paths)/n = difference in funding certainty",
-   "computed": -0.0633,
-   "reference": -0.06330000000000002,
+   "computed": -0.0629,
+   "reference": -0.06289999999999996,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6602,8 +6602,8 @@
   {
    "group": "M paired",
    "check": "J S1: LDCS funding certainty equals the stored Monte Carlo value",
-   "computed": 0.9367,
-   "reference": 0.9367,
+   "computed": 0.9371,
+   "reference": 0.9371,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6620,8 +6620,8 @@
   {
    "group": "M paired",
    "check": "J S2: (LDCS-only minus rival-only funded paths)/n = difference in funding certainty",
-   "computed": -0.0382,
-   "reference": -0.03820000000000001,
+   "computed": -0.0378,
+   "reference": -0.037799999999999945,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6629,8 +6629,8 @@
   {
    "group": "M paired",
    "check": "J S2: LDCS funding certainty equals the stored Monte Carlo value",
-   "computed": 0.9367,
-   "reference": 0.9367,
+   "computed": 0.9371,
+   "reference": 0.9371,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6647,8 +6647,8 @@
   {
    "group": "M paired",
    "check": "J S6: (LDCS-only minus rival-only funded paths)/n = difference in funding certainty",
-   "computed": 0.0911,
-   "reference": 0.09109999999999996,
+   "computed": 0.0915,
+   "reference": 0.09150000000000003,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6656,8 +6656,8 @@
   {
    "group": "M paired",
    "check": "J S6: LDCS funding certainty equals the stored Monte Carlo value",
-   "computed": 0.9367,
-   "reference": 0.9367,
+   "computed": 0.9371,
+   "reference": 0.9371,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6674,8 +6674,8 @@
   {
    "group": "M paired",
    "check": "J S8: (LDCS-only minus rival-only funded paths)/n = difference in funding certainty",
-   "computed": 0.1828,
-   "reference": 0.18279999999999996,
+   "computed": 0.1832,
+   "reference": 0.18320000000000003,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6683,8 +6683,8 @@
   {
    "group": "M paired",
    "check": "J S8: LDCS funding certainty equals the stored Monte Carlo value",
-   "computed": 0.9367,
-   "reference": 0.9367,
+   "computed": 0.9371,
+   "reference": 0.9371,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6701,8 +6701,8 @@
   {
    "group": "M paired",
    "check": "J S4: (LDCS-only minus rival-only funded paths)/n = difference in funding certainty",
-   "computed": 0.1691,
-   "reference": 0.16910000000000003,
+   "computed": 0.1695,
+   "reference": 0.1695000000000001,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6710,8 +6710,8 @@
   {
    "group": "M paired",
    "check": "J S4: LDCS funding certainty equals the stored Monte Carlo value",
-   "computed": 0.9367,
-   "reference": 0.9367,
+   "computed": 0.9371,
+   "reference": 0.9371,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -7106,8 +7106,8 @@
   {
    "group": "M joint Poisson",
    "check": "S10C joint shortfall recomputed from the crash table",
-   "computed": 0.0020690614732642,
-   "reference": 0.0020690614732642603,
+   "computed": 0.0019032475585232,
+   "reference": 0.0019032475585232492,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -7304,8 +7304,8 @@
   {
    "group": "M Markov",
    "check": "S10C: sum of share x conditional shortfall = case J shortfall",
-   "computed": 0.06329999999999994,
-   "reference": 0.06330000000000002,
+   "computed": 0.06289999999999997,
+   "reference": 0.06289999999999996,
    "tolerance": 1e-09,
    "ok": true,
    "note": ""
@@ -7313,8 +7313,8 @@
   {
    "group": "M Markov",
    "check": "S10C: sum of share x conditional broken promise = case J broken promise",
-   "computed": 0.1629,
-   "reference": 0.16290000000000004,
+   "computed": 0.16569999999999996,
+   "reference": 0.16569999999999996,
    "tolerance": 1e-09,
    "ok": true,
    "note": ""
@@ -7484,8 +7484,8 @@
   {
    "group": "N crash impact",
    "check": "T1 S10C: joint broken promise = P(type) x (1 - replay promise kept)",
-   "computed": 0.0014703465311857,
-   "reference": 0.0014703465311857163,
+   "computed": 0.001494029965245,
+   "reference": 0.001494029965245083,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -7493,8 +7493,8 @@
   {
    "group": "N crash impact",
    "check": "T1 S10C: contribution hit = no-crash median - replay median",
-   "computed": 44479.70698915713,
-   "reference": 44479.70698915713,
+   "computed": 43424.93418499414,
+   "reference": 43424.93418499414,
    "tolerance": 1e-06,
    "ok": true,
    "note": ""
@@ -7727,8 +7727,8 @@
   {
    "group": "N crash impact",
    "check": "T2 S10C: joint broken promise = P(type) x (1 - replay promise kept)",
-   "computed": 0.0014628025579761,
-   "reference": 0.0014628025579761493,
+   "computed": 0.0012828546242568,
+   "reference": 0.0012828546242568616,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -7736,8 +7736,8 @@
   {
    "group": "N crash impact",
    "check": "T2 S10C: contribution hit = no-crash median - replay median",
-   "computed": 13241.4539748159,
-   "reference": 13241.4539748159,
+   "computed": 11556.414866554607,
+   "reference": 11556.414866554609,
    "tolerance": 1e-06,
    "ok": true,
    "note": ""
@@ -7970,8 +7970,8 @@
   {
    "group": "N crash impact",
    "check": "T3 S10C: joint broken promise = P(type) x (1 - replay promise kept)",
-   "computed": 0.0215971954561832,
-   "reference": 0.021597195456183205,
+   "computed": 0.0197642087263696,
+   "reference": 0.019764208726369612,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -7979,8 +7979,8 @@
   {
    "group": "N crash impact",
    "check": "T3 S10C: contribution hit = no-crash median - replay median",
-   "computed": 80343.21138794039,
-   "reference": 80343.21138794039,
+   "computed": 75942.31962080067,
+   "reference": 75942.31962080067,
    "tolerance": 1e-06,
    "ok": true,
    "note": ""
@@ -8213,8 +8213,8 @@
   {
    "group": "N crash impact",
    "check": "T3+ S10C: joint broken promise = P(type) x (1 - replay promise kept)",
-   "computed": 0.0011920276174693,
-   "reference": 0.0011920276174693942,
+   "computed": 0.0011294950211431,
+   "reference": 0.0011294950211431334,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -8222,8 +8222,8 @@
   {
    "group": "N crash impact",
    "check": "T3+ S10C: contribution hit = no-crash median - replay median",
-   "computed": 44225.9895953238,
-   "reference": 44225.9895953238,
+   "computed": 42704.948434106016,
+   "reference": 42704.948434106016,
    "tolerance": 1e-06,
    "ok": true,
    "note": ""
@@ -8465,8 +8465,8 @@
   {
    "group": "N crash impact",
    "check": "T4 S10C: contribution hit = no-crash median - replay median",
-   "computed": 3412.241083705623,
-   "reference": 3412.241083705623,
+   "computed": 2638.193192140432,
+   "reference": 2638.193192140432,
    "tolerance": 1e-06,
    "ok": true,
    "note": ""
@@ -8708,8 +8708,8 @@
   {
    "group": "N crash impact",
    "check": "T5 S10C: contribution hit = no-crash median - replay median",
-   "computed": -50136.0326875911,
-   "reference": -50136.0326875911,
+   "computed": -50561.04304490291,
+   "reference": -50561.04304490291,
    "tolerance": 1e-06,
    "ok": true,
    "note": ""
@@ -8933,8 +8933,8 @@
   {
    "group": "N crash impact",
    "check": "S10C: total joint broken promise equals the joint Poisson table",
-   "computed": 0.025744605331656654,
-   "reference": 0.0257446053316566,
+   "computed": 0.02369282150585688,
+   "reference": 0.0236928215058568,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -8942,8 +8942,8 @@
   {
    "group": "N crash impact",
    "check": "S10C: expected hit = sum of P(type) x hit",
-   "computed": -4498.449996477815,
-   "reference": -4498.449996477825,
+   "computed": -4973.271313904291,
+   "reference": -4973.271313904301,
    "tolerance": 1e-06,
    "ok": true,
    "note": ""
@@ -8951,8 +8951,8 @@
   {
    "group": "N crash impact",
    "check": "S10C: stock-crash expected hit = sum over T1-T4 of P(type) x hit",
-   "computed": 6648.378801715042,
-   "reference": 6648.378801715032,
+   "computed": 6268.05075462637,
+   "reference": 6268.05075462636,
    "tolerance": 1e-06,
    "ok": true,
    "note": ""
@@ -9256,6 +9256,60 @@
   },
   {
    "group": "N IPS variants",
+   "check": "no_band: lock-in share within [0, 1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N IPS variants",
+   "check": "no_band: crash resilience and promise reliability within [0, 1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N IPS variants",
+   "check": "no_band: LDCS keeps first place under equal weights",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N IPS variants",
+   "check": "band_only: lock-in share within [0, 1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N IPS variants",
+   "check": "band_only: crash resilience and promise reliability within [0, 1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N IPS variants",
+   "check": "band_only: LDCS keeps first place under equal weights",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N IPS variants",
    "check": "headline: lock-in share within [0, 1]",
    "computed": 1.0,
    "reference": 1.0,
@@ -9275,60 +9329,6 @@
   {
    "group": "N IPS variants",
    "check": "headline: LDCS keeps first place under equal weights",
-   "computed": 1.0,
-   "reference": 1.0,
-   "tolerance": 0,
-   "ok": true,
-   "note": ""
-  },
-  {
-   "group": "N IPS variants",
-   "check": "band: lock-in share within [0, 1]",
-   "computed": 1.0,
-   "reference": 1.0,
-   "tolerance": 0,
-   "ok": true,
-   "note": ""
-  },
-  {
-   "group": "N IPS variants",
-   "check": "band: crash resilience and promise reliability within [0, 1]",
-   "computed": 1.0,
-   "reference": 1.0,
-   "tolerance": 0,
-   "ok": true,
-   "note": ""
-  },
-  {
-   "group": "N IPS variants",
-   "check": "band: LDCS keeps first place under equal weights",
-   "computed": 1.0,
-   "reference": 1.0,
-   "tolerance": 0,
-   "ok": true,
-   "note": ""
-  },
-  {
-   "group": "N IPS variants",
-   "check": "band_trigger: lock-in share within [0, 1]",
-   "computed": 1.0,
-   "reference": 1.0,
-   "tolerance": 0,
-   "ok": true,
-   "note": ""
-  },
-  {
-   "group": "N IPS variants",
-   "check": "band_trigger: crash resilience and promise reliability within [0, 1]",
-   "computed": 1.0,
-   "reference": 1.0,
-   "tolerance": 0,
-   "ok": true,
-   "note": ""
-  },
-  {
-   "group": "N IPS variants",
-   "check": "band_trigger: LDCS keeps first place under equal weights",
    "computed": 1.0,
    "reference": 1.0,
    "tolerance": 0,
@@ -9374,8 +9374,8 @@
   {
    "group": "N IPS variants",
    "check": "headline version equals the stored S10C results (promise reliability)",
-   "computed": 0.8904500000000001,
-   "reference": 0.8904500000000001,
+   "computed": 0.8961250000000001,
+   "reference": 0.8961250000000001,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
