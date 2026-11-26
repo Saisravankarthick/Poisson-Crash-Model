@@ -17,4 +17,5 @@ try:
 except SystemExit as e:
     if e.code:
         raise
+runpy.run_module("final_report_figures", run_name="__main__")  # figures quoted in the Final Report
 runpy.run_module("make_report", run_name="__main__")     # writes report/*.md from the results
