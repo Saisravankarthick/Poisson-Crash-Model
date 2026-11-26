@@ -57,5 +57,6 @@ Every chart in `figures/`, the table behind it in `results/tables/`, and the fil
 | [INTERCONNECTIONS.md](INTERCONNECTIONS.md) | How the Poisson, Markov and Monte Carlo layers connect, and how this repository relates to the two earlier ones |
 | [DATA.md](DATA.md) | Every input and output file, with sources, row counts and proxy validation |
 | [SENSITIVITY.md](SENSITIVITY.md) | How λ changes with the crash threshold and the length of history |
+| [MATHEMATICS.md](MATHEMATICS.md) | Every formula, case and statistical tool derived from first principles, with worked examples from the results and APA references |
 | [ROBUSTNESS.md](ROBUSTNESS.md) | Nine-strategy scoreboard with one-line criterion definitions, random-weight and seed-stability tests, paired tests, joint Poisson shortfall, Poisson assumption tests, Markov conditional shortfall |
 | [../docs/Poisson_Crash_Model_Final_Report.pdf](../docs/Poisson_Crash_Model_Final_Report.pdf) | The same material as one printable PDF |

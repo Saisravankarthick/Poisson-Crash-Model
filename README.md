@@ -4,7 +4,7 @@ How often could a market crash hit **Laura Gao's** portfolio, how much could it 
 
 Team Parallax · Wharton Global High School Investment Competition 2026–27. This is the companion code to the Research Pack, Section 8 (rebuilt).
 
-**Start here: [`report/REPORT.md`](report/REPORT.md)**, the final report with every graph and the data behind it. Also: [how the models connect](report/INTERCONNECTIONS.md) · [data catalogue](report/DATA.md) · [sensitivity](report/SENSITIVITY.md) · [**strategy ranking and robustness tests**](report/ROBUSTNESS.md) · [index of every figure and table](report/INDEX.md) · [final report as one PDF](docs/Poisson_Crash_Model_Final_Report.pdf).
+**Start here: [`report/REPORT.md`](report/REPORT.md)**, the final report with every graph and the data behind it. Also: [how the models connect](report/INTERCONNECTIONS.md) · [data catalogue](report/DATA.md) · [sensitivity](report/SENSITIVITY.md) · [**strategy ranking and robustness tests**](report/ROBUSTNESS.md) · [**mathematics and methods, derived from scratch**](report/MATHEMATICS.md) · [index of every figure and table](report/INDEX.md) · [final report as one PDF](docs/Poisson_Crash_Model_Final_Report.pdf).
 
 ## What's here
 
@@ -137,7 +137,7 @@ These are upper bounds, because they assume the worst timing.
 | S4 All-equity | 6.50 / 6.80 / 5.12 | 2% | 5% | 13.69% |
 
 - **Seeds:** the whole Monte Carlo (four cases, six crash replays, 10,000 paths) re-run on 20 fresh seeds puts LDCS first under all three weightings every time.
-- **Paired tests** on identical paths, the **Poisson assumption tests** (dispersion by year and decade, exponential gaps) and the **Markov conditional shortfall** are in [`report/ROBUSTNESS.md`](report/ROBUSTNESS.md), with the one-line definition of each criterion and the limits of these tests.
+- **Paired tests** on identical paths, the **Poisson assumption tests** (dispersion by year and decade, exponential gaps) and the **Markov conditional shortfall** are in [`report/ROBUSTNESS.md`](report/ROBUSTNESS.md), with the one-line definition of each criterion and the limits of these tests. [`report/MATHEMATICS.md`](report/MATHEMATICS.md) derives every formula behind them: the annuity-due reserve, duration, the strategy rules (with a proof that the cushion rule protects the floor), the four Monte Carlo cases, the six crash replays, McNemar's test, the Dirichlet weights, the Poisson process and Garwood interval, compound Poisson damage, the dispersion and Kolmogorov–Smirnov tests and the Hamilton regime model.
 - With all ten original strategies LDCS ties the calendar glide path S9A on equal weights (4.00 each); leaving out our own two earlier versions is what makes the first place clear.
 
 ## Verification
