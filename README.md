@@ -230,6 +230,12 @@ Proxies are used before Dec 2016 and validated against the real funds (correlati
 - Worst-timing probabilities are upper bounds.
 - USD/TWD currency risk is analysed but not simulated.
 
+## Authorship and AI use
+
+Team Parallax (Wharton Global High School Investment Competition 2026–27) designed the strategy, chose the assumptions, the crash definitions, the strategy set and the scoring criteria, and made every recommendation. We used Claude (Anthropic), a generative AI assistant, to help write, test and document the code in this repository, run the simulations and draft the methods documents; commits it helped write carry a `Co-Authored-By: Claude` line. The team reviewed the results and is responsible for them. Methods taken from published work are cited in [`report/MATHEMATICS.md`](report/MATHEMATICS.md).
+
+Suggested APA citation of this repository: Team Parallax. (2026). *Poisson crash model* [Computer software]. GitHub.
+
 ## References
 
 - Garwood (1936), *Biometrika* 28.

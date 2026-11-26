@@ -110,7 +110,9 @@ def simulate(RET, DY, name, y0=Y_NOW, lock_cond=True, band="ips", trigger=True):
     y33 = np.maximum(y0 + DY.sum(1), 0.0025)
     ladder = PMT * (1 - (1 + y33) ** -NP) / y33 * (1 + y33)
     if L is None: L = 0.5 * np.maximum(Vy["pre2031"] - pv_liab(4), 0) * (1 + R) ** 2
-    return dict(V33=V33, ladder=ladder, y33=y33, L=L, V31=Vy["pre2031"], mdd=mdd, eshare=eshare, reviews=reviews, lock=lock)
+    Vy[6] = V33
+    return dict(V33=V33, ladder=ladder, y33=y33, L=L, V31=Vy["pre2031"], mdd=mdd, eshare=eshare, reviews=reviews, lock=lock,
+                Vy={k: v for k, v in Vy.items() if k != "pre2031"})
 
 # ---------- S0: bucket ladder ----------
 # Three Treasury buckets matched to the payment years (B1 2033-35, B2 2036-39, B3 2040-42), filled in that order; whatever is
