@@ -8,9 +8,13 @@ import robustness
 robustness.main()                                          # step 4: ranking robustness (about 3 minutes)
 figures.main()
 try:
-    runpy.run_module("verify", run_name="__main__")      # independent checks; raises SystemExit
+    runpy.run_module("verify", run_name="__main__")      # first pass writes verification.json (needed by figures_more)
+except SystemExit:
+    pass                                                   # table-on-disk checks can fail here: figures_more rewrites those tables next
+figures_more.main()                                        # charts 07-15 and the CSV tables
+try:
+    runpy.run_module("verify", run_name="__main__")      # final pass on the finished tables; stops the run if any check fails
 except SystemExit as e:
     if e.code:
         raise
-figures_more.main()                                        # charts 07-15 and the CSV tables (after verify so verification_checks.csv exists)
 runpy.run_module("make_report", run_name="__main__")     # writes report/*.md from the results

@@ -8,7 +8,7 @@ T1 Recession bear (2007-11 to 2009-02),worst,S8,0.9838,15174.11551672392
 T1 Recession bear (2007-11 to 2009-02),worst,S9,0.7724,45186.318067522836
 T1 Recession bear (2007-11 to 2009-02),worst,S9A,0.9702,107522.37210096134
 T1 Recession bear (2007-11 to 2009-02),worst,S10,0.9998,85276.28913414251
-T1 Recession bear (2007-11 to 2009-02),worst,S10C,0.9998,130485.80243084126
+T1 Recession bear (2007-11 to 2009-02),worst,S10C,0.9998,111789.73773044947
 T1 Recession bear (2007-11 to 2009-02),early,S1,1.0,72916.21179179533
 T1 Recession bear (2007-11 to 2009-02),early,S2,0.9997,123361.04529518023
 T1 Recession bear (2007-11 to 2009-02),early,S4,0.5672,24468.788002914953
@@ -18,7 +18,7 @@ T1 Recession bear (2007-11 to 2009-02),early,S8,0.5245,3042.3870914966683
 T1 Recession bear (2007-11 to 2009-02),early,S9,0.8874,85041.30052075302
 T1 Recession bear (2007-11 to 2009-02),early,S9A,0.9087,67928.66244513856
 T1 Recession bear (2007-11 to 2009-02),early,S10,0.9629,74607.6740562538
-T1 Recession bear (2007-11 to 2009-02),early,S10C,0.9579,68447.97432704602
+T1 Recession bear (2007-11 to 2009-02),early,S10C,0.9614,73809.85209293212
 T2 Exogenous V-shock (2020-02 to 2020-03),worst,S1,1.0,74009.11618018366
 T2 Exogenous V-shock (2020-02 to 2020-03),worst,S2,0.9978,104515.35795280949
 T2 Exogenous V-shock (2020-02 to 2020-03),worst,S4,0.8747,232746.50519405218
@@ -28,7 +28,7 @@ T2 Exogenous V-shock (2020-02 to 2020-03),worst,S8,0.9537,148851.4194005109
 T2 Exogenous V-shock (2020-02 to 2020-03),worst,S9,0.9659,152517.1404758622
 T2 Exogenous V-shock (2020-02 to 2020-03),worst,S9A,0.99,155680.20561571413
 T2 Exogenous V-shock (2020-02 to 2020-03),worst,S10,0.9979,136111.48157303763
-T2 Exogenous V-shock (2020-02 to 2020-03),worst,S10C,0.9981,146652.70646784897
+T2 Exogenous V-shock (2020-02 to 2020-03),worst,S10C,0.998,143027.9907447907
 T2 Exogenous V-shock (2020-02 to 2020-03),early,S1,1.0,74225.10851613252
 T2 Exogenous V-shock (2020-02 to 2020-03),early,S2,0.9968,100015.13814635403
 T2 Exogenous V-shock (2020-02 to 2020-03),early,S4,0.9086,292277.2483132793
@@ -38,7 +38,7 @@ T2 Exogenous V-shock (2020-02 to 2020-03),early,S8,0.848,85551.39645944064
 T2 Exogenous V-shock (2020-02 to 2020-03),early,S9,0.9763,170175.37124348473
 T2 Exogenous V-shock (2020-02 to 2020-03),early,S9A,0.9852,142163.47922314436
 T2 Exogenous V-shock (2020-02 to 2020-03),early,S10,0.9891,126703.80689554295
-T2 Exogenous V-shock (2020-02 to 2020-03),early,S10C,0.9883,117337.34367081802
+T2 Exogenous V-shock (2020-02 to 2020-03),early,S10C,0.9886,121300.96559599426
 T3 Inflation/rate shock (2022-01 to 2022-09),worst,S1,1.0,71396.44145101929
 T3 Inflation/rate shock (2022-01 to 2022-09),worst,S2,0.8931,38885.61563154019
 T3 Inflation/rate shock (2022-01 to 2022-09),worst,S4,0.8176,163072.09715187649
@@ -48,7 +48,7 @@ T3 Inflation/rate shock (2022-01 to 2022-09),worst,S8,0.7448,97276.79760307464
 T3 Inflation/rate shock (2022-01 to 2022-09),worst,S9,0.8904,86427.66026962546
 T3 Inflation/rate shock (2022-01 to 2022-09),worst,S9A,0.9356,87013.6450376315
 T3 Inflation/rate shock (2022-01 to 2022-09),worst,S10,0.943,71105.63242605928
-T3 Inflation/rate shock (2022-01 to 2022-09),worst,S10C,0.9536,78754.792180079
+T3 Inflation/rate shock (2022-01 to 2022-09),worst,S10C,0.9509,75926.23333166621
 T3 Inflation/rate shock (2022-01 to 2022-09),early,S1,1.0,72430.46612206695
 T3 Inflation/rate shock (2022-01 to 2022-09),early,S2,0.9519,55487.699135127594
 T3 Inflation/rate shock (2022-01 to 2022-09),early,S4,0.8827,244510.84411934123
@@ -58,7 +58,7 @@ T3 Inflation/rate shock (2022-01 to 2022-09),early,S8,0.7736,43542.804013714456
 T3 Inflation/rate shock (2022-01 to 2022-09),early,S9,0.943,124539.53279420518
 T3 Inflation/rate shock (2022-01 to 2022-09),early,S9A,0.955,98369.53619307245
 T3 Inflation/rate shock (2022-01 to 2022-09),early,S10,0.9427,69347.9750989365
-T3 Inflation/rate shock (2022-01 to 2022-09),early,S10C,0.9387,63780.45276656709
+T3 Inflation/rate shock (2022-01 to 2022-09),early,S10C,0.9387,63859.66256541203
 T3+ Severe inflation shock (1973-01 to 1974-09),worst,S1,1.0,125290.95819634973
 T3+ Severe inflation shock (1973-01 to 1974-09),worst,S2,0.9999,120561.93566474004
 T3+ Severe inflation shock (1973-01 to 1974-09),worst,S4,0.3244,-48326.37850717091
@@ -68,7 +68,7 @@ T3+ Severe inflation shock (1973-01 to 1974-09),worst,S8,0.9823,14373.1599653722
 T3+ Severe inflation shock (1973-01 to 1974-09),worst,S9,0.8272,56844.19123454523
 T3+ Severe inflation shock (1973-01 to 1974-09),worst,S9A,0.9755,110041.83466744097
 T3+ Severe inflation shock (1973-01 to 1974-09),worst,S10,0.9998,88382.44446936104
-T3+ Severe inflation shock (1973-01 to 1974-09),worst,S10C,0.9998,128960.58373730071
+T3+ Severe inflation shock (1973-01 to 1974-09),worst,S10C,0.9998,112043.4551242828
 T3+ Severe inflation shock (1973-01 to 1974-09),early,S1,1.0,116238.47520815145
 T3+ Severe inflation shock (1973-01 to 1974-09),early,S2,0.9995,112991.4008079468
 T3+ Severe inflation shock (1973-01 to 1974-09),early,S4,0.4908,-3520.3531609324855
@@ -78,7 +78,7 @@ T3+ Severe inflation shock (1973-01 to 1974-09),early,S8,0.4059,-9042.0739835208
 T3+ Severe inflation shock (1973-01 to 1974-09),early,S9,0.8682,72353.7389419825
 T3+ Severe inflation shock (1973-01 to 1974-09),early,S9A,0.8971,58595.046673812845
 T3+ Severe inflation shock (1973-01 to 1974-09),early,S10,0.9688,71177.91528288083
-T3+ Severe inflation shock (1973-01 to 1974-09),early,S10C,0.9656,65644.90442893346
+T3+ Severe inflation shock (1973-01 to 1974-09),early,S10C,0.9656,65764.02719843594
 T4 Valuation bust (2000-09 to 2002-09),worst,S1,1.0,90986.3559422546
 T4 Valuation bust (2000-09 to 2002-09),worst,S2,1.0,183442.97310818412
 T4 Valuation bust (2000-09 to 2002-09),worst,S4,0.3054,-50303.405483977054
@@ -88,7 +88,7 @@ T4 Valuation bust (2000-09 to 2002-09),worst,S8,0.9998,38078.8200594064
 T4 Valuation bust (2000-09 to 2002-09),worst,S9,0.9358,94470.02090580418
 T4 Valuation bust (2000-09 to 2002-09),worst,S9A,0.9954,151936.95213639294
 T4 Valuation bust (2000-09 to 2002-09),worst,S10,1.0,129466.98756864411
-T4 Valuation bust (2000-09 to 2002-09),worst,S10C,1.0,171163.70018557634
+T4 Valuation bust (2000-09 to 2002-09),worst,S10C,1.0,152857.20363590098
 T4 Valuation bust (2000-09 to 2002-09),early,S1,1.0,85828.75098177855
 T4 Valuation bust (2000-09 to 2002-09),early,S2,1.0,165136.9330361265
 T4 Valuation bust (2000-09 to 2002-09),early,S4,0.5331,9815.277899400477
@@ -98,7 +98,7 @@ T4 Valuation bust (2000-09 to 2002-09),early,S8,0.7475,28334.0398704205
 T4 Valuation bust (2000-09 to 2002-09),early,S9,0.9503,111833.3907982785
 T4 Valuation bust (2000-09 to 2002-09),early,S9A,0.9771,97879.67145240956
 T4 Valuation bust (2000-09 to 2002-09),early,S10,0.9967,115047.00500787061
-T4 Valuation bust (2000-09 to 2002-09),early,S10C,0.9965,106510.059907516
+T4 Valuation bust (2000-09 to 2002-09),early,S10C,0.9967,114952.53075276036
 T5 Falling-rate shock (2019-01 to 2020-07),worst,S1,1.0,73160.3557705131
 T5 Falling-rate shock (2019-01 to 2020-07),worst,S2,1.0,133368.62690203614
 T5 Falling-rate shock (2019-01 to 2020-07),worst,S4,0.9877,529202.3938892522
@@ -108,7 +108,7 @@ T5 Falling-rate shock (2019-01 to 2020-07),worst,S8,0.9894,377853.4743287819
 T5 Falling-rate shock (2019-01 to 2020-07),worst,S9,0.9983,257955.58041411958
 T5 Falling-rate shock (2019-01 to 2020-07),worst,S9A,0.9994,226980.32840755297
 T5 Falling-rate shock (2019-01 to 2020-07),worst,S10,0.9999,213700.50992131338
-T5 Falling-rate shock (2019-01 to 2020-07),worst,S10C,0.9999,202761.1185446498
+T5 Falling-rate shock (2019-01 to 2020-07),worst,S10C,0.9999,206405.4774071977
 T5 Falling-rate shock (2019-01 to 2020-07),early,S1,1.0,72606.03223344838
 T5 Falling-rate shock (2019-01 to 2020-07),early,S2,0.9998,126958.92832512478
 T5 Falling-rate shock (2019-01 to 2020-07),early,S4,0.9764,481898.275782696
@@ -118,4 +118,4 @@ T5 Falling-rate shock (2019-01 to 2020-07),early,S8,0.9613,222317.56447709014
 T5 Falling-rate shock (2019-01 to 2020-07),early,S9,0.9972,246837.36584404914
 T5 Falling-rate shock (2019-01 to 2020-07),early,S9A,0.9995,215324.63673259033
 T5 Falling-rate shock (2019-01 to 2020-07),early,S10,0.9998,218807.04617487598
-T5 Falling-rate shock (2019-01 to 2020-07),early,S10C,0.9998,202995.93060095713
+T5 Falling-rate shock (2019-01 to 2020-07),early,S10C,0.9998,216162.6032910234

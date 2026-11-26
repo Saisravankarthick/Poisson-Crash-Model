@@ -58,11 +58,18 @@ def weights(name, e):
     if name == "S4": return np.tile(w_vti, (len(e), 1))
     return e[:, None] * w_eq + (1 - e[:, None]) * w_bd
 
-def simulate(RET, DY, name, y0=Y_NOW):
-    """RET: PATHS x MON x 8 monthly returns; DY: PATHS x MON yield changes"""
+LOCK_Y2 = 0.04                                     # S10C adds the promise to the floor only if the 2-year yield is >= 4% in Jan 2031
+SPREAD_52 = (EV["now"]["y5"] - EV["now"]["y2"]) / 100   # today's 5y-2y spread (0.08 pts); the model tracks the 5y yield only
+
+
+def simulate(RET, DY, name, y0=Y_NOW, lock_cond=True, band=None, trigger=True):
+    """RET: PATHS x MON x 8 monthly returns; DY: PATHS x MON yield changes.
+    lock_cond: S10C locks in the promise only where the January 2031 2-year yield (5-year yield minus today's 5y-2y spread) is >= 4%.
+    band: if set (e.g. 0.02), check every month-end and rebalance to the rule's target when the equity share is more than `band`
+          away from it (the IPS tolerance band).  trigger: extra review after a 20% fall in the equity sleeve."""
     if name in ("S0", "S0b"): return simulate_s0(RET, DY, name, y0)
     n = RET.shape[0]
-    V = np.full(n, 300000.0); L = None
+    V = np.full(n, 300000.0); L = None; Lf = None; lock = np.zeros(n, bool)
     e, _ = target(name, 0, V); w = weights(name, e)
     H = w * V[:, None]                              # dollar holdings
     eq_peak = (H[:, :3].sum(1)).copy(); twr = np.ones(n); twr_pk = np.ones(n); mdd = np.zeros(n)
@@ -74,23 +81,32 @@ def simulate(RET, DY, name, y0=Y_NOW):
             if t == 4:
                 Vy["pre2031"] = V.copy()
                 L = 0.5 * np.maximum(V - pv_liab(4), 0) * (1 + R) ** 2
-            e, _ = target(name, t, V, L); H = weights(name, e) * V[:, None]; eq_peak = H[:, :3].sum(1).copy()
+                y2_31 = y0 + DY[:, :m].sum(1) - SPREAD_52
+                lock = (y2_31 >= LOCK_Y2) if lock_cond else np.ones(n, bool)
+                Lf = np.where(lock, L, 0.0)                         # the part of the promise added to the floor
+            e, _ = target(name, t, V, Lf); H = weights(name, e) * V[:, None]; eq_peak = H[:, :3].sum(1).copy()
             eshare[t] = np.median(e); Vy[t] = V.copy()
         r = RET[:, m, :]
         Vb = H.sum(1); H = H * (1 + r); Va = H.sum(1)
         twr *= Va / Vb; twr_pk = np.maximum(twr_pk, twr); mdd = np.maximum(mdd, 1 - twr / twr_pk)
+        if (m + 1) % 12 == 0:                                        # the January review follows
+            continue
         eqv = H[:, :3].sum(1); eq_peak = np.maximum(eq_peak, eqv)
-        trig = (eqv < 0.8 * eq_peak) & (eq_peak > 1)
-        if trig.any() and (m + 1) % 12 != 0:                       # extra review after a 20% equity fall
+        trig = (eqv < 0.8 * eq_peak) & (eq_peak > 1) if trigger else np.zeros(n, bool)
+        if band is not None:
+            t = (m + 1) / 12; Vn = H.sum(1); Ln = None if Lf is None else Lf
+            e_t, _ = target(name, t, Vn, Ln)
+            trig = trig | (np.abs(eqv / Vn - e_t) > band)
+        if trig.any():                                              # extra review
             t = (m + 1) / 12; Vt = H[trig].sum(1)
-            Lt = None if L is None else L[trig]
+            Lt = None if Lf is None else Lf[trig]
             e2, _ = target(name, t, Vt, Lt); H[trig] = weights(name, e2) * Vt[:, None]
             eq_peak[trig] = H[trig][:, :3].sum(1); reviews += trig
     V33 = H.sum(1)
     y33 = np.maximum(y0 + DY.sum(1), 0.0025)
     ladder = PMT * (1 - (1 + y33) ** -NP) / y33 * (1 + y33)
     if L is None: L = 0.5 * np.maximum(Vy["pre2031"] - pv_liab(4), 0) * (1 + R) ** 2
-    return dict(V33=V33, ladder=ladder, y33=y33, L=L, V31=Vy["pre2031"], mdd=mdd, eshare=eshare, reviews=reviews)
+    return dict(V33=V33, ladder=ladder, y33=y33, L=L, V31=Vy["pre2031"], mdd=mdd, eshare=eshare, reviews=reviews, lock=lock)
 
 # ---------- S0: bucket ladder ----------
 # Three Treasury buckets matched to the payment years (B1 2033-35, B2 2036-39, B3 2040-42), filled in that order; whatever is

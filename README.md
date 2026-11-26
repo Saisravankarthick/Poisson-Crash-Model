@@ -122,11 +122,11 @@ These are upper bounds, because they assume the worst timing.
 
 ## Strategy ranking and robustness (`src/robustness.py`)
 
-**LDCS** here is S10C: hold Treasury, TIPS and T-bill funds worth the present value of Laura's ten payments; invest only the amount above that floor in equities, capped at 39.7%; reset each January and after any 20% fall in the equity sleeve; from the 2031 co-sponsor announcement, add the announced minimum to the floor if two-year Treasury yields are at least 4%. It is ranked against eight alternatives: S9 core-satellite (the same ETFs held static, no floor rule), S7 risk parity, S0 bucket ladder, S1 T-bills, S2 pure LDI, S6 target-date, S8 CPPI and S4 all-equity. S9A and S10, earlier versions of our own rule, stay in `strategy_results.json` but are left out of the ranking.
+**LDCS** here is S10C: hold Treasury, TIPS and T-bill funds worth the present value of Laura's ten payments; invest only the amount above that floor in equities, capped at 39.7%; reset each January and after any 20% fall in the equity sleeve; from the 2031 co-sponsor announcement, add the announced minimum to the floor if two-year Treasury yields are at least 4% (we test this path by path; it applies in 68% of history-case paths). It is ranked against eight alternatives: S9 core-satellite (the same ETFs held static, no floor rule), S7 risk parity, S0 bucket ladder, S1 T-bills, S2 pure LDI, S6 target-date, S8 CPPI and S4 all-equity. S9A and S10, earlier versions of our own rule, stay in `strategy_results.json` but are left out of the ranking.
 
 | Strategy | Average rank (equal / safety / growth) | Ranked 1st, random weights | Top 3, random weights | Joint Poisson risk of a broken promise, 2031-32 |
 |---|---|---|---|---|
-| S10C LDCS (ours) | 3.00 / 2.80 / 3.50 | 68% | 98% | 2.10% |
+| S10C LDCS (ours) | 3.00 / 2.80 / 3.50 | 68% | 98% | 2.57% |
 | S9 Core-satellite | 5.33 / 5.30 / 5.00 | 0% | 12% | 9.81% |
 | S7 Risk parity | 3.50 / 3.00 / 4.38 | 24% | 87% | 3.54% |
 | S0 Bucket ladder | 4.50 / 4.40 / 4.88 | 0% | 38% | 4.60% |
@@ -138,11 +138,13 @@ These are upper bounds, because they assume the worst timing.
 
 - **Seeds:** the whole Monte Carlo (four cases, six crash replays, 10,000 paths) re-run on 20 fresh seeds puts LDCS first under all three weightings every time.
 - **Paired tests** on identical paths, the **Poisson assumption tests** (dispersion by year and decade, exponential gaps) and the **Markov conditional shortfall** are in [`report/ROBUSTNESS.md`](report/ROBUSTNESS.md), with the one-line definition of each criterion and the limits of these tests. [`report/MATHEMATICS.md`](report/MATHEMATICS.md) derives every formula behind them: the annuity-due reserve, duration, the strategy rules (with a proof that the cushion rule protects the floor), the four Monte Carlo cases, the six crash replays, McNemar's test, the Dirichlet weights, the Poisson process and Garwood interval, compound Poisson damage, the dispersion and Kolmogorov–Smirnov tests and the Hamilton regime model.
+- **Which crash hurts Laura most** (`ROBUSTNESS.md` section H, `results/tables/crash_impact_by_strategy.csv`): for each crash type, its Poisson probability in 2031-32 times the damage it does to each strategy when replayed to end in January 2033. The 2022-type stock-and-bond inflation shock is the biggest single risk for LDCS (2.16% of its 2.57%); core-satellite, the same ETFs without the rule, is hit hardest by the 2008-type and 1973-74-type crashes.
+- **Consistency with the IPS** (`ROBUSTNESS.md` section I): LDCS run with the IPS ±2% tolerance band, with and without the 2031 yield condition, and the IPS cushion rule alone. Every version ranks first under all three weightings.
 - With all ten original strategies LDCS ties the calendar glide path S9A on equal weights (4.00 each); leaving out our own two earlier versions is what makes the first place clear.
 
 ## Verification
 
-`python src/verify.py` recomputes the numbers a second way and checks them against the competition guide (WGHS 2026-27 Team Study Pack, sections 3.1-3.3). It runs **830 checks, all passing** (report in `results/verification.json` and `results/tables/verification_checks.csv`):
+`python src/verify.py` recomputes the numbers a second way and checks them against the competition guide (WGHS 2026-27 Team Study Pack, sections 3.1-3.3). It runs **1,044 checks, all passing** (report in `results/verification.json` and `results/tables/verification_checks.csv`):
 
 | Group | Checks | What is compared |
 |---|---|---|
@@ -159,6 +161,7 @@ These are upper bounds, because they assume the worst timing.
 | K Tables | 48 | CSV tables on disk equal the JSON they come from |
 | L Regimes | 1 | Every crash overlaps a turbulent spell |
 | M Robustness | 284 | S0 engine (zero and constant returns exact, buckets = liability PV, allocation invariants); scoreboard ranks and averages recomputed; the published ten-strategy Table 8.21 reproduced; paired-test identities; Garwood bounds by gamma quantiles; joint Poisson recomputed; Markov stationarity and total-probability decomposition |
+| N Crash impact and IPS variants | 214 | Every cell of the crash-impact table recomputed from the replay results (P(type) × P(broken promise), contribution lost, expected loss, worst strategy); the 2031 yield condition switches the lock-in off and on correctly; every IPS variant keeps LDCS first |
 
 `docs/Poisson_Graphs_and_Data.pdf` shows all six figures with their data tables.
 
@@ -194,7 +197,7 @@ These are upper bounds, because they assume the worst timing.
 pip install -r requirements.txt
 python src/run_all.py           # about 5 minutes: simulation, then the 20-seed robustness run
 python -m pytest tests -q       # 6 checks on the mathematics
-python src/verify.py            # 830 independent checks against the guide
+python src/verify.py            # 1,044 independent checks against the guide
 ```
 
 | Script | What it does |
@@ -206,7 +209,7 @@ python src/verify.py            # 830 independent checks against the guide
 | `src/laura_poisson.py` | Applies the model to Laura's holdings |
 | `src/figures.py` | Draws charts 01 to 06 |
 | `src/figures_more.py` | Draws charts 07 to 15 and writes the CSV tables |
-| `src/verify.py` | 830 independent checks against the competition guide |
+| `src/verify.py` | 1,044 independent checks against the competition guide |
 | `src/make_report.py` | Builds `report/*.md` from the results |
 
 ## Data

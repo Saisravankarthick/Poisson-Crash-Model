@@ -1,6 +1,6 @@
 # Mathematics and methods
 
-This document explains, from first principles, every calculation in the Poisson Crash Model repository: the data we built, the cases we simulated, the strategies we compared, the statistics we used to rank them, and the tests we ran to challenge that ranking. For each tool we state the formula, derive it where a derivation is short, show how we applied it to Laura Gao's case with the repository's own numbers, and cite the source. Every number quoted here comes from the files in `results/`; `src/verify.py` recomputes 830 of them independently.
+This document explains, from first principles, every calculation in the Poisson Crash Model repository: the data we built, the cases we simulated, the strategies we compared, the statistics we used to rank them, and the tests we ran to challenge that ranking. For each tool we state the formula, derive it where a derivation is short, show how we applied it to Laura Gao's case with the repository's own numbers, and cite the source. Every number quoted here comes from the files in `results/`; `src/verify.py` recomputes 1,044 of them independently.
 
 Contents
 
@@ -186,7 +186,7 @@ The cross terms are identical, so $RC_E = RC_B$ exactly when $w_E\sigma_E = w_B\
 LDCS holds bonds worth the floor and invests only the cushion above it in equities, up to the strategic share:
 
 ```math
-F_t = PV_L(t) \;-\; \frac{150{,}000}{(1+r)^{1-t}}\,\mathbf 1_{\{t<1\}} \;+\; \frac{L}{(1+r)^{6-t}}\,\mathbf 1_{\{t\ge 4\}}, \qquad C_t = \max(V_t - F_t,\ 0), \qquad e_t = \min\!\Big(\frac{C_t}{V_t},\ E_0\Big).
+F_t = PV_L(t) \;-\; \frac{150{,}000}{(1+r)^{1-t}}\,\mathbf 1_{\{t<1\}} \;+\; \frac{L\,\mathbf 1_{\{lock\}}}{(1+r)^{6-t}}\,\mathbf 1_{\{t\ge 4\}}, \qquad C_t = \max(V_t - F_t,\ 0), \qquad e_t = \min\!\Big(\frac{C_t}{V_t},\ E_0\Big).
 ```
 
 **Proposition (why the cushion rule protects the reserve).** Suppose that at a review the equity holding is $E \le C = V - F$, so the bond holding is $B = V - E \ge F$. Suppose further that until the next review the bond sleeve grows at least as fast as the floor. Then the portfolio stays at or above the floor, however far equities fall.
@@ -196,7 +196,7 @@ F_t = PV_L(t) \;-\; \frac{150{,}000}{(1+r)^{1-t}}\,\mathbf 1_{\{t<1\}} \;+\; \fr
 Two consequences follow, and the simulations show both.
 
 - **CPPI breaks the proposition.** With multiplier 3, $E = 3C$. An equity fall of more than one third before the next review leaves $V' < F'$. That is the gap risk of CPPI (Black and Perold, 1992), and it is why S8 scores only 47.0% on promise reliability (Section 7).
-- **The proposition needs the bonds.** If bonds fall while the floor does not, the second condition fails. The 2022-type replay, where stocks and bonds fell together, is exactly this case, and it is LDCS's weakest result (49% of paths keep the promise).
+- **The proposition needs the bonds.** If bonds fall while the floor does not, the second condition fails. The 2022-type replay, where stocks and bonds fell together, is exactly this case, and it is LDCS's weakest result (45% of paths keep the promise).
 
 The cap $E_0$ makes LDCS more conservative than a pure $m = 1$ rule, and the 20% extra review (Section 4.5) resets the cushion during a fall.
 
@@ -208,7 +208,13 @@ In January 2031 ($t = 4$) we set the minimum contribution Laura announces to co-
 L = 0.5 \cdot \max\big(V_{2031} - PV_L(4),\ 0\big)\cdot(1+r)^2 .
 ```
 
-For every strategy we record whether the 2033 contribution meets it ($c \ge L$). LDCS alone adds the discounted promise to its floor from January 2031, so it protects the promise as well as the reserve. In the simulation we add it in every path. The IPS attaches a condition (two-year Treasury yield at least 4%), which we did not model; Section 16 explains the effect.
+For every strategy we record whether the 2033 contribution meets it ($c \ge L$). LDCS alone adds the discounted promise to its floor from January 2031, so it protects the promise as well as the reserve, but only when safe assets can grow it at the 4% rate: the lock-in applies if the two-year Treasury yield in January 2031 is at least 4%. Our engine simulates the 5-year yield, so we estimate the 2-year yield as the simulated 5-year yield minus today's 0.08-point spread between them:
+
+```math
+\text{lock} = \mathbf 1\big\{\,y_5^{2031} - 0.0008 \ge 0.04\,\big\}, \qquad y_5^{2031} = y_5^{now} + \sum_{m<48} \Delta y_{5,m}.
+```
+
+The condition holds in 68% of the history-case paths and 73% of the jump-diffusion paths. Where it fails, LDCS keeps the cushion rule alone and the promise stays unprotected.
 
 ### 4.4 S0: the bucket ladder
 
@@ -231,6 +237,24 @@ S0 sells equity to refill the buckets only after a year in which the equity buck
 ### 4.5 Reviews
 
 For every strategy except S0 we reset the holdings to the rule each January (adding the \$150,000 in January 2028) and also in any month in which the equity sleeve stands 20% below its peak since the last review. For LDCS and CPPI the extra review cuts equity in a fall; for the fixed-mix strategies (S6, S7, S9) it rebalances back to target, which means buying equity after the fall.
+
+### 4.6 Consistency with the IPS: the tolerance band and the yield condition
+
+Our IPS commits to the cushion rule and to "a strict ±2% tolerance band" that triggers rebalancing. The 20% extra review and the 2031 lock-in come from our later research (Research Pack, Section 8). To check that the ranking does not depend on those later choices, we ran four other versions of LDCS through the same paths and put each into the nine-strategy scoreboard in place of S10C. For the band we check the equity share every month-end and rebalance to the rule's target whenever it is more than 2 points away:
+
+```math
+\big|\,e^{actual}_m - e^{rule}_m\,\big| > 0.02 \;\Rightarrow\; \text{rebalance to } e^{rule}_m .
+```
+
+| Version of LDCS | Lock-in applied | Min. funding certainty | Avg. funding certainty | Median contribution | Promise reliability | Place (equal / safety / growth) |
+|---|---|---|---|---|---|---|
+| Lock-in in every path (Research Pack) | 100% | 83.0% | 94.1% | \$184k | 91.2% | 1 / 1 / 1 |
+| **Lock-in if 2-year yield ≥ 4% (headline)** | 68% | 83.5% | 94.2% | \$187k | 89.0% | 1 / 1 / 1 |
+| IPS ±2% band, no 20% trigger | 68% | 82.1% | 93.8% | \$185k | 89.6% | 1 / 1 / 1 |
+| IPS ±2% band and 20% trigger | 68% | 82.3% | 93.9% | \$185k | 89.6% | 1 / 1 / 1 |
+| IPS cushion rule and band only, no lock-in | none | 83.1% | 94.0% | \$194k | 85.5% | 1 / 1 / 1 |
+
+Every version ranks first under all three weightings, and no criterion moves by more than 1.5 points or \$10k. The lock-in's job shows in the last column: without it, promise reliability falls from 89–91% to 85.5%.
 
 ---
 
@@ -325,7 +349,7 @@ F_k = \frac1N\sum_{i=1}^N \mathbf 1\{V_{2033,i} \ge R_4\}, \qquad PK_k = \frac1N
 | Crash resilience | $\frac16\sum_{j=1}^6 F_{T_j}$ | The reserve after each historical crash at the worst moment |
 | Promise reliability | mean of $PK_H$, $PK_J$ and the six replay $PK$s | Whether the portfolio delivers in 2033 the figure Laura announces in 2031 |
 
-**Worked example (LDCS).** $F_H = 99.58\%$, $F_S = 83.00\%$, $F_J = 93.94\%$, $F_C = 99.99\%$. The minimum is 83.0% and the average 94.1%.
+**Worked example (LDCS).** $F_H = 99.58\%$, $F_S = 83.53\%$, $F_J = 93.67\%$, $F_C = 99.99\%$. The minimum is 83.5% and the average 94.2%.
 
 ---
 
@@ -361,7 +385,7 @@ For each draw we recomputed every strategy's weighted rank. LDCS came first in 6
 
 To show the ranking is not an accident of one set of random numbers, we re-ran the whole simulation (four cases and six replays, 10,000 paths each) with 20 new seed pairs: bootstrap seeds 1000–1019 and jump-diffusion seeds 2000–2019. LDCS came first under all three weightings in all 20 runs.
 
-The spread across seeds matches the formula of Section 5.1. For LDCS's minimum funding certainty, $\sqrt{0.83 \times 0.17 / 10{,}000} = 0.38$ points, exactly the standard deviation we observed. The narrowest gaps next to an LDCS rank are 0.6 points (average funding certainty against the bucket ladder; crash resilience against risk parity) and \$3k (median contribution against the bucket ladder), against seed-to-seed spreads of 0.04–0.13 points and \$0.7–0.9k.
+The spread across seeds matches the formula of Section 5.1. For LDCS's minimum funding certainty the formula gives $\sqrt{0.835 \times 0.165 / 10{,}000} = 0.37$ points; we observed 0.38. The narrowest gaps next to an LDCS rank are 0.5 points (crash resilience against risk parity), 0.7 points (average funding certainty against the bucket ladder) and \$6k (median contribution against the bucket ladder), against seed-to-seed spreads of 0.04–0.13 points and \$0.8–0.9k.
 
 We also re-ran the base seeds (42 for the bootstrap, 7 for case J) through the same code; it reproduced every scoreboard value exactly.
 
@@ -381,7 +405,7 @@ b \sim \text{Binomial}\big(b+c,\ \tfrac12\big), \qquad p = \min\!\Big(1,\ 2\sum_
 
 (McNemar, 1947). We applied the same test to keeping the promise.
 
-**Example.** Against core-satellite in case J, LDCS alone covers the reserve on 1,021 paths and core-satellite alone on 94, so $p \approx 10^{-197}$. In case S the result reverses, 353 against 1,086: with 3.25 points a year less return, LDCS's smaller equity share leaves it short more often. Table D in `ROBUSTNESS.md` counts, out of the four cases, how often LDCS is significantly better or worse at $p < 0.05$.
+**Example.** Against core-satellite in case J, LDCS alone covers the reserve on 992 paths and core-satellite alone on 92, so $p \approx 10^{-191}$. In case S the result reverses, 351 against 1,031: with 3.25 points a year less return, LDCS's smaller equity share leaves it short more often. Table D in `ROBUSTNESS.md` counts, out of the four cases, how often LDCS is significantly better or worse at $p < 0.05$.
 
 ### 10.2 Paired mean difference for the contribution
 
@@ -391,11 +415,11 @@ For each path we take $d_i = c_{LDCS,i} - c_{rival,i}$ and call the difference s
 \bar d \pm 1.96\,\frac{s_d}{\sqrt N}.
 ```
 
-Against core-satellite in case H, $\bar d = -\$48{,}250 \pm \$931$: LDCS gives up about \$48,000 of typical facility money for its safety.
+Against core-satellite in case H, $\bar d = -\$43{,}447 \pm \$879$: LDCS gives up about \$43,000 of typical facility money for its safety.
 
 ### 10.3 Multiple testing
 
-Table D summarises 96 tests (8 rivals × 4 cases × 3 measures), so about five could pass $p < 0.05$ by chance. We re-checked every count at the Bonferroni level $0.05/96 = 0.00052$. All counts stay the same except two funding wins, one over the bucket ladder and one over pure LDI, which drop out. With 10,000 paths very small differences become significant, so we read significance as "real in the model" and use the sizes in Table A to judge whether a difference matters to Laura.
+Table D summarises 96 tests (8 rivals × 4 cases × 3 measures), so about five could pass $p < 0.05$ by chance. We re-checked every count at the Bonferroni level $0.05/96 = 0.00052$. All counts stay the same except two, which drop out: one funding win over pure LDI and one promise loss to risk parity. With 10,000 paths very small differences become significant, so we read significance as "real in the model" and use the sizes in Table A to judge whether a difference matters to Laura.
 
 ---
 
@@ -494,15 +518,15 @@ The sum is conservative twice over: Boole's inequality is an upper bound, and $q
 
 | Type | $p_j$ | $q_j$ | $p_j q_j$ |
 |---|---|---|---|
-| T1 | 1.97% | 0.06% | 0.001% |
-| T2 | 5.80% | 1.62% | 0.094% |
-| T3 | 3.91% | 51.28% | 2.004% |
-| T3+ | 3.91% | 0.02% | 0.001% |
+| T1 | 1.97% | 7.45% | 0.147% |
+| T2 | 5.80% | 2.52% | 0.146% |
+| T3 | 3.91% | 55.26% | 2.160% |
+| T3+ | 3.91% | 3.05% | 0.119% |
 | T4 | 3.91% | 0.00% | 0.000% |
 | T5 | 22.23% | 0.01% | 0.002% |
-| **Sum** | | | **2.10%** |
+| **Sum** | | | **2.57%** |
 
-Almost all the risk is the 2022-type shock. The same arithmetic gives core-satellite 9.81%, because without a floor rule it breaks the promise in 92% of 1973–74-type paths, 95% of 2008-type, 54% of 2022-type and 35% of 2000–02-type.
+Almost all the risk (2.16 of 2.57 points) is the 2022-type shock. The same arithmetic gives core-satellite 9.81%, because without a floor rule it breaks the promise in 92% of 1973–74-type paths, 95% of 2008-type, 54% of 2022-type and 35% of 2000–02-type.
 
 ### 11.7 Compound Poisson damage to Laura's holdings
 
@@ -517,6 +541,51 @@ using $E[N] = \operatorname{Var}(N) = \lambda t$.
 We drew each crash's type with its historical frequency (T1 10%, T2 30%, T3 40%, T4 20%), its depth from the same type's history, and its fund-by-fund returns from the matching 1990–2026 episode, scaling equity returns by depth relative to that episode. The dollar loss is the exposure (\$300,000 in 2027, \$450,000 afterwards) times the portfolio return. The average crash costs the portfolio as built 13.3%. Over 2027–32, with 200,000 simulations, the expected damage is \$33,676 against \$33,797 from the formula, and the standard deviation \$48,136 against \$48,205. This is damage before any recovery: a measure of exposure, not a forecast.
 
 We also counted falls of 10%, 20% and 30% in each of the eight funds since 1990 (`fund_level_poisson.csv`) to show which holdings carry the crash risk.
+
+### 11.8 Which crash hurts Laura most, and under which strategy
+
+This is where the Poisson layer and the Monte Carlo replays meet. For each crash type $j$ and strategy $s$ we multiplied the Poisson chance that the crash happens in 2031–32 by the share of replayed paths in which it breaks the 2031 promise:
+
+```math
+\text{Risk}_{j,s} = \underbrace{\big(1 - e^{-2\lambda_j}\big)}_{\text{Poisson: crash occurs in 2031–32}} \times \underbrace{\Pr(c < L \mid \text{crash } j \text{ ends in January 2033},\ s)}_{\text{Monte Carlo replay}} .
+```
+
+We then read across each row for the strategy hit hardest, and summed down each column (Section 11.6) for the strategy most exposed overall. Cells are percentages; the bold cell is the hardest-hit of the seven strategies compared in the Final Report.
+
+| Crash type | $\lambda_j$ a year | P(in 2031–32) | LDCS (ours) | Bucket ladder | T-bills | Pure LDI | Target-date | Risk parity | Core-satellite | Worst of all nine |
+|---|---|---|---|---|---|---|---|---|---|---|
+| T1 2008-type recession | 0.010 | 2.0% | 0.15% | 0.52% | 0.00% | 0.00% | 1.16% | 0.30% | **1.87%** | All-equity |
+| T2 2020-type V-shock | 0.030 | 5.8% | 0.15% | 0.31% | 0.00% | 0.18% | 0.51% | 0.25% | **0.80%** | CPPI m=3 |
+| T3 2022-type inflation | 0.020 | 3.9% | 2.16% | 2.81% | 0.00% | **2.97%** | 1.65% | 2.55% | 2.12% | Pure LDI |
+| T3+ 1973–74-type inflation | 0.020 | 3.9% | 0.12% | 0.96% | 0.00% | 0.00% | 1.95% | 0.44% | **3.60%** | All-equity |
+| T4 2000–02-type bust | 0.020 | 3.9% | 0.00% | 0.00% | 0.00% | 0.00% | 0.53% | 0.00% | **1.37%** | All-equity |
+| T5 2019–20 falling rates | 0.126 | 22.2% | 0.00% | 0.01% | 0.00% | 0.00% | **0.09%** | 0.00% | 0.04% | CPPI m=3 |
+| **All six types** | | | **2.57%** | **4.60%** | **0.00%** | **3.15%** | **5.90%** | **3.54%** | **9.81%** | CPPI m=3 (13.71%) |
+
+To show the damage in money, we also measured how far each crash pulls the median 2033 contribution below the no-crash history case, and weighted each fall by the crash's Poisson probability:
+
+```math
+\text{Expected fall}_s = \sum_{j \ne T5} \big(1 - e^{-2\lambda_j}\big)\,\big[\text{median}_H(c_s) - \text{median}_{j}(c_s)\big].
+```
+
+| Crash type | LDCS (ours) | Bucket ladder | T-bills | Pure LDI | Target-date | Risk parity | Core-satellite |
+|---|---|---|---|---|---|---|---|
+| T1 2008-type recession | \$44k | \$72k | \$1k | −\$38k | \$124k | \$48k | \$158k |
+| T2 2020-type V-shock | \$13k | \$24k | \$0k | −\$13k | \$37k | \$14k | \$51k |
+| T3 2022-type inflation | \$80k | \$92k | \$3k | \$52k | \$107k | \$80k | \$117k |
+| T3+ 1973–74-type inflation | \$44k | \$72k | −\$51k | −\$29k | \$115k | \$48k | \$147k |
+| T4 2000–02-type bust | \$3k | \$20k | −\$17k | −\$92k | \$83k | −\$3k | \$109k |
+| T5 2019–20 falling rates | −\$50k | −\$46k | \$1k | −\$42k | −\$58k | −\$48k | −\$54k |
+| **Expected fall, five stock-crash types** | **\$7k** | **\$10k** | **−\$2k** | **−\$4k** | **\$16k** | **\$7k** | **\$21k** |
+
+A negative figure is a gain. We left the falling-rate replay out of the total: it raises every bond-holding strategy's contribution because we value the reserve at a fixed 4%, while at market yields the same fall in rates would also raise the cost of the ten payments (Section 16).
+
+What the two tables show:
+
+- **The 2022-type stock-and-bond inflation shock is the crash that hurts LDCS most.** It supplies 2.16% of LDCS's 2.57% risk and the largest dollar fall (\$80k). This is the failure the proposition of Section 4.2 predicts: when bonds fall with stocks, the floor stops protecting the promise. Pure LDI is hit hardest of all by this crash type, because it holds only bonds.
+- **Without the floor rule the same ETFs are far more exposed.** Core-satellite holds LDCS's funds without the rule and carries 9.81% risk, 3.8 times LDCS's; it is hit hardest by the 2008-type (1.87%) and 1973–74-type (3.60%) crashes and loses \$158k of median contribution in a 2008-type crash against \$44k for LDCS.
+- **The most exposed strategies overall** (all nine, by summed risk): CPPI m=3 13.71%, All-equity 13.69%, Core-satellite 9.81%, Target-date 5.90%, Bucket ladder 4.60%, Risk parity 3.54%, Pure LDI 3.15%, LDCS (ours) 2.57%, T-bills 0.00%.
+- **T-bills carry no crash risk to the promise** but give up the most facility money in every normal market (Section 7), which is why they rank fourth rather than first.
 
 ---
 
@@ -626,8 +695,8 @@ We grouped the case J paths by the number of months of 2031–32 they spent turb
 |---|---|---|---|---|---|
 | 0 | 46.3% | 4.4% | 5.5% | 3.9% | 2.3% |
 | 1–6 | 27.6% | 5.4% | 12.4% | 6.3% | 5.6% |
-| 7–12 | 15.5% | 8.4% | 26.2% | 11.4% | 11.6% |
-| 13–24 | 10.5% | 11.6% | 50.1% | 22.7% | 26.5% |
+| 7–12 | 15.5% | 8.8% | 26.2% | 11.4% | 11.6% |
+| 13–24 | 10.5% | 13.8% | 50.1% | 22.7% | 26.5% |
 
 The cushion rule cuts equity as turbulence erodes the surplus, so LDCS's shortfall grows slowly with turbulence, while fixed-mix strategies rebalance back into a falling market. In calm paths risk parity does better. Because turbulence drives case J returns by construction, this table shows how each rule responds to a bad regime; it is not separate evidence that regimes exist.
 
@@ -650,7 +719,7 @@ The cushion rule cuts equity as turbulence erodes the surplus, so LDCS's shortfa
 
 ## 15. Verification
 
-`src/verify.py` recomputes the main results by separate code paths and compares them with the stored results within stated tolerances. The latest run passes 830 of 830 checks.
+`src/verify.py` recomputes the main results by separate code paths and compares them with the stored results within stated tolerances. The latest run passes 1,044 of 1,044 checks.
 
 | Group | What we check | Checks |
 |---|---|---|
@@ -666,6 +735,7 @@ The cushion rule cuts equity as turbulence erodes the surplus, so LDCS's shortfa
 | K | Every table on disk equals the JSON it comes from | 48 |
 | L | Regime model against the crash dates | 1 |
 | M | S0 engine, scoreboard recomputation and the published ten-strategy Table 8.21, weights, seeds, paired tests, joint Poisson, Poisson tests, Markov | 284 |
+| N | Every cell of the crash-impact table (Section 11.8) recomputed from the replays; the yield condition switches the lock-in off and on correctly; every IPS version keeps LDCS first | 214 |
 
 To reproduce everything from the raw data: `cd src && python run_all.py && python verify.py`.
 
@@ -673,14 +743,14 @@ To reproduce everything from the raw data: `cd src && python run_all.py && pytho
 
 ## 16. Assumptions and limits
 
-1. **The 2031 yield condition.** We add the announced minimum to the LDCS floor in every path from January 2031. The IPS adds it only if two-year yields are at least 4% (4.63% in November 2026). Paths where yields fall below 4% would keep more equity under the IPS rule than the model shows.
+1. **The 2031 yield condition.** We model the two-year-yield test path by path, but the engine simulates the 5-year yield only, so we estimate the 2-year yield from it with today's 0.08-point spread. A flatter or steeper curve in 2031 would change which paths lock in.
 2. **A fixed 4% hurdle.** We compare $V_{2033}$ with $R_4 = \$421{,}767$, as the IPS defines the reserve, and do not reprice the payments at 2033 market yields. If yields are below 4% in 2033 the payments cost more, so the falling-rate replay (T5) looks safer than it would at market value. The bond sleeve's 4.06-year duration is shorter than the liability's 9.8 years in 2027, so the portfolio carries this rate risk before 2033.
 3. **Sampling noise only.** The seed test resamples the same 2004–2026 history with the same model; cases S, C and J and the λ intervals are the model-risk checks.
 4. **Judgements.** The six criteria and the three weightings are team choices; random weights test the weights, not the criteria.
 5. **Ranks and significance.** Ranks discard size, and 10,000 paths make tiny differences significant.
 6. **Worst-timing replays and independence.** The joint Poisson figures are upper bounds; the union form assumes crash types occur independently, and the splitting theorem assumes a crash's type is independent of its timing.
 7. **Small samples.** Ten crashes, nine gaps, five rate shocks, 27 turbulent months in 2004–2026 (behind the turbulent-regime covariance) and 3 jump months in 2004–2026 (behind the jump betas) give wide intervals and weak tests.
-8. **Proxies.** We rebuilt fund returns before December 2016 from indices and yields (Section 2).
+8. **Proxies.** We rebuilt fund returns before December 2016 from indices and yields (Section 2). In the 1973–74 replay TIPS did not exist, and our CPI-plus-1% stand-in gains 21% over the episode; real TIPS would also have lost value as real yields rose, so that replay flatters every strategy that holds SCHP, LDCS included.
 9. **The payout years.** The simulation ends at the January 2033 valuation; we argue the 2033–2042 payout phase rather than simulate it.
 10. **One bucket design.** S0 refills only after up years; other bucket rules could rank differently.
 

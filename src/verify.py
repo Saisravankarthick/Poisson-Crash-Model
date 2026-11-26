@@ -269,7 +269,8 @@ for s_ in S_:
 PUB = {"S10C": (4.0, 3.8, 4.75), "S9A": (4.0, 3.7, 4.25), "S7": (4.1667, 3.7, 5.125), "S10": (4.1667, 4.0, 4.625), "S1": (5.5, 5.5, 6.625), "S4": (7.3333, 7.7, 5.75)}
 for s_, v_ in PUB.items():
     for w_, x_ in zip(("equal", "safety", "growth"), v_):
-        chk("M scoreboard", f"ten-strategy Table 8.21 {s_} {w_} reproduced", RB["full10_totals"][w_][s_], x_, 5e-4, "Research Pack p.13")
+        chk("M scoreboard", f"ten-strategy Table 8.21 {s_} {w_} reproduced", RB["full10_totals_published"][w_][s_], x_, 5e-4,
+            "Research Pack p.13; LDCS run without the 2031 yield condition, as printed")
 chk("M scoreboard", "base seed re-run through robustness.py reproduces the scoreboard", RB["base_rerun_matches"], 0, 1e-12)
 chk("M weights", "P(ranked 1st) sums to 1 over strategies", sum(RB["weights"]["p_first"].values()), 1, 1e-9)
 chk("M weights", "P(top 3) sums to 3 over strategies", sum(RB["weights"]["p_top3"].values()), 3, 1e-9)
@@ -303,6 +304,42 @@ for s_ in S_:
     chk("M Markov", f"{s_}: sum of share x conditional shortfall = case J shortfall", (q_.share_of_paths * q_.p_shortfall).sum(), 1 - SR["J"][s_]["f4"], 1e-9)
     chk("M Markov", f"{s_}: sum of share x conditional broken promise = case J broken promise", (q_.share_of_paths * q_.p_promise_broken).sum(), 1 - SR["J"][s_]["promise_kept"], 1e-9)
 chk("M Markov", "regime-bucket shares sum to 1", MC_.drop_duplicates("turbulent_months_2031_32").share_of_paths.sum(), 1, 1e-12)
+
+# ------------------------------------------------------------------ N. crash impact table and the IPS-consistency variants
+IM_ = pd.read_csv(RES / "tables" / "crash_impact_by_strategy.csv")
+CTi = CT_.set_index("type")
+for _, r_ in IM_.iterrows():
+    scen_ = next(a["scenario"] for a in L["affects_laura"] if a["type"] == r_["type"])
+    w_ = SR["crash"][scen_]["timing"]["worst"][r_["strategy"]]
+    chk("N crash impact", f"{r_['type']} {r_['strategy']}: P(in 2031-32) matches the crash-type table", r_["p_2031_32"], CTi.loc[r_["type"], "p_2031_32"], 1e-12)
+    chk("N crash impact", f"{r_['type']} {r_['strategy']}: joint broken promise = P(type) x (1 - replay promise kept)",
+        r_["joint_promise_broken"], r_["p_2031_32"] * (1 - w_["promise_kept"]), 1e-12)
+    chk("N crash impact", f"{r_['type']} {r_['strategy']}: contribution hit = no-crash median - replay median",
+        r_["contribution_hit"], SR["H"][r_["strategy"]]["p50"] - w_["p50"], 1e-6)
+CI_ = RB["crash_impact"]
+for s_ in S_:
+    chk("N crash impact", f"{s_}: total joint broken promise equals the joint Poisson table", CI_["totals"][s_]["joint_promise_broken"], JP_.loc[s_, "broken_sum"], 1e-12)
+    chk("N crash impact", f"{s_}: expected hit = sum of P(type) x hit", CI_["totals"][s_]["expected_hit"],
+        (IM_[IM_.strategy == s_].p_2031_32 * IM_[IM_.strategy == s_].contribution_hit).sum(), 1e-6)
+    chk("N crash impact", f"{s_}: stock-crash expected hit = sum over T1-T4 of P(type) x hit", CI_["totals"][s_]["expected_hit_stock_crashes"],
+        (IM_[(IM_.strategy == s_) & (IM_.type != "T5")].p_2031_32 * IM_[(IM_.strategy == s_) & (IM_.type != "T5")].contribution_hit).sum(), 1e-6)
+for t_, w__ in CI_["worst"].items():
+    q_ = IM_[IM_.type == t_]
+    chk("N crash impact", f"{t_}: worst strategy (all nine) has the highest joint broken-promise probability",
+        q_.set_index("strategy").loc[w__["all"]["strategy"], "joint_promise_broken"], q_.joint_promise_broken.max(), 1e-15)
+IV_ = RB["ips_check"]
+for k_, v_ in IV_.items():
+    chk("N IPS variants", f"{k_}: lock-in share within [0, 1]", float(0 <= v_["lock_share_H"] <= 1), 1.0, 0)
+    chk("N IPS variants", f"{k_}: crash resilience and promise reliability within [0, 1]",
+        float(0 <= v_["crit"][crit_[4]] <= 1 and 0 <= v_["crit"][crit_[5]] <= 1), 1.0, 0)
+    chk("N IPS variants", f"{k_}: LDCS keeps first place under equal weights", v_["place"]["equal"], 1, 0)
+chk("N IPS variants", "published version locks in every path", IV_["published"]["lock_share_H"], 1.0, 0)
+chk("N IPS variants", "headline version equals the stored S10C results (promise reliability)", IV_["headline"]["crit"][crit_[5]],
+    RB["scoreboard"]["values"][crit_[5]]["S10C"], 1e-12)
+Zr = np.zeros((3, 72, 8)); Dr = np.zeros((3, 72)); Dr[0, 10] = -0.02                # path 0: yields fall 2 pts before 2031
+lk_ = ss_.simulate(Zr, Dr, "S10C")["lock"]
+chk("N IPS variants", "yield condition: lock-in off when the 2031 2-year yield is below 4%", float(lk_[0]), 0.0, 0)
+chk("N IPS variants", "yield condition: lock-in on when the 2031 2-year yield is at least 4%", float(lk_[1]), 1.0, 0)
 
 bad = [c for c in checks if not c["ok"]]
 json.dump(dict(n_checks=len(checks), n_failed=len(bad), checks=checks), open(RES / "verification.json", "w"), indent=1)

@@ -1,5 +1,5 @@
 {
- "n_checks": 830,
+ "n_checks": 1044,
  "n_failed": 0,
  "checks": [
   {
@@ -1328,8 +1328,8 @@
   {
    "group": "F affects",
    "check": "T1 S10C promise broken = P(occurs) x P(broken | crash)",
-   "computed": 1.184171702968455e-05,
-   "reference": 1.184171702968455e-05,
+   "computed": 0.0014703465311857217,
+   "reference": 0.0014703465311857217,
    "tolerance": 1e-09,
    "ok": true,
    "note": ""
@@ -1409,8 +1409,8 @@
   {
    "group": "F affects",
    "check": "T2 S10C shortfall = P(occurs) x P(short | crash)",
-   "computed": 0.00011029066905375814,
-   "reference": 0.00011029066905375814,
+   "computed": 0.00011609544110921843,
+   "reference": 0.00011609544110921843,
    "tolerance": 1e-09,
    "ok": true,
    "note": ""
@@ -1418,8 +1418,8 @@
   {
    "group": "F affects",
    "check": "T2 S10C promise broken = P(occurs) x P(broken | crash)",
-   "computed": 0.000940373072984668,
-   "reference": 0.000940373072984668,
+   "computed": 0.0014628025579761508,
+   "reference": 0.0014628025579761508,
    "tolerance": 1e-09,
    "ok": true,
    "note": ""
@@ -1499,8 +1499,8 @@
   {
    "group": "F affects",
    "check": "T3 S10C shortfall = P(occurs) x P(short | crash)",
-   "computed": 0.0018134452934616392,
-   "reference": 0.0018134452934616392,
+   "computed": 0.0019189690497622102,
+   "reference": 0.0019189690497622102,
    "tolerance": 1e-09,
    "ok": true,
    "note": ""
@@ -1508,8 +1508,8 @@
   {
    "group": "F affects",
    "check": "T3 S10C promise broken = P(occurs) x P(broken | crash)",
-   "computed": 0.020041697122567426,
-   "reference": 0.020041697122567426,
+   "computed": 0.02159719545618323,
+   "reference": 0.02159719545618323,
    "tolerance": 1e-09,
    "ok": true,
    "note": ""
@@ -1598,8 +1598,8 @@
   {
    "group": "F affects",
    "check": "T3+ S10C promise broken = P(occurs) x P(broken | crash)",
-   "computed": 7.816574540782067e-06,
-   "reference": 7.816574540782067e-06,
+   "computed": 0.0011920276174693953,
+   "reference": 0.0011920276174693953,
    "tolerance": 1e-09,
    "ok": true,
    "note": ""
@@ -4199,8 +4199,8 @@
   {
    "group": "J replay link",
    "check": "T1 S10C: P(promise broken | crash) = 1 - replay promise kept",
-   "computed": 0.0006000000000000449,
-   "reference": 0.0006000000000000449,
+   "computed": 0.07450000000000001,
+   "reference": 0.07450000000000001,
    "tolerance": 0.0005,
    "ok": true,
    "note": ""
@@ -4244,8 +4244,8 @@
   {
    "group": "J replay link",
    "check": "T2 S10C: P(shortfall | crash) = 1 - replay funding certainty",
-   "computed": 0.0019000000000000128,
-   "reference": 0.0019000000000000128,
+   "computed": 0.0020000000000000018,
+   "reference": 0.0020000000000000018,
    "tolerance": 0.0005,
    "ok": true,
    "note": ""
@@ -4253,8 +4253,8 @@
   {
    "group": "J replay link",
    "check": "T2 S10C: P(promise broken | crash) = 1 - replay promise kept",
-   "computed": 0.016199999999999992,
-   "reference": 0.016199999999999992,
+   "computed": 0.0252,
+   "reference": 0.0252,
    "tolerance": 0.0005,
    "ok": true,
    "note": ""
@@ -4298,8 +4298,8 @@
   {
    "group": "J replay link",
    "check": "T3 S10C: P(shortfall | crash) = 1 - replay funding certainty",
-   "computed": 0.0464,
-   "reference": 0.0464,
+   "computed": 0.04910000000000003,
+   "reference": 0.04910000000000003,
    "tolerance": 0.0005,
    "ok": true,
    "note": ""
@@ -4307,8 +4307,8 @@
   {
    "group": "J replay link",
    "check": "T3 S10C: P(promise broken | crash) = 1 - replay promise kept",
-   "computed": 0.5127999999999999,
-   "reference": 0.5127999999999999,
+   "computed": 0.5526,
+   "reference": 0.5526,
    "tolerance": 0.0005,
    "ok": true,
    "note": ""
@@ -4361,8 +4361,8 @@
   {
    "group": "J replay link",
    "check": "T3+ S10C: P(promise broken | crash) = 1 - replay promise kept",
-   "computed": 0.00019999999999997797,
-   "reference": 0.00019999999999997797,
+   "computed": 0.03049999999999997,
+   "reference": 0.03049999999999997,
    "tolerance": 0.0005,
    "ok": true,
    "note": ""
@@ -4649,8 +4649,8 @@
   {
    "group": "K tables",
    "check": "strategy_summary S S10C funding certainty",
-   "computed": 0.83,
-   "reference": 0.83,
+   "computed": 0.8353,
+   "reference": 0.8353,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -4829,8 +4829,8 @@
   {
    "group": "K tables",
    "check": "strategy_summary J S10C funding certainty",
-   "computed": 0.9394,
-   "reference": 0.9394,
+   "computed": 0.9367,
+   "reference": 0.9367,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -5886,7 +5886,7 @@
    "reference": 4.0,
    "tolerance": 0.0005,
    "ok": true,
-   "note": "Research Pack p.13"
+   "note": "Research Pack p.13; LDCS run without the 2031 yield condition, as printed"
   },
   {
    "group": "M scoreboard",
@@ -5895,7 +5895,7 @@
    "reference": 3.8,
    "tolerance": 0.0005,
    "ok": true,
-   "note": "Research Pack p.13"
+   "note": "Research Pack p.13; LDCS run without the 2031 yield condition, as printed"
   },
   {
    "group": "M scoreboard",
@@ -5904,7 +5904,7 @@
    "reference": 4.75,
    "tolerance": 0.0005,
    "ok": true,
-   "note": "Research Pack p.13"
+   "note": "Research Pack p.13; LDCS run without the 2031 yield condition, as printed"
   },
   {
    "group": "M scoreboard",
@@ -5913,7 +5913,7 @@
    "reference": 4.0,
    "tolerance": 0.0005,
    "ok": true,
-   "note": "Research Pack p.13"
+   "note": "Research Pack p.13; LDCS run without the 2031 yield condition, as printed"
   },
   {
    "group": "M scoreboard",
@@ -5922,7 +5922,7 @@
    "reference": 3.7,
    "tolerance": 0.0005,
    "ok": true,
-   "note": "Research Pack p.13"
+   "note": "Research Pack p.13; LDCS run without the 2031 yield condition, as printed"
   },
   {
    "group": "M scoreboard",
@@ -5931,7 +5931,7 @@
    "reference": 4.25,
    "tolerance": 0.0005,
    "ok": true,
-   "note": "Research Pack p.13"
+   "note": "Research Pack p.13; LDCS run without the 2031 yield condition, as printed"
   },
   {
    "group": "M scoreboard",
@@ -5940,7 +5940,7 @@
    "reference": 4.1667,
    "tolerance": 0.0005,
    "ok": true,
-   "note": "Research Pack p.13"
+   "note": "Research Pack p.13; LDCS run without the 2031 yield condition, as printed"
   },
   {
    "group": "M scoreboard",
@@ -5949,7 +5949,7 @@
    "reference": 3.7,
    "tolerance": 0.0005,
    "ok": true,
-   "note": "Research Pack p.13"
+   "note": "Research Pack p.13; LDCS run without the 2031 yield condition, as printed"
   },
   {
    "group": "M scoreboard",
@@ -5958,7 +5958,7 @@
    "reference": 5.125,
    "tolerance": 0.0005,
    "ok": true,
-   "note": "Research Pack p.13"
+   "note": "Research Pack p.13; LDCS run without the 2031 yield condition, as printed"
   },
   {
    "group": "M scoreboard",
@@ -5967,7 +5967,7 @@
    "reference": 4.1667,
    "tolerance": 0.0005,
    "ok": true,
-   "note": "Research Pack p.13"
+   "note": "Research Pack p.13; LDCS run without the 2031 yield condition, as printed"
   },
   {
    "group": "M scoreboard",
@@ -5976,7 +5976,7 @@
    "reference": 4.0,
    "tolerance": 0.0005,
    "ok": true,
-   "note": "Research Pack p.13"
+   "note": "Research Pack p.13; LDCS run without the 2031 yield condition, as printed"
   },
   {
    "group": "M scoreboard",
@@ -5985,7 +5985,7 @@
    "reference": 4.625,
    "tolerance": 0.0005,
    "ok": true,
-   "note": "Research Pack p.13"
+   "note": "Research Pack p.13; LDCS run without the 2031 yield condition, as printed"
   },
   {
    "group": "M scoreboard",
@@ -5994,7 +5994,7 @@
    "reference": 5.5,
    "tolerance": 0.0005,
    "ok": true,
-   "note": "Research Pack p.13"
+   "note": "Research Pack p.13; LDCS run without the 2031 yield condition, as printed"
   },
   {
    "group": "M scoreboard",
@@ -6003,7 +6003,7 @@
    "reference": 5.5,
    "tolerance": 0.0005,
    "ok": true,
-   "note": "Research Pack p.13"
+   "note": "Research Pack p.13; LDCS run without the 2031 yield condition, as printed"
   },
   {
    "group": "M scoreboard",
@@ -6012,7 +6012,7 @@
    "reference": 6.625,
    "tolerance": 0.0005,
    "ok": true,
-   "note": "Research Pack p.13"
+   "note": "Research Pack p.13; LDCS run without the 2031 yield condition, as printed"
   },
   {
    "group": "M scoreboard",
@@ -6021,7 +6021,7 @@
    "reference": 7.3333,
    "tolerance": 0.0005,
    "ok": true,
-   "note": "Research Pack p.13"
+   "note": "Research Pack p.13; LDCS run without the 2031 yield condition, as printed"
   },
   {
    "group": "M scoreboard",
@@ -6030,7 +6030,7 @@
    "reference": 7.7,
    "tolerance": 0.0005,
    "ok": true,
-   "note": "Research Pack p.13"
+   "note": "Research Pack p.13; LDCS run without the 2031 yield condition, as printed"
   },
   {
    "group": "M scoreboard",
@@ -6039,7 +6039,7 @@
    "reference": 5.75,
    "tolerance": 0.0005,
    "ok": true,
-   "note": "Research Pack p.13"
+   "note": "Research Pack p.13; LDCS run without the 2031 yield condition, as printed"
   },
   {
    "group": "M scoreboard",
@@ -6296,8 +6296,8 @@
   {
    "group": "M paired",
    "check": "S S9: (LDCS-only minus rival-only funded paths)/n = difference in funding certainty",
-   "computed": -0.0733,
-   "reference": -0.07330000000000003,
+   "computed": -0.068,
+   "reference": -0.06799999999999995,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6305,8 +6305,8 @@
   {
    "group": "M paired",
    "check": "S S9: LDCS funding certainty equals the stored Monte Carlo value",
-   "computed": 0.83,
-   "reference": 0.83,
+   "computed": 0.8353,
+   "reference": 0.8353,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6323,8 +6323,8 @@
   {
    "group": "M paired",
    "check": "S S7: (LDCS-only minus rival-only funded paths)/n = difference in funding certainty",
-   "computed": -0.0472,
-   "reference": -0.04720000000000002,
+   "computed": -0.0419,
+   "reference": -0.04189999999999994,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6332,8 +6332,8 @@
   {
    "group": "M paired",
    "check": "S S7: LDCS funding certainty equals the stored Monte Carlo value",
-   "computed": 0.83,
-   "reference": 0.83,
+   "computed": 0.8353,
+   "reference": 0.8353,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6350,8 +6350,8 @@
   {
    "group": "M paired",
    "check": "S S0: (LDCS-only minus rival-only funded paths)/n = difference in funding certainty",
-   "computed": 0.0096,
-   "reference": 0.009599999999999942,
+   "computed": 0.0149,
+   "reference": 0.014900000000000024,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6359,8 +6359,8 @@
   {
    "group": "M paired",
    "check": "S S0: LDCS funding certainty equals the stored Monte Carlo value",
-   "computed": 0.83,
-   "reference": 0.83,
+   "computed": 0.8353,
+   "reference": 0.8353,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6377,8 +6377,8 @@
   {
    "group": "M paired",
    "check": "S S1: (LDCS-only minus rival-only funded paths)/n = difference in funding certainty",
-   "computed": 0.5838,
-   "reference": 0.5838,
+   "computed": 0.5891,
+   "reference": 0.5891000000000001,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6386,8 +6386,8 @@
   {
    "group": "M paired",
    "check": "S S1: LDCS funding certainty equals the stored Monte Carlo value",
-   "computed": 0.83,
-   "reference": 0.83,
+   "computed": 0.8353,
+   "reference": 0.8353,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6404,8 +6404,8 @@
   {
    "group": "M paired",
    "check": "S S2: (LDCS-only minus rival-only funded paths)/n = difference in funding certainty",
-   "computed": 0.2694,
-   "reference": 0.2694,
+   "computed": 0.2747,
+   "reference": 0.27470000000000006,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6413,8 +6413,8 @@
   {
    "group": "M paired",
    "check": "S S2: LDCS funding certainty equals the stored Monte Carlo value",
-   "computed": 0.83,
-   "reference": 0.83,
+   "computed": 0.8353,
+   "reference": 0.8353,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6431,8 +6431,8 @@
   {
    "group": "M paired",
    "check": "S S6: (LDCS-only minus rival-only funded paths)/n = difference in funding certainty",
-   "computed": -0.0666,
-   "reference": -0.06659999999999999,
+   "computed": -0.0613,
+   "reference": -0.06129999999999991,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6440,8 +6440,8 @@
   {
    "group": "M paired",
    "check": "S S6: LDCS funding certainty equals the stored Monte Carlo value",
-   "computed": 0.83,
-   "reference": 0.83,
+   "computed": 0.8353,
+   "reference": 0.8353,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6458,8 +6458,8 @@
   {
    "group": "M paired",
    "check": "S S8: (LDCS-only minus rival-only funded paths)/n = difference in funding certainty",
-   "computed": 0.0687,
-   "reference": 0.06869999999999998,
+   "computed": 0.074,
+   "reference": 0.07400000000000007,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6467,8 +6467,8 @@
   {
    "group": "M paired",
    "check": "S S8: LDCS funding certainty equals the stored Monte Carlo value",
-   "computed": 0.83,
-   "reference": 0.83,
+   "computed": 0.8353,
+   "reference": 0.8353,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6485,8 +6485,8 @@
   {
    "group": "M paired",
    "check": "S S4: (LDCS-only minus rival-only funded paths)/n = difference in funding certainty",
-   "computed": -0.0686,
-   "reference": -0.0686,
+   "computed": -0.0633,
+   "reference": -0.06329999999999991,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6494,8 +6494,8 @@
   {
    "group": "M paired",
    "check": "S S4: LDCS funding certainty equals the stored Monte Carlo value",
-   "computed": 0.83,
-   "reference": 0.83,
+   "computed": 0.8353,
+   "reference": 0.8353,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6512,8 +6512,8 @@
   {
    "group": "M paired",
    "check": "J S9: (LDCS-only minus rival-only funded paths)/n = difference in funding certainty",
-   "computed": 0.0927,
-   "reference": 0.0927,
+   "computed": 0.09,
+   "reference": 0.08999999999999997,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6521,8 +6521,8 @@
   {
    "group": "M paired",
    "check": "J S9: LDCS funding certainty equals the stored Monte Carlo value",
-   "computed": 0.9394,
-   "reference": 0.9394,
+   "computed": 0.9367,
+   "reference": 0.9367,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6539,8 +6539,8 @@
   {
    "group": "M paired",
    "check": "J S7: (LDCS-only minus rival-only funded paths)/n = difference in funding certainty",
-   "computed": 0.0115,
-   "reference": 0.011500000000000066,
+   "computed": 0.0088,
+   "reference": 0.00880000000000003,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6548,8 +6548,8 @@
   {
    "group": "M paired",
    "check": "J S7: LDCS funding certainty equals the stored Monte Carlo value",
-   "computed": 0.9394,
-   "reference": 0.9394,
+   "computed": 0.9367,
+   "reference": 0.9367,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6566,8 +6566,8 @@
   {
    "group": "M paired",
    "check": "J S0: (LDCS-only minus rival-only funded paths)/n = difference in funding certainty",
-   "computed": 0.0165,
-   "reference": 0.01649999999999996,
+   "computed": 0.0138,
+   "reference": 0.013799999999999923,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6575,8 +6575,8 @@
   {
    "group": "M paired",
    "check": "J S0: LDCS funding certainty equals the stored Monte Carlo value",
-   "computed": 0.9394,
-   "reference": 0.9394,
+   "computed": 0.9367,
+   "reference": 0.9367,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6593,8 +6593,8 @@
   {
    "group": "M paired",
    "check": "J S1: (LDCS-only minus rival-only funded paths)/n = difference in funding certainty",
-   "computed": -0.0606,
-   "reference": -0.06059999999999999,
+   "computed": -0.0633,
+   "reference": -0.06330000000000002,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6602,8 +6602,8 @@
   {
    "group": "M paired",
    "check": "J S1: LDCS funding certainty equals the stored Monte Carlo value",
-   "computed": 0.9394,
-   "reference": 0.9394,
+   "computed": 0.9367,
+   "reference": 0.9367,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6620,8 +6620,8 @@
   {
    "group": "M paired",
    "check": "J S2: (LDCS-only minus rival-only funded paths)/n = difference in funding certainty",
-   "computed": -0.0355,
-   "reference": -0.035499999999999976,
+   "computed": -0.0382,
+   "reference": -0.03820000000000001,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6629,8 +6629,8 @@
   {
    "group": "M paired",
    "check": "J S2: LDCS funding certainty equals the stored Monte Carlo value",
-   "computed": 0.9394,
-   "reference": 0.9394,
+   "computed": 0.9367,
+   "reference": 0.9367,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6647,8 +6647,8 @@
   {
    "group": "M paired",
    "check": "J S6: (LDCS-only minus rival-only funded paths)/n = difference in funding certainty",
-   "computed": 0.0938,
-   "reference": 0.0938,
+   "computed": 0.0911,
+   "reference": 0.09109999999999996,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6656,8 +6656,8 @@
   {
    "group": "M paired",
    "check": "J S6: LDCS funding certainty equals the stored Monte Carlo value",
-   "computed": 0.9394,
-   "reference": 0.9394,
+   "computed": 0.9367,
+   "reference": 0.9367,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6674,8 +6674,8 @@
   {
    "group": "M paired",
    "check": "J S8: (LDCS-only minus rival-only funded paths)/n = difference in funding certainty",
-   "computed": 0.1855,
-   "reference": 0.1855,
+   "computed": 0.1828,
+   "reference": 0.18279999999999996,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6683,8 +6683,8 @@
   {
    "group": "M paired",
    "check": "J S8: LDCS funding certainty equals the stored Monte Carlo value",
-   "computed": 0.9394,
-   "reference": 0.9394,
+   "computed": 0.9367,
+   "reference": 0.9367,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6701,8 +6701,8 @@
   {
    "group": "M paired",
    "check": "J S4: (LDCS-only minus rival-only funded paths)/n = difference in funding certainty",
-   "computed": 0.1718,
-   "reference": 0.17180000000000006,
+   "computed": 0.1691,
+   "reference": 0.16910000000000003,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -6710,8 +6710,8 @@
   {
    "group": "M paired",
    "check": "J S4: LDCS funding certainty equals the stored Monte Carlo value",
-   "computed": 0.9394,
-   "reference": 0.9394,
+   "computed": 0.9367,
+   "reference": 0.9367,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -7106,8 +7106,8 @@
   {
    "group": "M joint Poisson",
    "check": "S10C joint shortfall recomputed from the crash table",
-   "computed": 0.0019577329449082,
-   "reference": 0.0019577329449082296,
+   "computed": 0.0020690614732642,
+   "reference": 0.0020690614732642603,
    "tolerance": 1e-12,
    "ok": true,
    "note": ""
@@ -7304,8 +7304,8 @@
   {
    "group": "M Markov",
    "check": "S10C: sum of share x conditional shortfall = case J shortfall",
-   "computed": 0.060599999999999946,
-   "reference": 0.06059999999999999,
+   "computed": 0.06329999999999994,
+   "reference": 0.06330000000000002,
    "tolerance": 1e-09,
    "ok": true,
    "note": ""
@@ -7313,8 +7313,8 @@
   {
    "group": "M Markov",
    "check": "S10C: sum of share x conditional broken promise = case J broken promise",
-   "computed": 0.14869999999999997,
-   "reference": 0.14870000000000005,
+   "computed": 0.1629,
+   "reference": 0.16290000000000004,
    "tolerance": 1e-09,
    "ok": true,
    "note": ""
@@ -7469,6 +7469,1932 @@
    "computed": 1.0,
    "reference": 1.0,
    "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T1 S10C: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0197361950494727,
+   "reference": 0.0197361950494727,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T1 S10C: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0014703465311857,
+   "reference": 0.0014703465311857163,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T1 S10C: contribution hit = no-crash median - replay median",
+   "computed": 44479.70698915713,
+   "reference": 44479.70698915713,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T1 S9: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0197361950494727,
+   "reference": 0.0197361950494727,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T1 S9: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.018715833765415,
+   "reference": 0.018715833765414962,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T1 S9: contribution hit = no-crash median - replay median",
+   "computed": 158449.9159867299,
+   "reference": 158449.9159867299,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T1 S7: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0197361950494727,
+   "reference": 0.0197361950494727,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T1 S7: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0029880599304901,
+   "reference": 0.002988059930490166,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T1 S7: contribution hit = no-crash median - replay median",
+   "computed": 48467.07427854874,
+   "reference": 48467.07427854874,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T1 S0: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0197361950494727,
+   "reference": 0.0197361950494727,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T1 S0: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0052083818735558,
+   "reference": 0.0052083818735558455,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T1 S0: contribution hit = no-crash median - replay median",
+   "computed": 72286.29609171959,
+   "reference": 72286.29609171959,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T1 S1: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0197361950494727,
+   "reference": 0.0197361950494727,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T1 S1: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0,
+   "reference": 0.0,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T1 S1: contribution hit = no-crash median - replay median",
+   "computed": 894.5958950366767,
+   "reference": 894.5958950366767,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T1 S2: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0197361950494727,
+   "reference": 0.0197361950494727,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T1 S2: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 9.8680975247353e-06,
+   "reference": 9.868097524735262e-06,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T1 S2: contribution hit = no-crash median - replay median",
+   "computed": -38313.24245437692,
+   "reference": -38313.242454376916,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T1 S6: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0197361950494727,
+   "reference": 0.0197361950494727,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T1 S6: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0116265925036444,
+   "reference": 0.011626592503644366,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T1 S6: contribution hit = no-crash median - replay median",
+   "computed": 124249.16148300072,
+   "reference": 124249.16148300073,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T1 S8: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0197361950494727,
+   "reference": 0.0197361950494727,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T1 S8: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0191145049054143,
+   "reference": 0.01911450490541431,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T1 S8: contribution hit = no-crash median - replay median",
+   "computed": 295048.77129075746,
+   "reference": 295048.77129075746,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T1 S4: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0197361950494727,
+   "reference": 0.0197361950494727,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T1 S4: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.019726326951948,
+   "reference": 0.019726326951947964,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T1 S4: contribution hit = no-crash median - replay median",
+   "computed": 480535.3952076703,
+   "reference": 480535.3952076703,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T2 S10C: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0580477205546091,
+   "reference": 0.0580477205546091,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T2 S10C: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0014628025579761,
+   "reference": 0.0014628025579761493,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T2 S10C: contribution hit = no-crash median - replay median",
+   "computed": 13241.4539748159,
+   "reference": 13241.4539748159,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T2 S9: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0580477205546091,
+   "reference": 0.0580477205546091,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T2 S9: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0080047806644806,
+   "reference": 0.008004780664480597,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T2 S9: contribution hit = no-crash median - replay median",
+   "computed": 51119.093578390544,
+   "reference": 51119.093578390544,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T2 S7: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0580477205546091,
+   "reference": 0.0580477205546091,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T2 S7: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0025250758441254,
+   "reference": 0.0025250758441254947,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T2 S7: contribution hit = no-crash median - replay median",
+   "computed": 14092.639947968652,
+   "reference": 14092.639947968652,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T2 S0: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0580477205546091,
+   "reference": 0.0580477205546091,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T2 S0: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0030881387335052,
+   "reference": 0.0030881387335052056,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T2 S0: contribution hit = no-crash median - replay median",
+   "computed": 23870.08257484634,
+   "reference": 23870.08257484634,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T2 S1: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0580477205546091,
+   "reference": 0.0580477205546091,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T2 S1: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 1.1609544110920552e-05,
+   "reference": 1.1609544110920542e-05,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T2 S1: contribution hit = no-crash median - replay median",
+   "computed": 389.0655480697169,
+   "reference": 389.0655480697169,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T2 S2: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0580477205546091,
+   "reference": 0.0580477205546091,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T2 S2: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.001776260248971,
+   "reference": 0.001776260248971036,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T2 S2: contribution hit = no-crash median - replay median",
+   "computed": -13195.073877625196,
+   "reference": -13195.073877625196,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T2 S6: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0580477205546091,
+   "reference": 0.0580477205546091,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T2 S6: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0051430280411383,
+   "reference": 0.005143028041138367,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T2 S6: contribution hit = no-crash median - replay median",
+   "computed": 36837.71120202064,
+   "reference": 36837.71120202064,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T2 S8: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0580477205546091,
+   "reference": 0.0580477205546091,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T2 S8: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0191151143786327,
+   "reference": 0.019115114378632777,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T2 S8: contribution hit = no-crash median - replay median",
+   "computed": 161371.46740697045,
+   "reference": 161371.46740697045,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T2 S4: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0580477205546091,
+   "reference": 0.0580477205546091,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T2 S4: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0169325200857794,
+   "reference": 0.016932520085779473,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T2 S4: contribution hit = no-crash median - replay median",
+   "computed": 188942.2481949462,
+   "reference": 188942.2481949462,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3 S10C: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0390828727039146,
+   "reference": 0.0390828727039146,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3 S10C: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0215971954561832,
+   "reference": 0.021597195456183205,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3 S10C: contribution hit = no-crash median - replay median",
+   "computed": 80343.21138794039,
+   "reference": 80343.21138794039,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3 S9: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0390828727039146,
+   "reference": 0.0390828727039146,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3 S9: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0212180915909552,
+   "reference": 0.021218091590955234,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3 S9: contribution hit = no-crash median - replay median",
+   "computed": 117208.57378462728,
+   "reference": 117208.57378462728,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3 S7: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0390828727039146,
+   "reference": 0.0390828727039146,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3 S7: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0254546749920596,
+   "reference": 0.025454674992059577,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3 S7: contribution hit = no-crash median - replay median",
+   "computed": 80082.57751668902,
+   "reference": 80082.57751668902,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3 S0: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0390828727039146,
+   "reference": 0.0390828727039146,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3 S0: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0280732274632218,
+   "reference": 0.028073227463221852,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3 S0: contribution hit = no-crash median - replay median",
+   "computed": 91938.8133075002,
+   "reference": 91938.81330750021,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3 S1: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0390828727039146,
+   "reference": 0.0390828727039146,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3 S1: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0,
+   "reference": 0.0,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3 S1: contribution hit = no-crash median - replay median",
+   "computed": 3001.7402772340865,
+   "reference": 3001.7402772340865,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3 S2: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0390828727039146,
+   "reference": 0.0390828727039146,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3 S2: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0297186164040566,
+   "reference": 0.02971861640405666,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3 S2: contribution hit = no-crash median - replay median",
+   "computed": 52434.6684436441,
+   "reference": 52434.6684436441,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3 S6: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0390828727039146,
+   "reference": 0.0390828727039146,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3 S6: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0165046971428631,
+   "reference": 0.016504697142863137,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3 S6: contribution hit = no-crash median - replay median",
+   "computed": 106669.4030690558,
+   "reference": 106669.40306905581,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3 S8: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0390828727039146,
+   "reference": 0.0390828727039146,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3 S8: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0234067324623744,
+   "reference": 0.02340673246237445,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3 S8: contribution hit = no-crash median - replay median",
+   "computed": 212946.08920440671,
+   "reference": 212946.08920440671,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3 S4: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0390828727039146,
+   "reference": 0.0390828727039146,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3 S4: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.018490107076222,
+   "reference": 0.018490107076221996,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3 S4: contribution hit = no-crash median - replay median",
+   "computed": 258616.6562371219,
+   "reference": 258616.6562371219,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3+ S10C: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0390828727039146,
+   "reference": 0.0390828727039146,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3+ S10C: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0011920276174693,
+   "reference": 0.0011920276174693942,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3+ S10C: contribution hit = no-crash median - replay median",
+   "computed": 44225.9895953238,
+   "reference": 44225.9895953238,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3+ S9: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0390828727039146,
+   "reference": 0.0390828727039146,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3+ S9: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0359836008984942,
+   "reference": 0.035983600898494165,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3+ S9: contribution hit = no-crash median - replay median",
+   "computed": 146792.0428197075,
+   "reference": 146792.0428197075,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3+ S7: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0390828727039146,
+   "reference": 0.0390828727039146,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3+ S7: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0044046397537311,
+   "reference": 0.004404639753731176,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3+ S7: contribution hit = no-crash median - replay median",
+   "computed": 47833.894836331165,
+   "reference": 47833.894836331165,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3+ S0: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0390828727039146,
+   "reference": 0.0390828727039146,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3+ S0: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0095792120997294,
+   "reference": 0.009579212099729468,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3+ S0: contribution hit = no-crash median - replay median",
+   "computed": 72317.66760450954,
+   "reference": 72317.66760450954,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3+ S1: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0390828727039146,
+   "reference": 0.0390828727039146,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3+ S1: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0,
+   "reference": 0.0,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3+ S1: contribution hit = no-crash median - replay median",
+   "computed": -50892.77646809636,
+   "reference": -50892.77646809636,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3+ S2: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0390828727039146,
+   "reference": 0.0390828727039146,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3+ S2: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 7.816574540782067e-06,
+   "reference": 7.816574540782059e-06,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3+ S2: contribution hit = no-crash median - replay median",
+   "computed": -29241.651589555757,
+   "reference": -29241.651589555753,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3+ S6: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0390828727039146,
+   "reference": 0.0390828727039146,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3+ S6: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0194867203301718,
+   "reference": 0.01948672033017182,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3+ S6: contribution hit = no-crash median - replay median",
+   "computed": 115145.6485319528,
+   "reference": 115145.64853195279,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3+ S8: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0390828727039146,
+   "reference": 0.0390828727039146,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3+ S8: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0381214340353983,
+   "reference": 0.0381214340353983,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3+ S8: contribution hit = no-crash median - replay median",
+   "computed": 295849.7268421091,
+   "reference": 295849.7268421091,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3+ S4: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0390828727039146,
+   "reference": 0.0390828727039146,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3+ S4: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0390828727039146,
+   "reference": 0.0390828727039146,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3+ S4: contribution hit = no-crash median - replay median",
+   "computed": 470015.1318961693,
+   "reference": 470015.1318961693,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T4 S10C: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0390828727039146,
+   "reference": 0.0390828727039146,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T4 S10C: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0,
+   "reference": 0.0,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T4 S10C: contribution hit = no-crash median - replay median",
+   "computed": 3412.241083705623,
+   "reference": 3412.241083705623,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T4 S9: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0390828727039146,
+   "reference": 0.0390828727039146,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T4 S9: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0137298131808852,
+   "reference": 0.013729813180885196,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T4 S9: contribution hit = no-crash median - replay median",
+   "computed": 109166.21314844856,
+   "reference": 109166.21314844856,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T4 S7: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0390828727039146,
+   "reference": 0.0390828727039146,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T4 S7: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 2.344972362235054e-05,
+   "reference": 2.3449723622350515e-05,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T4 S7: contribution hit = no-crash median - replay median",
+   "computed": -2644.266442277527,
+   "reference": -2644.266442277527,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T4 S0: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0390828727039146,
+   "reference": 0.0390828727039146,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T4 S0: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 3.908287270391034e-06,
+   "reference": 3.9082872703910295e-06,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T4 S0: contribution hit = no-crash median - replay median",
+   "computed": 20065.762669627904,
+   "reference": 20065.762669627904,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T4 S1: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0390828727039146,
+   "reference": 0.0390828727039146,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T4 S1: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0,
+   "reference": 0.0,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T4 S1: contribution hit = no-crash median - replay median",
+   "computed": -16588.17421400122,
+   "reference": -16588.17421400122,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T4 S2: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0390828727039146,
+   "reference": 0.0390828727039146,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T4 S2: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0,
+   "reference": 0.0,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T4 S2: contribution hit = no-crash median - replay median",
+   "computed": -92122.68903299984,
+   "reference": -92122.68903299983,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T4 S6: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0390828727039146,
+   "reference": 0.0390828727039146,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T4 S6: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0053269955495435,
+   "reference": 0.005326995549543558,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T4 S6: contribution hit = no-crash median - replay median",
+   "computed": 82739.5821693606,
+   "reference": 82739.5821693606,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T4 S8: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0390828727039146,
+   "reference": 0.0390828727039146,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T4 S8: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0320674970535619,
+   "reference": 0.032067497053561926,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T4 S8: contribution hit = no-crash median - replay median",
+   "computed": 272144.0667480749,
+   "reference": 272144.06674807495,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T4 S4: P(in 2031-32) matches the crash-type table",
+   "computed": 0.0390828727039146,
+   "reference": 0.0390828727039146,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T4 S4: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0390828727039146,
+   "reference": 0.0390828727039146,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T4 S4: contribution hit = no-crash median - replay median",
+   "computed": 471992.1588729754,
+   "reference": 471992.15887297544,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T5 S10C: P(in 2031-32) matches the crash-type table",
+   "computed": 0.222331688421604,
+   "reference": 0.222331688421604,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T5 S10C: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 2.2233168842157952e-05,
+   "reference": 2.2233168842157952e-05,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T5 S10C: contribution hit = no-crash median - replay median",
+   "computed": -50136.0326875911,
+   "reference": -50136.0326875911,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T5 S9: P(in 2031-32) matches the crash-type table",
+   "computed": 0.222331688421604,
+   "reference": 0.222331688421604,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T5 S9: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.000422430208001,
+   "reference": 0.00042243020800105047,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T5 S9: contribution hit = no-crash median - replay median",
+   "computed": -54319.346359866846,
+   "reference": -54319.346359866846,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T5 S7: P(in 2031-32) matches the crash-type table",
+   "computed": 0.222331688421604,
+   "reference": 0.222331688421604,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T5 S7: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0,
+   "reference": 0.0,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T5 S7: contribution hit = no-crash median - replay median",
+   "computed": -48471.76875007665,
+   "reference": -48471.76875007665,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T5 S0: P(in 2031-32) matches the crash-type table",
+   "computed": 0.222331688421604,
+   "reference": 0.222331688421604,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T5 S0: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 6.669950652647386e-05,
+   "reference": 6.669950652647386e-05,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T5 S0: contribution hit = no-crash median - replay median",
+   "computed": -46232.44536876236,
+   "reference": -46232.44536876236,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T5 S1: P(in 2031-32) matches the crash-type table",
+   "computed": 0.222331688421604,
+   "reference": 0.222331688421604,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T5 S1: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0,
+   "reference": 0.0,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T5 S1: contribution hit = no-crash median - replay median",
+   "computed": 1237.825957740279,
+   "reference": 1237.8259577402787,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T5 S2: P(in 2031-32) matches the crash-type table",
+   "computed": 0.222331688421604,
+   "reference": 0.222331688421604,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T5 S2: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0,
+   "reference": 0.0,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T5 S2: contribution hit = no-crash median - replay median",
+   "computed": -42048.34282685185,
+   "reference": -42048.34282685185,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T5 S6: P(in 2031-32) matches the crash-type table",
+   "computed": 0.222331688421604,
+   "reference": 0.222331688421604,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T5 S6: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0008670935848442,
+   "reference": 0.0008670935848442588,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T5 S6: contribution hit = no-crash median - replay median",
+   "computed": -58440.53295723774,
+   "reference": -58440.53295723774,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T5 S8: P(in 2031-32) matches the crash-type table",
+   "computed": 0.222331688421604,
+   "reference": 0.222331688421604,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T5 S8: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0052247946779076,
+   "reference": 0.005224794677907686,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T5 S8: contribution hit = no-crash median - replay median",
+   "computed": -67630.58752130053,
+   "reference": -67630.58752130053,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T5 S4: P(in 2031-32) matches the crash-type table",
+   "computed": 0.222331688421604,
+   "reference": 0.222331688421604,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T5 S4: joint broken promise = P(type) x (1 - replay promise kept)",
+   "computed": 0.0035795401835878,
+   "reference": 0.003579540183587825,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T5 S4: contribution hit = no-crash median - replay median",
+   "computed": -107513.64050025382,
+   "reference": -107513.64050025382,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "S10C: total joint broken promise equals the joint Poisson table",
+   "computed": 0.025744605331656654,
+   "reference": 0.0257446053316566,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "S10C: expected hit = sum of P(type) x hit",
+   "computed": -4498.449996477815,
+   "reference": -4498.449996477825,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "S10C: stock-crash expected hit = sum over T1-T4 of P(type) x hit",
+   "computed": 6648.378801715042,
+   "reference": 6648.378801715032,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "S9: total joint broken promise equals the joint Poisson table",
+   "computed": 0.09807455030823137,
+   "reference": 0.0980745503082313,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "S9: expected hit = sum of P(type) x hit",
+   "computed": 8602.065020934317,
+   "reference": 8602.065020934286,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "S9: stock-crash expected hit = sum over T1-T4 of P(type) x hit",
+   "computed": 20678.97701108142,
+   "reference": 20678.97701108139,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "S7: total joint broken promise equals the joint Poisson table",
+   "computed": 0.03539590024402881,
+   "reference": 0.0353959002440288,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "S7: expected hit = sum of P(type) x hit",
+   "computed": -4106.211253022815,
+   "reference": -4106.211253022824,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "S7: stock-crash expected hit = sum over T1-T4 of P(type) x hit",
+   "computed": 6670.598933963267,
+   "reference": 6670.598933963258,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "S0: total joint broken promise equals the joint Poisson table",
+   "computed": 0.0460195679638093,
+   "reference": 0.0460195679638093,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "S0: expected hit = sum of P(type) x hit",
+   "computed": -262.8345343051642,
+   "reference": -262.83453430517875,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "S0: stock-crash expected hit = sum over T1-T4 of P(type) x hit",
+   "computed": 10016.103104391337,
+   "reference": 10016.103104391323,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "S1: total joint broken promise equals the joint Poisson table",
+   "computed": 1.1609544110920553e-05,
+   "reference": 1.1609544110920552e-05,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "S1: expected hit = sum of P(type) x hit",
+   "computed": -2204.5845498590447,
+   "reference": -2204.584549859042,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "S1: stock-crash expected hit = sum over T1-T4 of P(type) x hit",
+   "computed": -2479.79248501553,
+   "reference": -2479.7924850155273,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "S2: total joint broken promise equals the joint Poisson table",
+   "computed": 0.031512561325093245,
+   "reference": 0.0315125613250932,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "S2: expected hit = sum of P(type) x hit",
+   "computed": -13564.75024651851,
+   "reference": -13564.750246518504,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "S2: stock-crash expected hit = sum over T1-T4 of P(type) x hit",
+   "computed": -4216.071190494098,
+   "reference": -4216.071190494093,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "S6: total joint broken promise equals the joint Poisson table",
+   "computed": 0.0589551271522056,
+   "reference": 0.0589551271522056,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "S6: expected hit = sum of P(type) x hit",
+   "computed": 3500.2384698818532,
+   "reference": 3500.2384698818296,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "S6: stock-crash expected hit = sum over T1-T4 of P(type) x hit",
+   "computed": 16493.420834522913,
+   "reference": 16493.42083452289,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "S8: total joint broken promise equals the joint Poisson table",
+   "computed": 0.13705007751328965,
+   "reference": 0.1370500775132896,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "S8: expected hit = sum of P(type) x hit",
+   "computed": 30675.337260943914,
+   "reference": 30675.337260943852,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "S8: stock-crash expected hit = sum over T1-T4 of P(type) x hit",
+   "computed": 45711.75997349972,
+   "reference": 45711.75997349966,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "S4: total joint broken promise equals the joint Poisson table",
+   "computed": 0.13689423970536665,
+   "reference": 0.1368942397053666,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "S4: expected hit = sum of P(type) x hit",
+   "computed": 43471.75077751661,
+   "reference": 43471.750777516514,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "S4: stock-crash expected hit = sum over T1-T4 of P(type) x hit",
+   "computed": 67375.43999829139,
+   "reference": 67375.43999829129,
+   "tolerance": 1e-06,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T1: worst strategy (all nine) has the highest joint broken-promise probability",
+   "computed": 0.019726326951948,
+   "reference": 0.019726326951948,
+   "tolerance": 1e-15,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T2: worst strategy (all nine) has the highest joint broken-promise probability",
+   "computed": 0.0191151143786327,
+   "reference": 0.0191151143786327,
+   "tolerance": 1e-15,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3: worst strategy (all nine) has the highest joint broken-promise probability",
+   "computed": 0.0297186164040566,
+   "reference": 0.0297186164040566,
+   "tolerance": 1e-15,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T3+: worst strategy (all nine) has the highest joint broken-promise probability",
+   "computed": 0.0390828727039146,
+   "reference": 0.0390828727039146,
+   "tolerance": 1e-15,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T4: worst strategy (all nine) has the highest joint broken-promise probability",
+   "computed": 0.0390828727039146,
+   "reference": 0.0390828727039146,
+   "tolerance": 1e-15,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N crash impact",
+   "check": "T5: worst strategy (all nine) has the highest joint broken-promise probability",
+   "computed": 0.0052247946779076,
+   "reference": 0.0052247946779076,
+   "tolerance": 1e-15,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N IPS variants",
+   "check": "published: lock-in share within [0, 1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N IPS variants",
+   "check": "published: crash resilience and promise reliability within [0, 1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N IPS variants",
+   "check": "published: LDCS keeps first place under equal weights",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N IPS variants",
+   "check": "headline: lock-in share within [0, 1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N IPS variants",
+   "check": "headline: crash resilience and promise reliability within [0, 1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N IPS variants",
+   "check": "headline: LDCS keeps first place under equal weights",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N IPS variants",
+   "check": "band: lock-in share within [0, 1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N IPS variants",
+   "check": "band: crash resilience and promise reliability within [0, 1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N IPS variants",
+   "check": "band: LDCS keeps first place under equal weights",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N IPS variants",
+   "check": "band_trigger: lock-in share within [0, 1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N IPS variants",
+   "check": "band_trigger: crash resilience and promise reliability within [0, 1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N IPS variants",
+   "check": "band_trigger: LDCS keeps first place under equal weights",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N IPS variants",
+   "check": "ips_rule: lock-in share within [0, 1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N IPS variants",
+   "check": "ips_rule: crash resilience and promise reliability within [0, 1]",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N IPS variants",
+   "check": "ips_rule: LDCS keeps first place under equal weights",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N IPS variants",
+   "check": "published version locks in every path",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N IPS variants",
+   "check": "headline version equals the stored S10C results (promise reliability)",
+   "computed": 0.8904500000000001,
+   "reference": 0.8904500000000001,
+   "tolerance": 1e-12,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N IPS variants",
+   "check": "yield condition: lock-in off when the 2031 2-year yield is below 4%",
+   "computed": 0.0,
+   "reference": 0.0,
+   "tolerance": 0,
+   "ok": true,
+   "note": ""
+  },
+  {
+   "group": "N IPS variants",
+   "check": "yield condition: lock-in on when the 2031 2-year yield is at least 4%",
+   "computed": 1.0,
+   "reference": 1.0,
+   "tolerance": 0,
    "ok": true,
    "note": ""
   }

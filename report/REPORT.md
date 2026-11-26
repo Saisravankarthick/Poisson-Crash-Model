@@ -16,7 +16,7 @@ Other documents: [Interconnections](INTERCONNECTIONS.md) · [Data catalogue](DAT
 | Cost to Laura of one crash ($300k portfolio) | about $39,882 (-13.3%) before any recovery |
 | Expected crash damage, 2027–32 | $33,676; P(≥ $50k) = 29.6%; 99% VaR $190,419 |
 | Is Poisson a fair description of the timing? | Yes, not rejected: variance/mean = 0.91, p = 0.73 |
-| Independent checks | 830 of 830 pass (`python src/verify.py`) |
+| Independent checks | 1044 of 1044 pass (`python src/verify.py`) |
 
 ## 1. The inputs (Case Study only)
 
@@ -148,10 +148,10 @@ P(type affects Laura) = P(type occurs in 2031–32, Poisson) × P(harm | it occu
 
 | Crash type | P(occurs) | Reserve missed: S9 | S10 | S10C | Promise broken: S9 | S10 | S10C |
 |---|---|---|---|---|---|---|---|
-| T1 Recession bear | 2.0% | 0.45% | 0.00% | 0.00% | 1.87% | 0.44% | 0.00% |
-| T2 Exogenous V-shock | 5.8% | 0.20% | 0.01% | 0.01% | 0.80% | 0.27% | 0.09% |
-| T3 Inflation/rate shock | 3.9% | 0.43% | 0.22% | 0.18% | 2.12% | 2.41% | 2.00% |
-| T3+ Severe inflation shock | 3.9% | 0.68% | 0.00% | 0.00% | 3.60% | 0.34% | 0.00% |
+| T1 Recession bear | 2.0% | 0.45% | 0.00% | 0.00% | 1.87% | 0.44% | 0.15% |
+| T2 Exogenous V-shock | 5.8% | 0.20% | 0.01% | 0.01% | 0.80% | 0.27% | 0.15% |
+| T3 Inflation/rate shock | 3.9% | 0.43% | 0.22% | 0.19% | 2.12% | 2.41% | 2.16% |
+| T3+ Severe inflation shock | 3.9% | 0.68% | 0.00% | 0.00% | 3.60% | 0.34% | 0.12% |
 | T4 Valuation bust | 3.9% | 0.25% | 0.00% | 0.00% | 1.37% | 0.00% | 0.00% |
 | T5 Falling-rate shock | 22.2% | 0.04% | 0.00% | 0.00% | 0.04% | 0.00% | 0.00% |
 
@@ -196,7 +196,7 @@ The Monte Carlo layer (`src/strategy_sim.py`) simulates ten strategies through 7
 | S9 LDCS static | 98.8% | 90.3% | 99.6% | 84.7% |
 | S9A LDCS + glide | 99.5% | 89.9% | 99.9% | 89.2% |
 | S10 LDCS + cushion | 99.6% | 84.7% | 100.0% | 93.3% |
-| S10C cushion + lock-in | 99.6% | 83.0% | 100.0% | 93.9% |
+| S10C cushion + lock-in | 99.6% | 83.5% | 100.0% | 93.7% |
 
 Funding certainty is the share of paths on which the portfolio at the start of 2033 is at least the $421,767 reserve. Table: `results/tables/strategy_summary.csv`.
 
@@ -213,7 +213,7 @@ Funding certainty is the share of paths on which the portfolio at the start of 2
 | S9 LDCS static | $50,963 | $203,636 | $361,989 | −$28,568 | $98,763 | $230,850 | 95.1% |
 | S9A LDCS + glide | $60,620 | $173,812 | $289,749 | −$20,403 | $73,769 | $170,376 | 97.3% |
 | S10 LDCS + cushion | $55,636 | $165,650 | $308,313 | −$30,847 | $52,768 | $154,367 | 96.7% |
-| S10C cushion + lock-in | $52,884 | $153,020 | $271,901 | −$31,693 | $46,373 | $135,703 | 97.1% |
+| S10C cushion + lock-in | $53,089 | $156,269 | $286,584 | −$31,429 | $48,691 | $143,199 | 96.9% |
 
 The facility contribution is the portfolio value in 2033 less the reserve. All-equity and CPPI have the widest ranges and the worst tails; the LDCS family trades some upside for a narrow, mostly positive range.
 
@@ -229,7 +229,7 @@ The written version, with the comparison to the Markov-Model and Monte-Carlo-Sim
 
 ## 13. How it was checked
 
-`python src/verify.py` runs **830 independent checks, 830 passing**. They recompute the numbers a second way (a separate crash counter, Garwood by inverting the Poisson cdf, the Markov recursion month by month, the liability duration and convexity from first principles, and a separate 20,000-path bootstrap of the all-equity and T-bill strategies) and compare the case arithmetic with the Team Study Pack tables (reserve at 0–6%, 2033 portfolio at 0–8%, remainder after the reserve, 2031 illustrations). They also check that the tables on disk equal the results files and that the probability-of-harm table uses the replayed crash results. `python -m pytest tests -q` runs six unit tests of the mathematics.
+`python src/verify.py` runs **1044 independent checks, 1044 passing**. They recompute the numbers a second way (a separate crash counter, Garwood by inverting the Poisson cdf, the Markov recursion month by month, the liability duration and convexity from first principles, and a separate 20,000-path bootstrap of the all-equity and T-bill strategies) and compare the case arithmetic with the Team Study Pack tables (reserve at 0–6%, 2033 portfolio at 0–8%, remainder after the reserve, 2031 illustrations). They also check that the tables on disk equal the results files and that the probability-of-harm table uses the replayed crash results. `python -m pytest tests -q` runs six unit tests of the mathematics.
 
 ## 14. Limits
 

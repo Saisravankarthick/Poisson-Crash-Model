@@ -30,6 +30,7 @@ Every chart in `figures/`, the table behind it in `results/tables/`, and the fil
 |---|---|---|
 | [`compound_poisson_damage.csv`](../results/tables/compound_poisson_damage.csv) | 4 | window, lam_t, expected, expected_formula, sd, p_ge_50k … |
 | [`crash_episodes.csv`](../results/tables/crash_episodes.csv) | 10 | peak, trough, recovered, depth, type, d10y … |
+| [`crash_impact_by_strategy.csv`](../results/tables/crash_impact_by_strategy.csv) | 54 | type, name, lam, p_2031_32, strategy, strategy_name … |
 | [`crash_replay_summary.csv`](../results/tables/crash_replay_summary.csv) | 120 | crash, timing, strategy, funding_certainty_4pct, contribution_p50 |
 | [`crash_type_promise.csv`](../results/tables/crash_type_promise.csv) | 6 | type, name, events, years, lambda, lambda_lo90 … |
 | [`dollar_loss_by_fund_and_type.csv`](../results/tables/dollar_loss_by_fund_and_type.csv) | 8 | fund, T1 Recession bear, T2 Exogenous V-shock, T3 Inflation / rate shock, T4 Valuation bust |
@@ -46,7 +47,7 @@ Every chart in `figures/`, the table behind it in `results/tables/`, and the fil
 | [`scoreboard_ranked.csv`](../results/tables/scoreboard_ranked.csv) | 9 | strategy, name, Minimum funding certainty, Average funding certainty, Median contribution, Bad-case contribution (P5, J) … |
 | [`seed_stability.csv`](../results/tables/seed_stability.csv) | 9 | strategy, name, equal: share of seeds ranked 1st, equal: best-worst place, safety: share of seeds ranked 1st, safety: best-worst place … |
 | [`strategy_summary.csv`](../results/tables/strategy_summary.csv) | 40 | case, strategy, funding_certainty_4pct, funding_certainty_3pct, funding_certainty_ladder, contribution_p5 … |
-| [`verification_checks.csv`](../results/tables/verification_checks.csv) | 830 | group, check, computed, reference, tolerance, ok … |
+| [`verification_checks.csv`](../results/tables/verification_checks.csv) | 1044 | group, check, computed, reference, tolerance, ok … |
 | [`weight_robustness.csv`](../results/tables/weight_robustness.csv) | 9 | strategy, name, p_rank_1, p_top_3 |
 
 ## Documents
@@ -58,5 +59,5 @@ Every chart in `figures/`, the table behind it in `results/tables/`, and the fil
 | [DATA.md](DATA.md) | Every input and output file, with sources, row counts and proxy validation |
 | [SENSITIVITY.md](SENSITIVITY.md) | How λ changes with the crash threshold and the length of history |
 | [MATHEMATICS.md](MATHEMATICS.md) | Every formula, case and statistical tool derived from first principles, with worked examples from the results and APA references |
-| [ROBUSTNESS.md](ROBUSTNESS.md) | Nine-strategy scoreboard with one-line criterion definitions, random-weight and seed-stability tests, paired tests, joint Poisson shortfall, Poisson assumption tests, Markov conditional shortfall |
+| [ROBUSTNESS.md](ROBUSTNESS.md) | Nine-strategy scoreboard with one-line criterion definitions, random-weight and seed-stability tests, paired tests, joint Poisson shortfall, Poisson assumption tests, Markov conditional shortfall, which crash hurts Laura most under each strategy, LDCS under the IPS tolerance band |
 | [../docs/Poisson_Crash_Model_Final_Report.pdf](../docs/Poisson_Crash_Model_Final_Report.pdf) | The same material as one printable PDF |

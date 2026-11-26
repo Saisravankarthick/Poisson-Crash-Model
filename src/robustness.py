@@ -14,6 +14,9 @@ Tests
   E  Joint Poisson shortfall: sum over crash types of P(type occurs in 2031-32) x P(shortfall | worst-timed replay),
      with the union form and the 90% Garwood interval of each lambda.
   F  Poisson assumptions: dispersion by year and by decade, and exponential gaps between crashes (KS test).
+  H  Crash impact: for each crash type, P(occurs in 2031-32) x damage under each strategy (broken promise, contribution lost),
+     and the strategy hit hardest.
+  I  IPS consistency: LDCS with the IPS +/-2% tolerance band, and with / without the 2031 yield condition, in the same scoreboard.
   G  Markov: transition matrix, stationary shares, expected spell lengths, P(turbulence in 2031-32), and shortfall
      conditional on the months the jump-diffusion paths spend in the turbulent state during 2031-32.
 Outputs: results/robustness.json, results/tables/{scoreboard_ranked,weight_robustness,seed_stability,paired_tests,
@@ -47,6 +50,7 @@ TYPES = ["T1", "T2", "T3", "T3+", "T4", "T5"]
 TNAME = {"T1": "2008-type recession", "T2": "2020-type V-shock", "T3": "2022-type inflation", "T3+": "1973-74-type inflation",
          "T4": "2000-02-type bust", "T5": "2019-20 falling rates"}
 NSEED, NDIR = 20, 20000
+REPORT_SET = ["S10C", "S0", "S1", "S2", "S6", "S7", "S9"]     # the comparison set named in the Final Report
 plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 8, "axes.edgecolor": MUTED_INK, "axes.labelcolor": INK,
                      "xtick.color": MUTED_INK, "ytick.color": MUTED_INK, "axes.spines.top": False, "axes.spines.right": False})
 
@@ -214,6 +218,65 @@ def main():
     CT = pd.DataFrame(trows); CT.to_csv(T_ / "crash_type_promise.csv", index=False)
     out["joint_poisson"] = JP.set_index("strategy").to_dict("index"); out["crash_types"] = trows
 
+    # ---------------- H. which crash hurts Laura most, under which strategy (Poisson probability x replay damage)
+    irows = []
+    for t in TYPES:
+        sc_ = AL[t]["scenario"]; wst = R["crash"][sc_]["timing"]["worst"]; p2 = 1 - math.exp(-2 * lam[t])
+        for s in RANKSET:
+            base50 = R["H"][s]["p50"]; rep50 = wst[s]["p50"]
+            irows.append(dict(type=t, name=TNAME[t], lam=lam[t], p_2031_32=p2, strategy=s, strategy_name=SHORT[s],
+                              p_promise_broken_given=1 - wst[s]["promise_kept"], p_shortfall_given=1 - wst[s]["f4"],
+                              joint_promise_broken=p2 * (1 - wst[s]["promise_kept"]), joint_shortfall=p2 * (1 - wst[s]["f4"]),
+                              median_contribution_no_crash=base50, median_contribution_after=rep50, contribution_hit=base50 - rep50,
+                              expected_hit=p2 * (base50 - rep50), mean_shortfall_vs_promise=wst[s]["short_vs_L"]))
+    IM = pd.DataFrame(irows)
+    worst = {}
+    for t in TYPES:
+        q = IM[IM.type == t].set_index("strategy")
+        for lab, S_ in (("all", RANKSET), ("report", REPORT_SET)):
+            qq = q.loc[S_].sort_values(["joint_promise_broken", "contribution_hit"], ascending=False)
+            worst.setdefault(t, {})[lab] = dict(strategy=qq.index[0], joint_promise_broken=float(qq.iloc[0]["joint_promise_broken"]),
+                                               contribution_hit=float(qq.iloc[0]["contribution_hit"]))
+    IM["expected_hit_stock_crashes"] = np.where(IM.type == "T5", 0.0, IM.expected_hit)
+    tot = IM.groupby("strategy")[["joint_promise_broken", "joint_shortfall", "expected_hit", "expected_hit_stock_crashes"]].sum()
+    irows = IM.to_dict("records")
+    IM.to_csv(T_ / "crash_impact_by_strategy.csv", index=False)
+    out["crash_impact"] = dict(rows=irows, worst=worst, totals=tot.to_dict("index"),
+                               order_by_broken_promise=tot.sort_values("joint_promise_broken", ascending=False).index.tolist(),
+                               order_by_expected_hit=tot.sort_values("expected_hit", ascending=False).index.tolist())
+
+    # ---------------- I. IPS consistency: the cushion rule run with the IPS's +/-2% tolerance band, and without the yield condition
+    cs0 = ss.make_cases(42, 7); reps = {k: ss.crash_replay(*cs0["H"], k) for k in ss.EPIS}
+    def vstats(name, **kw):
+        st = {c: {name: light(ss.simulate(*cs0[c], name, **kw))} for c in "HSJC"}
+        st["crash"] = {k: {name: light(ss.simulate(*reps[k], name, **kw))} for k in ss.EPIS}
+        lk = float(ss.simulate(*cs0["H"], name, **kw)["lock"].mean())
+        return st, lk
+    VAR = {"published": ("S10C", dict(lock_cond=False), "LDCS without the yield condition (lock-in in every path), as in the Research Pack"),
+           "headline": ("S10C", dict(), "LDCS as defined: lock-in only if the 2-year yield is at least 4% (the headline in this page)"),
+           "band": ("S10C", dict(band=0.02, trigger=False), "LDCS with the IPS ±2% tolerance band checked monthly, no 20% trigger"),
+           "band_trigger": ("S10C", dict(band=0.02), "LDCS with the IPS ±2% band and the 20% trigger"),
+           "ips_rule": ("S10", dict(band=0.02, trigger=False), "IPS cushion rule only (no 2031 lock-in), ±2% band")}
+    ivar = {}
+    for k, (nm, kw, desc) in VAR.items():
+        st, lk = vstats(nm, **kw)
+        for c in "HSJC": st[c]["S10C"] = st[c].pop(nm)
+        for kk in ss.EPIS: st["crash"][kk]["S10C"] = st["crash"][kk].pop(nm)
+        full = {c: {**{s: base[c][s] for s in RANKSET if s != "S10C"}, "S10C": st[c]["S10C"]} for c in "HSJC"}
+        full["crash"] = {kk: {**{s: base["crash"][kk][s] for s in RANKSET if s != "S10C"}, "S10C": st["crash"][kk]["S10C"]} for kk in ss.EPIS}
+        c_ = criteria(full, RANKSET); r_, t_ = rank(c_, RANKSET)
+        ivar[k] = dict(description=desc, lock_share_H=lk if nm == "S10C" else 0.0, lock_rule=nm == "S10C", crit={CRIT[i]: c_[i]["S10C"] for i in range(6)},
+                       ranks={CRIT[i]: r_[i]["S10C"] for i in range(6)}, totals={w: t_[w]["S10C"] for w in WEIGHTS},
+                       place={w: sorted(RANKSET, key=lambda s: t_[w][s]).index("S10C") + 1 for w in WEIGHTS})
+        if k == "published":                                   # the ten-strategy Table 8.21 as printed in the Research Pack
+            f10 = {c: {s: dict(f4=R[c][s]["f4"], p50=R[c][s]["p50"], p5=R[c][s]["p5"], pk=R[c][s]["promise_kept"]) for s in FULL10} for c in "HSJC"}
+            f10["crash"] = {kk: {s: dict(f4=R["crash"][kk]["timing"]["worst"][s]["f4"], pk=R["crash"][kk]["timing"]["worst"][s]["promise_kept"])
+                                 for s in FULL10} for kk in R["crash"]}
+            for c in "HSJC": f10[c]["S10C"] = st[c]["S10C"]
+            for kk in ss.EPIS: f10["crash"][kk]["S10C"] = st["crash"][kk]["S10C"]
+            _, out["full10_totals_published"] = rank(criteria(f10, FULL10), FULL10)
+    out["ips_check"] = ivar
+
     # ---------------- F. Poisson assumptions
     ep = pd.read_csv(T_ / "crash_episodes.csv"); yrs = ep["peak"].str[:4].astype(int)
     dec = np.array([((yrs >= y) & (yrs < y + 10)).sum() for y in range(1926, 2026, 10)])
@@ -354,7 +417,7 @@ def write_md(o, sb, PT, JP, CT, MC):
              "**LDCS** in this page is S10C: hold Treasury, TIPS and T-bill funds worth the present value of Laura's ten payments; "
              "invest only the amount above that floor in equities, capped at 39.7%; reset each January and after any 20% fall in the "
              "equity sleeve; from the 2031 co-sponsor announcement add the announced minimum to the floor if two-year Treasury yields "
-             "are at least 4%. S9A and S10 (earlier versions of the same rule) are left out of the ranking; S9 is the same ETFs held "
+             "are at least 4% (modelled path by path; section I). S9A and S10 (earlier versions of the same rule) are left out of the ranking; S9 is the same ETFs held "
              "static, i.e. core-satellite without the floor rule.\n")
     L.append("## A. Scoreboard (Research Pack Table 8.21, nine strategies)\n")
     L.append(md(["Criterion", "Definition"], list(zip(CRIT, CRIT_DEF))) + "\n")
@@ -367,10 +430,12 @@ def write_md(o, sb, PT, JP, CT, MC):
     L.append(md(["Strategy", "Min. funding certainty", "Avg. funding certainty", "Median contribution", "Bad-case P5 (J)", "Crash resilience",
                  "Promise reliability", "Avg rank equal / safety / growth"], rows) + "\n")
     L.append("Order: " + "; ".join(f"**{w}** " + ", ".join(sc["place"][w]) for w in WEIGHTS) + ".\n")
-    t10 = o["full10_totals"]
-    L.append(f"With all ten original strategies (Table 8.21) LDCS scores {t10['equal']['S10C']:.2f} / {t10['safety']['S10C']:.2f} / "
+    t10 = o["full10_totals"]; tp = o["full10_totals_published"]
+    L.append(f"With all ten original strategies LDCS scores {t10['equal']['S10C']:.2f} / {t10['safety']['S10C']:.2f} / "
              f"{t10['growth']['S10C']:.2f}; the calendar glide path S9A scores {t10['equal']['S9A']:.2f} / {t10['safety']['S9A']:.2f} / "
-             f"{t10['growth']['S9A']:.2f}. Leaving out our own two earlier versions is what turns that tie into a clear first place.\n")
+             f"{t10['growth']['S9A']:.2f}. Leaving out our own two earlier versions is what turns that near-tie into a clear first place. "
+             f"(Research Pack Table 8.21, which locked in the promise in every path, is reproduced exactly: LDCS {tp['equal']['S10C']:.2f} / "
+             f"{tp['safety']['S10C']:.2f} / {tp['growth']['S10C']:.2f}.)\n")
     L.append("## B. Random weights\n")
     L.append(md(["Strategy", "P(ranked 1st)", "P(top 3)"], [[f"{s} {SHORT[s]}", pct(o['weights']['p_first'][s]), pct(o['weights']['p_top3'][s])] for s in S]) + "\n")
     L.append(f"{o['weights']['draws']:,} weightings drawn from a flat Dirichlet distribution (every mix of the six criteria equally likely).\n")
@@ -424,6 +489,44 @@ def write_md(o, sb, PT, JP, CT, MC):
         rows.append([b, pct(q.share_of_paths.iloc[0])] + [f"{pct(q.loc[s, 'p_shortfall'])} / {pct(q.loc[s, 'p_promise_broken'])}" for s in ["S10C", "S9", "S0", "S7", "S2"]])
     L.append(md(["Turbulent months in 2031-32", "Share of paths"] + [f"{SHORT[s]}: shortfall / broken" for s in ["S10C", "S9", "S0", "S7", "S2"]], rows) + "\n")
     L.append("Case J paths, base seed. Total shortfall = Σ share × conditional shortfall (checked in verify.py).\n")
+    ci = o["crash_impact"]; IM = pd.DataFrame(ci["rows"])
+    L.append("## H. Which crash hurts Laura most, and under which strategy\n")
+    L.append("For each crash type we combine its Poisson probability of occurring in 2031-32 with what it does to each strategy when "
+             "replayed to end at the January 2033 valuation. Cell = P(crash occurs in 2031-32 **and** breaks the 2031 promise), in %; "
+             "the bold cell in each row is the strategy hit hardest among the seven compared in the Final Report.\n")
+    rows = []
+    for t in TYPES:
+        q = IM[IM.type == t].set_index("strategy"); w_ = ci["worst"][t]["report"]["strategy"]
+        rows.append([TNAME[t], f"{q.iloc[0]['lam']:.3f}", pct(q.iloc[0]["p_2031_32"])] +
+                    [(f"**{pct(q.loc[s, 'joint_promise_broken'], 2)}**" if s == w_ else pct(q.loc[s, "joint_promise_broken"], 2)) for s in REPORT_SET] +
+                    [f"{SHORT[ci['worst'][t]['all']['strategy']]} ({pct(ci['worst'][t]['all']['joint_promise_broken'], 2)})"])
+    tt = ci["totals"]
+    rows.append(["**All six types (sum)**", "", ""] + [f"**{pct(tt[s]['joint_promise_broken'], 2)}**" for s in REPORT_SET] +
+                [f"{SHORT[ci['order_by_broken_promise'][0]]} ({pct(tt[ci['order_by_broken_promise'][0]]['joint_promise_broken'], 2)})"])
+    L.append(md(["Crash type", "λ a year", "P(in 2031-32)"] + [SHORT[s] for s in REPORT_SET] + ["Worst of all nine"], rows) + "\n")
+    L.append("Dollar view: fall in the median 2033 contribution when the crash is replayed, against the no-crash history case, "
+             "and the Poisson-weighted expected fall Σ P(type) × fall over the five stock-crash types. A negative figure is a gain. "
+             "The falling-rate replay raises every bond-holding strategy's contribution because the reserve is valued at a fixed 4%; "
+             "at market yields the same fall in rates would also raise the cost of the ten payments, so we leave it out of the total.\n")
+    rows = []
+    for t in TYPES:
+        q = IM[IM.type == t].set_index("strategy")
+        rows.append([TNAME[t]] + [usd(q.loc[s, "contribution_hit"]) for s in REPORT_SET])
+    rows.append(["**Expected fall from the five stock-crash types, 2031-32**"] + [f"**{usd(tt[s]['expected_hit_stock_crashes'])}**" for s in REPORT_SET])
+    L.append(md(["Crash type"] + [SHORT[s] for s in REPORT_SET], rows) + "\n")
+    L.append("Strategies most exposed overall (sum of joint broken-promise probabilities, all nine): " +
+             ", ".join(f"{SHORT[s]} {pct(tt[s]['joint_promise_broken'], 2)}" for s in ci["order_by_broken_promise"]) +
+             ". Full table, including CPPI and all-equity and the reserve-shortfall version: `results/tables/crash_impact_by_strategy.csv`.\n")
+    iv = o["ips_check"]
+    L.append("## I. Consistency with the IPS: tolerance band and the 2031 yield condition\n")
+    L.append("The IPS commits to a cushion rule with a ±2% tolerance band; the Research Pack added the 2031 lock-in with a 2-year-yield "
+             "condition and a 20% extra review. Each version of LDCS below is put into the same nine-strategy scoreboard in place of S10C.\n")
+    L.append(md(["Version", "Lock-in applied (share of paths)"] + [c.split(" (")[0] for c in CRIT] + ["Place equal / safety / growth"],
+                [[v["description"], pct(v["lock_share_H"], 0) if v["lock_rule"] else "none (no lock-in)"] +
+                 [(usd(v["crit"][c]) if "contribution" in c.lower() else pct(v["crit"][c])) + f" ({v['ranks'][c]})" for c in CRIT] +
+                 [" / ".join(str(v["place"][w]) for w in WEIGHTS)] for v in iv.values()]) + "\n")
+    L.append("The 2-year yield in January 2031 is the simulated 5-year yield minus today's 0.08-point 5y-2y spread (the engine tracks the "
+             "5-year yield only).\n")
     L.append("## Limits of these tests\n")
     L.append("- Seed stability measures Monte Carlo sampling noise only. Every seed resamples the same 2004-2026 history, uses the same six "
              "crash replays and the same model, so it says nothing about model risk; the four cases (H, S, C, J) and the λ ranges are the model-risk checks.\n"
@@ -431,7 +534,12 @@ def write_md(o, sb, PT, JP, CT, MC):
              "- With 10,000 paths the paired tests detect very small differences. Statistically significant is not the same as large enough to matter to Laura.\n"
              "- Crash replays are deterministic worst-timing stresses. The joint Poisson figures are upper bounds and the union form assumes crash types are independent.\n"
              "- The simulation ends in January 2033; the payout years 2033-42 are not simulated.\n"
-             "- S0 is one bucket design (a liability ladder refilled only after up years). Other bucket designs could rank differently.\n")
+             "- S0 is one bucket design (a liability ladder refilled only after up years). Other bucket designs could rank differently.\n"
+             "- The 2031 yield condition uses the 2-year yield estimated from the simulated 5-year yield and today's 0.08-point spread.\n"
+             "- In the 1973-74 replay TIPS are a CPI-plus-1% stand-in that gains 21% over the episode; real TIPS would also have lost value "
+             "as real yields rose, so that row flatters every strategy holding SCHP, LDCS included.\n"
+             "- The falling-rate (T5) replay raises contributions because the reserve is valued at a fixed 4%; at market yields the payments "
+             "would also cost more, so section H leaves T5 out of the dollar total.\n")
     L.append("## Figures\n\n![](../figures/16_crash_type_promise_by_strategy.png)\n\n![](../figures/17_contribution_ogive.png)\n\n"
              "![](../figures/18_rank_robustness.png)\n\n![](../figures/19_markov_conditional_shortfall.png)\n")
     (ROOT / "report" / "ROBUSTNESS.md").write_text("\n".join(L))
