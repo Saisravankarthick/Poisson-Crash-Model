@@ -1,14 +1,14 @@
 section,figure,value,how
-Table 4,"Typical January 2031 value, four cases pooled",521372,median of pooled V31
-Table 4,Pooled range P10 (gross of buffer),85470,"P10 of 2033 contribution, paths within 2.5% of typical V31"
-Table 4,Pooled median (gross of buffer),137045,"as above, P50"
-Table 4,Pooled range P90 (gross of buffer),185312,"as above, P90"
-Table 4,Minimum at typical 2031 value,71074,0.5 x (V31 - PV of payments in 2031) x 1.04^2
-Table 4,"Minimum met, average of four cases",0.8313,mean over cases of P(contribution >= own minimum); per-case values = promise_kept in strategy_results.json
-Table 4 note,Flexibility buffer,17538.87,reserve at 3% minus reserve at 4%
-Table 4 note,Pooled P10 net of buffer,67931,gross figure minus buffer
-Table 4 note,Pooled P50 net of buffer,119506,gross figure minus buffer
-Table 4 note,Pooled P90 net of buffer,167773,gross figure minus buffer
+Table 6,"Typical January 2031 value, four cases pooled",521372,median of pooled V31
+Table 6,Pooled range P10 (gross of buffer),85470,"P10 of 2033 contribution, paths within 2.5% of typical V31"
+Table 6,Pooled median (gross of buffer),137045,"as above, P50"
+Table 6,Pooled range P90 (gross of buffer),185312,"as above, P90"
+Table 6,Minimum at typical 2031 value,71074,0.5 x (V31 - PV of payments in 2031) x 1.04^2
+Table 6,"Minimum met, average of four cases",0.8313,mean over cases of P(contribution >= own minimum); per-case values = promise_kept in strategy_results.json
+Table 6 note,Flexibility buffer,17538.87,reserve at 3% minus reserve at 4%
+Table 6 note,Pooled P10 net of buffer,67931,gross figure minus buffer
+Table 6 note,Pooled P50 net of buffer,119506,gross figure minus buffer
+Table 6 note,Pooled P90 net of buffer,167773,gross figure minus buffer
 Confidence,"Share inside $85,000-$185,000 at the typical 2031 value, case H",0.8889,paths of this case whose V31 is within 2.5% of the pooled typical value
 Confidence,"Share inside $85,000-$185,000 at the typical 2031 value, case S",0.7403,paths of this case whose V31 is within 2.5% of the pooled typical value
 Confidence,"Share inside $85,000-$185,000 at the typical 2031 value, case C",0.7348,paths of this case whose V31 is within 2.5% of the pooled typical value
@@ -27,22 +27,22 @@ Steady-return check,2% a year: V31 / minimum / V33 / contribution,"483,911 / 50,
 Steady-return check,4% a year: V31 / minimum / V33 / contribution,"519,687 / 70,164 / 562,094 / 140,327","$300k Jan 2027 + $150k Jan 2028, constant return"
 Steady-return check,6% a year: V31 / minimum / V33 / contribution,"557,395 / 90,556 / 626,290 / 204,523","$300k Jan 2027 + $150k Jan 2028, constant return"
 Steady-return check,8% a year: V31 / minimum / V33 / contribution,"597,103 / 112,030 / 696,462 / 274,695","$300k Jan 2027 + $150k Jan 2028, constant return"
-Table 7,2027: floor / typical / 10th percentile / funding ratio,"189,097 / 300,000 / 300,000 / 1.59",history case; floor excludes any locked-in minimum
-Table 7,2028: floor / typical / 10th percentile / funding ratio,"346,661 / 468,514 / 444,131 / 1.35",history case; floor excludes any locked-in minimum
-Table 7,2031: floor / typical / 10th percentile / funding ratio,"389,947 / 535,847 / 470,695 / 1.37",history case; floor excludes any locked-in minimum
-Table 7,2033: floor / typical / 10th percentile / funding ratio,"421,767 / 576,001 / 494,027 / 1.37",history case; floor excludes any locked-in minimum
+Table 9,2027: floor / typical / 10th percentile / funding ratio,"189,097 / 300,000 / 300,000 / 1.59",history case; floor excludes any locked-in minimum
+Table 9,2028: floor / typical / 10th percentile / funding ratio,"346,661 / 468,514 / 444,131 / 1.35",history case; floor excludes any locked-in minimum
+Table 9,2031: floor / typical / 10th percentile / funding ratio,"389,947 / 535,847 / 470,695 / 1.37",history case; floor excludes any locked-in minimum
+Table 9,2033: floor / typical / 10th percentile / funding ratio,"421,767 / 576,001 / 494,027 / 1.37",history case; floor excludes any locked-in minimum
 Section 2,"PV of payments, Jan 2027 / PV of 2028 contribution / floor / cushion","333,328 / 144,231 / 189,097 / 110,903",4% discount rate
 Section 2,"Cushion as share of $300,000",0.3697,most the rule allows in equities on day one
-Table 3,Reserve slice 2033-2035,144305,"PV at Jan 2033, 4%"
-Table 3,Reserve slice 2036-2039,167802,"PV at Jan 2033, 4%"
-Table 3,Reserve slice 2040-2042,109660,"PV at Jan 2033, 4%"
+Table 5,Reserve slice 2033-2035,144305,"PV at Jan 2033, 4%"
+Table 5,Reserve slice 2036-2039,167802,"PV at Jan 2033, 4%"
+Table 5,Reserve slice 2040-2042,109660,"PV at Jan 2033, 4%"
 Inflation,Cost rise 2027-2033 at 4% a year,0.2653,1.04^6 - 1
 Inflation,"$137,000 in 2027 dollars",108273,"137,000 / 1.04^6"
-Table 5 note,"Expected contribution lost to the five stock-crash types, LDCS",6268,"sum of expected_hit_stock_crashes, crash_impact_by_strategy.csv"
-Table 5 note,"Expected contribution lost to the five stock-crash types, Core-satellite",20679,"sum of expected_hit_stock_crashes, crash_impact_by_strategy.csv"
-Table 2 (Section 2),Equity funds: return a year / volatility / worst 12 months (end) / 2022 / duration,9.8% / 15.1% / -46.3% (2009-02-01) / -17.5% / -,"monthly returns Jan 2004-Oct 2026, Table 1 weights, compound annual return"
-Table 2 (Section 2),Treasury funds: return a year / volatility / worst 12 months (end) / 2022 / duration,2.4% / 3.4% / -9.1% (2022-10-01) / -8.2% / 4.1 years,"monthly returns Jan 2004-Oct 2026, Table 1 weights, compound annual return"
-Table 2 (Section 2),Whole portfolio: return a year / volatility / worst 12 months (end) / 2022 / duration,5.4% / 6.2% / -18.9% (2009-02-01) / -11.4% / 2.4 years,"monthly returns Jan 2004-Oct 2026, Table 1 weights, compound annual return"
+Table 7 note,"Expected contribution lost to the five stock-crash types, LDCS",6268,"sum of expected_hit_stock_crashes, crash_impact_by_strategy.csv"
+Table 7 note,"Expected contribution lost to the five stock-crash types, Core-satellite",20679,"sum of expected_hit_stock_crashes, crash_impact_by_strategy.csv"
+Table 2,Equity funds: return a year / volatility / worst 12 months (end) / 2022 / duration,9.8% / 15.1% / -46.3% (2009-02-01) / -17.5% / -,"monthly returns Jan 2004-Oct 2026, Table 1 weights, compound annual return"
+Table 2,Treasury funds: return a year / volatility / worst 12 months (end) / 2022 / duration,2.4% / 3.4% / -9.1% (2022-10-01) / -8.2% / 4.1 years,"monthly returns Jan 2004-Oct 2026, Table 1 weights, compound annual return"
+Table 2,Whole portfolio: return a year / volatility / worst 12 months (end) / 2022 / duration,5.4% / 6.2% / -18.9% (2009-02-01) / -11.4% / 2.4 years,"monthly returns Jan 2004-Oct 2026, Table 1 weights, compound annual return"
 Inflation,"CPI 12-month change, latest available (September 2026)",0.0372,"CPIAUCSL matched by date; October 2025 CPI was not published, so October 2026 has no 12-month figure"
 Inflation,"Five-year breakeven inflation, latest (2026-11-23)",2.15,"T5YIE, percent a year"
 Inflation,"Five-year breakeven inflation, October 2026 average",2.4,T5YIE monthly mean

@@ -41,16 +41,16 @@ pct = lambda a, q: float(np.percentile(a, q))
 v_typ = float(np.median(pool31))
 m = np.abs(pool31 / v_typ - 1) < BAND
 L_typ = 0.5 * max(v_typ - PV_PAY_2031, 0) * (1 + R) ** 2
-add("Table 4", "Typical January 2031 value, four cases pooled", round(v_typ), "median of pooled V31")
-add("Table 4", "Pooled range P10 (gross of buffer)", round(pct(pool33[m], 10)), "P10 of 2033 contribution, paths within 2.5% of typical V31")
-add("Table 4", "Pooled median (gross of buffer)", round(pct(pool33[m], 50)), "as above, P50")
-add("Table 4", "Pooled range P90 (gross of buffer)", round(pct(pool33[m], 90)), "as above, P90")
-add("Table 4", "Minimum at typical 2031 value", round(L_typ), "0.5 x (V31 - PV of payments in 2031) x 1.04^2")
-add("Table 4", "Minimum met, average of four cases", round(np.mean([float((C33[c] >= res[c]["L"]).mean()) for c in "HSCJ"]), 4),
+add("Table 6", "Typical January 2031 value, four cases pooled", round(v_typ), "median of pooled V31")
+add("Table 6", "Pooled range P10 (gross of buffer)", round(pct(pool33[m], 10)), "P10 of 2033 contribution, paths within 2.5% of typical V31")
+add("Table 6", "Pooled median (gross of buffer)", round(pct(pool33[m], 50)), "as above, P50")
+add("Table 6", "Pooled range P90 (gross of buffer)", round(pct(pool33[m], 90)), "as above, P90")
+add("Table 6", "Minimum at typical 2031 value", round(L_typ), "0.5 x (V31 - PV of payments in 2031) x 1.04^2")
+add("Table 6", "Minimum met, average of four cases", round(np.mean([float((C33[c] >= res[c]["L"]).mean()) for c in "HSCJ"]), 4),
     "mean over cases of P(contribution >= own minimum); per-case values = promise_kept in strategy_results.json")
-add("Table 4 note", "Flexibility buffer", round(BUFFER, 2), "reserve at 3% minus reserve at 4%")
+add("Table 6 note", "Flexibility buffer", round(BUFFER, 2), "reserve at 3% minus reserve at 4%")
 for q in (10, 50, 90):
-    add("Table 4 note", f"Pooled P{q} net of buffer", round(pct(pool33[m] - BUFFER, q)), "gross figure minus buffer")
+    add("Table 6 note", f"Pooled P{q} net of buffer", round(pct(pool33[m] - BUFFER, q)), "gross figure minus buffer")
 
 # ---------------------------------------------------------------- confidence in the announced range
 for c in "HSCJ":
@@ -88,7 +88,7 @@ floor = {0: sum(PAY / (1 + R) ** (k + 6) for k in range(N)) - 150_000 / (1 + R),
          1: sum(PAY / (1 + R) ** (k + 5) for k in range(N)), 4: PV_PAY_2031, 6: R4}
 for t, yr in ((0, 2027), (1, 2028), (4, 2031), (6, 2033)):
     typ, p10 = float(np.median(Vy[t])), pct(Vy[t], 10)
-    add("Table 7", f"{yr}: floor / typical / 10th percentile / funding ratio",
+    add("Table 9", f"{yr}: floor / typical / 10th percentile / funding ratio",
         f"{floor[t]:,.0f} / {typ:,.0f} / {p10:,.0f} / {typ / floor[t]:.2f}", "history case; floor excludes any locked-in minimum")
 
 # ---------------------------------------------------------------- deterministic figures (Section 2, Table 3, inflation)
@@ -97,7 +97,7 @@ add("Section 2", "PV of payments, Jan 2027 / PV of 2028 contribution / floor / c
     f"{pv27:,.0f} / {pv150:,.0f} / {pv27 - pv150:,.0f} / {300_000 - (pv27 - pv150):,.0f}", "4% discount rate")
 add("Section 2", "Cushion as share of $300,000", round((300_000 - (pv27 - pv150)) / 300_000, 4), "most the rule allows in equities on day one")
 for name, ks in (("2033-2035", range(0, 3)), ("2036-2039", range(3, 7)), ("2040-2042", range(7, 10))):
-    add("Table 3", f"Reserve slice {name}", round(sum(PAY / (1 + R) ** k for k in ks)), "PV at Jan 2033, 4%")
+    add("Table 5", f"Reserve slice {name}", round(sum(PAY / (1 + R) ** k for k in ks)), "PV at Jan 2033, 4%")
 add("Inflation", "Cost rise 2027-2033 at 4% a year", round(1.04 ** 6 - 1, 4), "1.04^6 - 1")
 add("Inflation", "$137,000 in 2027 dollars", round(137_000 / 1.04 ** 6), "137,000 / 1.04^6")
 
@@ -106,7 +106,7 @@ import pandas as pd  # noqa: E402
 ci = pd.read_csv(ROOT / "results/tables/crash_impact_by_strategy.csv")
 stock = ci[ci["type"] != "T5"]
 for sid, nm in (("S10C", "LDCS"), ("S9", "Core-satellite")):
-    add("Table 5 note", f"Expected contribution lost to the five stock-crash types, {nm}",
+    add("Table 7 note", f"Expected contribution lost to the five stock-crash types, {nm}",
         round(float(stock.loc[stock.strategy == sid, "expected_hit_stock_crashes"].sum())), "sum of expected_hit_stock_crashes, crash_impact_by_strategy.csv")
 
 # ---------------------------------------------------------------- Section 2, Table 2: risk profile of the final WInS portfolio
@@ -124,7 +124,7 @@ dur = json.load(open(ROOT / "results/strategy_results.json"))["sleeve_duration"]
 eq = {k: W1[k] for k in ("VTI", "VXUS", "EQAL")}; bd = {k: W1[k] for k in ("IEF", "SCHP", "SGOV", "SHY", "VGIT")}
 for nm, ws, cash, d_ in (("Equity funds", eq, 0.0, None), ("Treasury funds", bd, 0.0, dur), ("Whole portfolio", W1, CASH, dur * sum(bd.values()) / 100)):
     st = profile(ws, cash)
-    add("Table 2 (Section 2)", f"{nm}: return a year / volatility / worst 12 months (end) / 2022 / duration",
+    add("Table 2", f"{nm}: return a year / volatility / worst 12 months (end) / 2022 / duration",
         f"{st['ret']:.1%} / {st['vol']:.1%} / {st['worst12']:.1%} ({st['worst12_end']}) / {st['y2022']:.1%} / " + ("-" if d_ is None else f"{d_:.1f} years"),
         "monthly returns Jan 2004-Oct 2026, Table 1 weights, compound annual return")
 
